@@ -1,5 +1,5 @@
+"Vim Configuartion
 "Ansley Peduru
-".vimrc
 
 "General/Vundle 
 set nocompatible    "no Vi compatibility mode
@@ -8,10 +8,9 @@ filetype off		"required for Vundle
 set runtimepath+=/home/ansley/Github/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
-set mouse=a			"Allow mouse usage
-
 "Plugins 
 Plugin 'gmarik/Vundle.vim' "Let Vundle manage Vundle
+Plugin 'Valloric/YouCompleteMe'	"Autocompletion FTW 
 
 call vundle#end()
 filetype plugin indent on
@@ -32,6 +31,7 @@ set title	        "vim decides title of terminal
 set showmode    	"show current mode (insert,visual, etc)
 set showcmd         "show last commands in status line
 set laststatus=2    "display status line
+set mouse=a			"Allow mouse usage
 
 
 "Spaces & Tabs
@@ -49,10 +49,10 @@ set matchtime=1
 
 "Colors & Fonts
 syntax enable
-
 set t_Co=256
 set background=dark	"for the longevity of my eyes
 colorscheme molokai
+
 
 "Searching
 set incsearch       "search as characters are entered
