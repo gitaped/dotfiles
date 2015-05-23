@@ -11,6 +11,7 @@ call vundle#begin()
 "Plugins 
 Plugin 'gmarik/Vundle.vim' "Let Vundle manage Vundle
 Plugin 'Valloric/YouCompleteMe'	"Autocompletion FTW 
+Plugin 'scrooloose/syntastic'	"Syntax checking hax, see syntastic below
 
 call vundle#end()
 filetype plugin indent on
@@ -60,6 +61,7 @@ set hlsearch        "search for all matches
 set ignorecase      "ignore case when searching
 set smartcase       "for unexpected results
 
+"Syntastic
 
 
 
