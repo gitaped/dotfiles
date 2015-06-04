@@ -5,7 +5,7 @@
 set nocompatible    "no Vi compatibility mode
 filetype off		"required for Vundle
 
-set runtimepath+=/home/ansley/Github/dotfiles/vim/bundle/Vundle.vim
+set runtimepath+=~/Github/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 "Plugins 
