@@ -7,8 +7,9 @@ rm -f ~/.vimrc
 rm -f ~/.vim
 
 echo "Creating symlinks"
-ln -sf ~/Github/dotfiles/vimrc ~/.vimrc
-ln -sf ~/Github/dotfiles/vim ~/.vim
+ln -sf ~/dotfiles/vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim ~/.vim
 
-echo "script completed"
-
+cd ~/dotfiles/vim/bundle
+git clone https://github.com/gmarik/Vundle.vim.git
+vim +PluginInstall +qall

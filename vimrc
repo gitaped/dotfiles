@@ -64,4 +64,15 @@ set smartcase       "for unexpected results
 "Syntastic
 
 
-
+"Mappings
+"Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool) 
+"Disable arrow keys
+map <Up> <NOP>	
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+"Use semicolon in normal mode without shifting
+nnoremap ; :
+"Directional Keys
+noremap j gj
+noremap k gk
