@@ -2,7 +2,7 @@
 #Script for creating symlinks from vim home directory to desired dotfiles folder
 #Clone repo after creating Github directory in home then execute this script
 
-echo "Deleting exisitng vim configurations"
+echo "Deleting exisiting vim configurations"
 rm  ~/.vimrc
 rm -rf  ~/.vim
 
