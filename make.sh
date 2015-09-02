@@ -3,8 +3,8 @@
 #Clone repo after creating Github directory in home then execute this script
 
 echo "Deleting exisitng vim configurations"
-rm -f ~/.vimrc
-rm -f ~/.vim
+rm  ~/.vimrc
+rm -rf  ~/.vim
 
 echo "Creating symlinks"
 ln -sf ~/dotfiles/vimrc ~/.vimrc
