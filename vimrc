@@ -10,6 +10,9 @@ call vundle#begin()
 
 "Plugins 
 Plugin 'gmarik/Vundle.vim' "Let Vundle manage Vundle
+"Plugin 'Valloric/YouCompleteMe'	"AutoCompletion FTW
+Plugin 'scrooloose/nerdtree'	"Filesystem tree
+"Plugin 'scrooloose/syntastic'	"Syntax checking
 
 call vundle#end()
 filetype plugin indent on
@@ -34,7 +37,7 @@ set mouse=a			"Allow mouse usage
 
 
 "Spaces & Tabs
-set tabstop=4	    "TAB MASTER RACE
+set tabstop=4	    "TAB MASTER RACE jk
 set softtabstop=4
 set shiftwidth=4
 set smarttab        "use tabs at start of line, spaces eleswhere
@@ -62,13 +65,15 @@ set smartcase       "for unexpected results
 
 "Mappings
 "Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool) 
-"Disable arrow keys
-map <Up> <NOP>	
-map <Down> <NOP>
-map <Left> <NOP>
-map <Right> <NOP>
+"Arrow keys r 4 plebs
+nnoremap <Up> :echoe "Use k"<CR>	
+nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
 "Use semicolon in normal mode without shifting
 nnoremap ; :
 "Directional Keys
 noremap j gj
 noremap k gk
+
+"TODO: Add NERD Tree bindings, syntastic settings
