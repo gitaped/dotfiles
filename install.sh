@@ -2,8 +2,10 @@
 
 BUNDLE="$HOME/dotfiles/vim/bundle"
 VUNDLE="Vundle.vim"
+GITHUB="https://github.com"
 YCM="YouCompleteMe"
 NERD="nerdtree"
+SYN="syntastic"
 
 get_sudo(){
 	sudo -v
@@ -30,7 +32,7 @@ install_plugins(){
 
 	echo "Installing Vundle" 
 	if [ ! -d $VUNDLE ]; then
-		git clone https://github.com/gmarik/Vundle.vim.git
+		git clone $GITHUB/gmarik/Vundle.vim.git
 	else
 		echo "Vundle already cloned"
 	fi
@@ -40,7 +42,7 @@ install_plugins(){
 	#sudo apt-get install python-dev
 	
 	if [ ! -d $YCM ]; then
-		git clone https://github.com/Valloric/YouCompleteMe 
+		git clone $GITHUB/Valloric/YouCompleteMe.git 
 	else
 		echo "YouCompleteMe already cloned"
 	fi
@@ -48,11 +50,19 @@ install_plugins(){
 	#git submodule update --init --recursive
 	#./install.py --clang-completer	
 	
+	echo "Installing NERD Tree"
 	if [ ! -d $NERD ]; then
-		git clone https://github.com/scooloose/nerdtree 
+		git clone $GITHUB/scrooloose/nerdtree.git
 	else
 		echo "NERD tree already cloned"
 	fi 
+	
+	echo "Installing Syntastic"
+	if [ ! -d $SYN ]; then
+		git clone $GITHUB/scrooloose/syntastic
+	else
+		echo "Syntastic already cloned"
+	fi
 
 	vim +PluginInstall +qall
 }
