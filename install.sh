@@ -6,6 +6,7 @@ GITHUB="https://github.com"
 YCM="YouCompleteMe"
 NERD="nerdtree"
 SYN="syntastic"
+SUR="vim-surround"
 
 get_sudo(){
 	sudo -v
@@ -32,7 +33,7 @@ install_plugins(){
 
 	echo "Installing Vundle" 
 	if [ ! -d $VUNDLE ]; then
-		git clone $GITHUB/gmarik/Vundle.vim.git
+		git clone $GITHUB/gmarik/$VUNDLE.git
 	else
 		echo "Vundle already cloned"
 	fi
@@ -42,7 +43,7 @@ install_plugins(){
 	#sudo apt-get install python-dev
 	
 	if [ ! -d $YCM ]; then
-		git clone $GITHUB/Valloric/YouCompleteMe.git 
+		git clone $GITHUB/Valloric/$YCM.git 
 	else
 		echo "YouCompleteMe already cloned"
 	fi
@@ -52,18 +53,25 @@ install_plugins(){
 	
 	echo "Installing NERD Tree"
 	if [ ! -d $NERD ]; then
-		git clone $GITHUB/scrooloose/nerdtree.git
+		git clone $GITHUB/scrooloose/$NERD.git
 	else
 		echo "NERD tree already cloned"
 	fi 
 	
 	echo "Installing Syntastic"
 	if [ ! -d $SYN ]; then
-		git clone $GITHUB/scrooloose/syntastic
+		git clone $GITHUB/scrooloose/$SYN.git
 	else
 		echo "Syntastic already cloned"
 	fi
-
+	
+	echo "Installing Surround"
+	if [ ! -d $SUR ]; then
+		git clone $GITHUB/tpope/$SUR.git
+	else
+		echo "Surround already cloned"
+	fi
+	
 	vim +PluginInstall +qall
 }
 

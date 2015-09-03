@@ -1,4 +1,6 @@
 [user]
 	name = Ansley Peduru
 	email = ansleypeduru96@gmail.com
-	
+
+[color]
+	ui = auto

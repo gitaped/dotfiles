@@ -9,10 +9,11 @@ set runtimepath+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 "Plugins 
-Plugin 'gmarik/Vundle.vim' "Let Vundle manage Vundle
-"Plugin 'Valloric/YouCompleteMe'	"AutoCompletion FTW
-Plugin 'scrooloose/nerdtree'	"Filesystem tree
-Plugin 'scrooloose/syntastic'	"Syntax checking
+Plugin 'gmarik/Vundle.vim'		 "Let Vundle manage Vundle
+"Plugin 'Valloric/YouCompleteMe' "AutoCompletion FTW
+Plugin 'scrooloose/nerdtree'	 "Filesystem tree
+Plugin 'scrooloose/syntastic'	 "Syntax checking
+Plugin 'tpope/vim-surround'      "Surroundings
 
 call vundle#end()
 filetype plugin indent on
@@ -78,6 +79,11 @@ noremap k gk
 
 "TODO: Add NERD Tree bindings, syntastic settings, Arduino syntax
 "NERD Tree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "Syntastic
+"
+"
+"
+"
