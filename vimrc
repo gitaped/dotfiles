@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' "Let Vundle manage Vundle
 "Plugin 'Valloric/YouCompleteMe'	"AutoCompletion FTW
 Plugin 'scrooloose/nerdtree'	"Filesystem tree
-"Plugin 'scrooloose/syntastic'	"Syntax checking
+Plugin 'scrooloose/syntastic'	"Syntax checking
 
 call vundle#end()
 filetype plugin indent on
@@ -76,4 +76,8 @@ nnoremap ; :
 noremap j gj
 noremap k gk
 
-"TODO: Add NERD Tree bindings, syntastic settings
+"TODO: Add NERD Tree bindings, syntastic settings, Arduino syntax
+"NERD Tree
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"Syntastic
