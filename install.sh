@@ -4,8 +4,9 @@ BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 YCM="YouCompleteMe"
 
-plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline )
-repos=( gmarik scrooloose scrooloose tpope bling )  
+plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline supertab
+vim-gitgutter vim-signify vim-fugitive )
+repos=( gmarik scrooloose scrooloose tpope bling ervandew airblade mhinz tpope )  
 total=${#plugins[*]}
 
 get_sudo(){
@@ -31,7 +32,7 @@ install_plugins(){
 	mkdir $BUNDLE
 	cd $BUNDLE
 	
-	for (( p=0; p<=(( $total -1 )); p++ ))
+	for (( p=0; p<(( $total )); p++ ))
 	do
 		echo "Installing ${plugins[$p]}"
 		if [ ! -d "${plugins[$p]}" ]; then
@@ -63,7 +64,7 @@ basics(){
 	sudo apt-get install pip
 	sudo apt-get install ruby
 	sudo apt-get install gem
-	gem install jekyll
+	sudo gem install jekyll
 	sudo apt-get install openjdk-7-jdk
 }
 
