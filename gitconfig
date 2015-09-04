@@ -4,3 +4,17 @@
 
 [color]
 	ui = auto
+
+[alias]
+	ad = add
+	br = branch
+	ch = checkout
+	co = commit
+	cl = clone
+	df = diff
+	lo = log
+	ps = push
+	pl = pull
+	st = status
+	or = origin 
+	ma = master	

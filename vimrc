@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'		 "Let Vundle manage Vundle
 Plugin 'scrooloose/nerdtree'	 "Filesystem tree
 Plugin 'scrooloose/syntastic'	 "Syntax checking
 Plugin 'tpope/vim-surround'      "Surroundings
+Plugin 'bling/vim-airline'	     "Status/Tabline
 
 call vundle#end()
 filetype plugin indent on
@@ -34,7 +35,7 @@ set title	        "vim decides title of terminal
 set showmode    	"show current mode (insert,visual, etc)
 set showcmd         "show last commands in status line
 set laststatus=2    "display status line
-set mouse=a			"Allow mouse usage
+set mouse=r			"Allow mouse usage
 
 
 "Spaces & Tabs
@@ -49,6 +50,7 @@ set cindent	        "C style indenting
 set textwidth=80	"Wrap lines at column 80
 set showmatch
 set matchtime=1
+set pastetoggle=<F3>
 
 "Colors & Fonts
 syntax enable
@@ -65,6 +67,8 @@ set smartcase       "for unexpected results
 
 
 "Mappings
+
+let mapleader = ","
 "Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool) 
 "Arrow keys r 4 plebs
 nnoremap <Up> :echoe "Use k"<CR>	
@@ -78,7 +82,10 @@ noremap j gj
 noremap k gk
 
 "TODO: Add NERD Tree bindings, syntastic settings, Arduino syntax
+"TODO: Figure out how the fuck Airline works
+
 "NERD Tree
+map <F2> :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -87,3 +94,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "
 "
 "
+
+"Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='raven'
+let g:airline_left_sep='▶'
+let g:airline_right_sep='◀'
+let g:airline_symbols = {}
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+

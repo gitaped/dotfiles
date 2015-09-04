@@ -1,12 +1,12 @@
 #!/bin/bash
 
 BUNDLE="$HOME/dotfiles/vim/bundle"
-VUNDLE="Vundle.vim"
 GITHUB="https://github.com"
 YCM="YouCompleteMe"
-NERD="nerdtree"
-SYN="syntastic"
-SUR="vim-surround"
+
+plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline )
+repos=( gmarik scrooloose scrooloose tpope bling )  
+total=${#plugins[*]}
 
 get_sudo(){
 	sudo -v
@@ -30,58 +30,55 @@ install_plugins(){
 	echo "Installing Vundle plugins"
 	mkdir $BUNDLE
 	cd $BUNDLE
-
-	echo "Installing Vundle" 
-	if [ ! -d $VUNDLE ]; then
-		git clone $GITHUB/gmarik/$VUNDLE.git
-	else
-		echo "Vundle already cloned"
-	fi
-
-	echo "Installing YouCompleteMe"
+	
+	for (( p=0; p<=(( $total -1 )); p++ ))
+	do
+		echo "Installing ${plugins[$p]}"
+		if [ ! -d "${plugins[$p]}" ]; then
+			git clone $GITHUB/"${repos[$p]}"/"${plugins[$p]}".git	
+		else
+			echo "${plugins[$p]} already cloned"
+		fi
+	done
+ 
+	#echo "Installing YouCompleteMe"
 	#sudo apt-get install build-essential cmake
 	#sudo apt-get install python-dev
 	
-	if [ ! -d $YCM ]; then
-		git clone $GITHUB/Valloric/$YCM.git 
-	else
-		echo "YouCompleteMe already cloned"
-	fi
+	#if [ ! -d $YCM ]; then
+	#	git clone $GITHUB/Valloric/$YCM.git 
+	#else
+	#	echo "YouCompleteMe already cloned"
+	#fi
 	#cd ~/dotfiles/vim/bundle/YouCompleteMe
 	#git submodule update --init --recursive
 	#./install.py --clang-completer	
 	
-	echo "Installing NERD Tree"
-	if [ ! -d $NERD ]; then
-		git clone $GITHUB/scrooloose/$NERD.git
-	else
-		echo "NERD tree already cloned"
-	fi 
-	
-	echo "Installing Syntastic"
-	if [ ! -d $SYN ]; then
-		git clone $GITHUB/scrooloose/$SYN.git
-	else
-		echo "Syntastic already cloned"
-	fi
-	
-	echo "Installing Surround"
-	if [ ! -d $SUR ]; then
-		git clone $GITHUB/tpope/$SUR.git
-	else
-		echo "Surround already cloned"
-	fi
-	
 	vim +PluginInstall +qall
 }
 
+basics(){
+	sudo apt-get install build-essential
+	sudo apt-get install python
+	sudo apt-get install pip
+	sudo apt-get install ruby
+	sudo apt-get install gem
+	gem install jekyll
+	sudo apt-get install openjdk-7-jdk
+}
+
+arduino(){
+	pip install ino
+
+}
 
 main(){
 	get_sudo
 	setup_git
 	create_symlinks
+	#basics
 	install_plugins
-	
+	#arduino	
 }
 
 main
