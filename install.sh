@@ -4,9 +4,8 @@ BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 YCM="YouCompleteMe"
 
-plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline supertab
-vim-gitgutter vim-signify vim-fugitive )
-repos=( gmarik scrooloose scrooloose tpope bling ervandew airblade mhinz tpope )  
+plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline supertab vim-gitgutter vim-signify vim-fugitive fonts )
+repos=( gmarik scrooloose scrooloose tpope bling ervandew airblade mhinz tpope powerline )  
 total=${#plugins[*]}
 
 get_sudo(){
@@ -32,16 +31,17 @@ install_plugins(){
 	mkdir $BUNDLE
 	cd $BUNDLE
 	
-	for (( p=0; p<(( $total )); p++ ))
+	for (( p=0; p<=(( $total -1 )); p++ ))
 	do
-		echo "Installing ${plugins[$p]}"
-		if [ ! -d "${plugins[$p]}" ]; then
-			git clone $GITHUB/"${repos[$p]}"/"${plugins[$p]}".git	
-		else
-			echo "${plugins[$p]} already cloned"
-		fi
+	echo "Installing ${plugins[$p]}"
+	if [ ! -d "${plugins[$p]}" ]
+	then
+		git clone $GITHUB/"${repos[$p]}"/"${plugins[$p]}".git
+	else
+		echo "${plugins[$p]} already cloned"
+	fi
 	done
- 
+
 	#echo "Installing YouCompleteMe"
 	#sudo apt-get install build-essential cmake
 	#sudo apt-get install python-dev
@@ -56,6 +56,8 @@ install_plugins(){
 	#./install.py --clang-completer	
 	
 	vim +PluginInstall +qall
+	cd $BUNDLE/fonts
+	bash install.sh
 }
 
 basics(){

@@ -1,4 +1,4 @@
-"------------------
+"-----------------
 "Vim Configuartion|
 "Ansley Peduru    |
 "------------------
@@ -6,11 +6,10 @@
 "-----------------
 "General & Vundle|
 "-----------------
-set nocompatible    "no Vi compatibility mode
-filetype off		"required for Vundle
+set nocompatible    "no Vi compatibility mode 
+filetype off		"required for Vundle 
 set runtimepath+=~/dotfiles/vim/bundle/Vundle.vim
-call vundle#begin()
- 
+call vundle#begin() 
 Plugin 'gmarik/Vundle.vim'		 "Let Vundle manage Vundle
 "Plugin 'Valloric/YouCompleteMe' "AutoCompletion FTW
 Plugin 'scrooloose/nerdtree'	 "Filesystem tree
@@ -73,7 +72,7 @@ set noerrorbells
 syntax enable
 set t_Co=256
 set background=dark	"for the longevity of my eyes
-colorscheme molokai
+colorscheme badwolf
 
 "----------
 "Searching|
@@ -106,7 +105,6 @@ noremap k gk
 "NERD Tree|
 "----------
 map <F2> :NERDTreeToggle<CR>
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "----------
@@ -115,11 +113,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
-
 let g:syntastic_error_symbol =  "✖"
-let g:syntastic_style_error_symbol = ">"
 let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_warning_symbol = ">"
 
 "--------
 "Airline|
@@ -127,25 +122,19 @@ let g:syntastic_style_warning_symbol = ">"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled=1
-let g:airline#extensions#hunks#enabled=0
-"let g:airline_theme='raven'
-let g:airline_left_sep='▶'
-let g:airline_right_sep='◀'
-let g:airline_symbols = {}
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-
+let g:airline#extensions#hunks#enabled=1
+let g:airline_detect_paste=1 
+let g:airline_theme='badwolf'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_symbols = {} 
+let g:airline_symbols.paste = 'λ' "Cause lambdas are perfect for paste
 
 function! AirlineInit()
 	let g:airline_section_a = airline#section#create(['mode'])
-	let g:airline_section_b = airline#section#create_left(['branch'])
-	let g:airline_section_c = airline#section#create(['%f'])
-	let g:airline_section_y = airline#section#create_right(['branch', 'ffenc'])
-	let g:airline_section_z = airline#section#create_right(['(%l/%c) [%p%%]'])
-	let g:airline_section_warning =
+	let g:airline_section_b = airline#section#create(['paste'])
+	let g:airline_section_x = airline#section#create(['%P'])
+	let g:airline_section_y = airline#section#create(['filetype'])
+	let g:airline_section_z = airline#section#create_right(['branch','hunks'])
 endfunction
-"autocmd VimEnter * call AirlineInit()
-
-
-
-
+autocmd VimEnter * call AirlineInit()
