@@ -4,8 +4,10 @@ BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 YCM="YouCompleteMe"
 
-plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline supertab vim-gitgutter vim-signify vim-fugitive fonts )
-repos=( gmarik scrooloose scrooloose tpope bling ervandew airblade mhinz tpope powerline )  
+plugins=( Vundle.vim nerdtree syntastic vim-surround vim-airline supertab
+vim-gitgutter vim-signify vim-fugitive fonts )
+repos=( gmarik scrooloose scrooloose tpope bling ervandew airblade mhinz tpope
+powerline )  
 total=${#plugins[*]}
 
 get_sudo(){
