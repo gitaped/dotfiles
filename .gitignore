@@ -1,2 +1,2 @@
-#Vundle plugins 
 vim/bundle/
+*.swp
