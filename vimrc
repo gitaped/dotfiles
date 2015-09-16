@@ -1,4 +1,3 @@
-"-----------------
 "Vim Configuartion|
 "Ansley Peduru    |
 "------------------
