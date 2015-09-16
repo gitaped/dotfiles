@@ -1,11 +1,9 @@
-"Mappings|
-"---------
 let mapleader = "\<Space>"
-"Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool) 
+"Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool)
 "TODO: find better alternative to ESC
 "
 "Arrow keys r 4 plebs
-nnoremap <Up> :echoe "Use k"<CR>	
+nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -25,14 +23,5 @@ map <C-z> <Nop>
 nnoremap H ^
 nnoremap L $
 
-
- 
-
-
-
-
-
-
-
-
-
+"F5 to remove trailling whitespace
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
