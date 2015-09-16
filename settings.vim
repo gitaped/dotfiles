@@ -28,12 +28,12 @@ set textwidth=80	"Wrap lines at column 80
 set showmatch
 set matchtime=1
 set pastetoggle=<F3>
-set paste!
 
 "-------
 "Sounds|
 "-------
-set noerrorbells 
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 "---------------
 "Colors & Fonts|
@@ -51,4 +51,8 @@ set hlsearch        "search for all matches
 set ignorecase      "ignore case when searching
 set smartcase       "for unexpected results
 
-
+"-------
+"Backup|
+"-------
+set nobackup
+set noswapfile
