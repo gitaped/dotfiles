@@ -1,5 +1,3 @@
-#!/bin/bash
-
 BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 YCM="YouCompleteMe"
