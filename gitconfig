@@ -5,16 +5,13 @@
 [color]
 	ui = auto
 
-[alias]
-	ad = add
-	br = branch
-	ch = checkout
-	co = commit
-	cl = clone
-	df = diff
-	lo = log
-	ps = push
-	pl = pull
-	st = status
-	or = origin 
-	ma = master	
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = red
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
