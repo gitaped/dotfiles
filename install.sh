@@ -12,8 +12,12 @@ get_sudo(){
 	sudo -v
 }
 
-setup_git(){
+copy_dots(){
+	echo "Copying dotfiles"
 	cp gitconfig "$HOME/.gitconfig"	
+	cp bash_aliases "$HOME/.bash_aliases"
+	source ~/.bash_aliases 
+	echo
 }
 
 create_symlinks(){
@@ -24,11 +28,17 @@ create_symlinks(){
 	echo "Creating symlinks to new location"
  	ln -sf ~/dotfiles/vimrc ~/.vimrc
 	ln -sf ~/dotfiles/vim ~/.vim
+	echo
 }
 
 install_plugins(){
 	echo "Installing Vundle plugins"
-	mkdir $BUNDLE
+	if [ ! -d "$BUNDLE" ]
+	then
+		mkdir $BUNDLE
+	else
+		echo "bundle directory already created"
+	fi
 	cd $BUNDLE
 	
 	for (( p=0; p<=(( $total -1 )); p++ ))
@@ -51,7 +61,7 @@ install_plugins(){
 	#else
 	#	echo "YouCompleteMe already cloned"
 	#fi
-	#cd ~/dotfiles/vim/bundle/YouCompleteMe
+	#cd $BUNDLE/YouCompleteMe
 	#git submodule update --init --recursive
 	#./install.py --clang-completer	
 	
@@ -60,28 +70,22 @@ install_plugins(){
 	bash install.sh
 }
 
-basics(){
+essentials(){
 	sudo apt-get install build-essential
 	sudo apt-get install python
 	sudo apt-get install pip
 	sudo apt-get install ruby
 	sudo apt-get install gem
 	sudo gem install jekyll
-	sudo apt-get install openjdk-7-jdk
-}
-
-arduino(){
-	pip install ino
-
 }
 
 main(){
 	get_sudo
-	setup_git
+	copy_dots
 	create_symlinks
-	#basics
+	#essentials
 	install_plugins
-	#arduino	
 }
 
 main
+clear
