@@ -13,4 +13,10 @@ alias gst='git status'
 alias gss='git stash save'
 alias gsp='git stash pop'
 
-alias og='origin'
+#Directory
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+#Python
+alias pipi='pip install'
