@@ -25,3 +25,5 @@ nnoremap L $
 
 "F5 to remove trailling whitespace
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+"F6 to fix indentation
+nnoremap <F6> mzgg=G`z
