@@ -9,7 +9,7 @@ let &titlestring = expand('%:p') "show full directory of working file
 set title	        "vim decides title of terminal
 set showmode    	"show current mode (insert,visual, etc)
 set laststatus=2    "display status line
-set mouse=r			"Allow mouse usage
+set mouse=a			"Allow mouse usage
 
 "--------------
 "Spaces & Tabs|
@@ -20,6 +20,9 @@ set shiftwidth=4
 set smarttab        "use tabs at start of line, spaces eleswhere
 set autoindent
 set cindent	        "C style indenting
+set formatoptions-=t "Hack to prevent autowrapping
+set nowrap          
+set colorcolumn=80  
 
 "-----
 "Text|
@@ -56,3 +59,8 @@ set smartcase       "for unexpected results
 "-------
 set nobackup
 set noswapfile
+
+"--------
+"Mapping|
+"--------
+set timeoutlen=1500
