@@ -1,23 +1,30 @@
 BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
+BASH="$HOME/dotfiles/bash"
 YCM="YouCompleteMe"
 
-plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-surround vim-airline supertab
-vim-gitgutter vim-signify vim-fugitive fonts )
-repos=( gmarik scrooloose scrooloose scrooloose tpope bling ervandew airblade mhinz tpope
-powerline )
+plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline supertab vim-gitgutter vim-signify delimitMate neocomplete.vim fonts )
+repos=( gmarik scrooloose scrooloose scrooloose bling ervandew airblade mhinz Raimondi Shougo powerline )
 total=${#plugins[*]}
 
 get_sudo(){
 	sudo -v
 }
 
+update_vim(){
+	sudo apt-get update
+	sudo apt-get install vim
+	sudo apt-get install vim-gnome #required for neocomplete.vim
+}
+
 copy_dots(){
 	echo "Copying dotfiles"
 	cp gitconfig "$HOME/.gitconfig"
+	cd $BASH
+	#chmod 777 ~/.bashrc
 	cp bash_aliases "$HOME/.bash_aliases"
-	. ~/.bash_aliases #identical to source 
-	echo
+	#sudo cat bashrc >> "$HOME/.bashrc"
+	. ~/.bash_aliases  
 }
 
 create_symlinks(){
@@ -28,7 +35,6 @@ create_symlinks(){
 	echo "Creating symlinks to new location"
 	ln -sf ~/dotfiles/vimrc ~/.vimrc
 	ln -sf ~/dotfiles/vim ~/.vim
-	echo
 }
 
 install_plugins(){
@@ -76,14 +82,14 @@ essentials(){
 	sudo apt-get install pip
 	sudo apt-get install ruby
 	sudo apt-get install gem
-	sudo gem install jekyll
 }
 
 main(){
 	get_sudo
+	#update_vim
+	#essentials
 	copy_dots
 	create_symlinks
-	#essentials
 	install_plugins
 }
 

@@ -1,0 +1,3 @@
+function cdls() {
+	cd "$@" && ls -F
+}

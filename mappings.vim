@@ -1,4 +1,4 @@
-let mapleader = "\<Space>"
+let mapleader = ","
 
 "Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool)
 "TODO: find better alternative to ESC
@@ -25,15 +25,18 @@ nnoremap H ^
 nnoremap L $
 
 "yank to end of line
-nnoremap yL y$
+nmap yL y$
+"yank to start of line
+nmap yH y^
 
 "Switching between buffers 
-map <Leader>n :bn<CR>
-map <Leader>p :bp<CR>
-map <Leader>d :bd<CR>
+nmap <C-n> :w<Bar>:bn <CR>
+nmap <C-p> :w<Bar>:bp <CR>
+nmap <C-d> :w<Bar>:bd <CR>
 
 "F5 to remove trailling whitespace
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "F6 to fix indentation
 nnoremap <F6> mzgg=G`z
+
 

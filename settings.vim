@@ -10,16 +10,16 @@ set title	        "vim decides title of terminal
 set showmode    	"show current mode (insert,visual, etc)
 set laststatus=2    "display status line
 set mouse=a			"Allow mouse usage
+set completeopt-=preview
 
 "--------------
 "Spaces & Tabs|
 "--------------
-set tabstop=4	    "TAB MASTER RACE jk
+set tabstop=4	   
 set softtabstop=4
 set shiftwidth=4
 set smarttab        "use tabs at start of line, spaces eleswhere
 set autoindent
-set cindent	        "C style indenting
 set formatoptions-=t "Hack to prevent autowrapping
 set nowrap          
 set colorcolumn=80  
@@ -63,4 +63,4 @@ set noswapfile
 "--------
 "Mapping|
 "--------
-set timeoutlen=1500
+set timeoutlen=1000

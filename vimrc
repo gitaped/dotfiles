@@ -12,3 +12,4 @@ source $HOME/dotfiles/mappings.vim
 source $HOME/dotfiles/nerd.vim
 source $HOME/dotfiles/syntastic.vim
 source $HOME/dotfiles/airline.vim
+source $HOME/dotfiles/neocomplete.vim

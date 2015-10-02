@@ -17,6 +17,6 @@ alias gsp='git stash pop'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
+alias .....='cd ../../../..'
 #Python
 alias pipi='pip install'
