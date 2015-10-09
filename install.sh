@@ -3,8 +3,8 @@ GITHUB="https://github.com"
 BASH="$HOME/dotfiles/bash"
 YCM="YouCompleteMe"
 
-plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline supertab vim-gitgutter vim-signify delimitMate neocomplete.vim fonts )
-repos=( gmarik scrooloose scrooloose scrooloose bling ervandew airblade mhinz Raimondi Shougo powerline )
+plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline supertab vim-gitgutter vim-signify delimitMate neocomplete.vim vim-fugitive fonts )
+repos=( gmarik scrooloose scrooloose scrooloose bling ervandew airblade mhinz Raimondi Shougo tpope powerline )
 total=${#plugins[*]}
 
 get_sudo(){

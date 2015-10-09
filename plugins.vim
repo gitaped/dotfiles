@@ -17,6 +17,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'Raimondi/delimitMate'
 "Plugin 'kien/ctrlp'			"Try these at home
 "Plugin 'sjl/gundo'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
