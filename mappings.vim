@@ -4,10 +4,10 @@ let mapleader = ","
 "TODO: find better alternative to ESC
 "
 "Arrow keys r 4 plebs
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <up> :echoe "use k"<cr>
+nnoremap <down> :echoe "use j"<cr>
+nnoremap <left> :echoe "use h"<cr>
+nnoremap <right> :echoe "use l"<cr>
 
 "Use semicolon in normal mode without shifting
 nnoremap ; :
@@ -20,9 +20,12 @@ noremap k gk
 map <C-z> <Nop>
 
 "Remap start and end of line keys
-"Reminder of the importance of ^ and $ as regex tokens
 nnoremap H ^
 nnoremap L $
+
+"Create blank line above and below without entering Insert mode
+nnoremap t o<Esc>
+nnoremap T O<Esc>
 
 "yank to end of line
 nmap yL y$
@@ -34,9 +37,23 @@ nmap <C-n> :w<Bar>:bn <CR>
 nmap <C-p> :w<Bar>:bp <CR>
 nmap <C-d> :w<Bar>:bd <CR>
 
-"F5 to remove trailling whitespace
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-"F6 to fix indentation
-nnoremap <F6> mzgg=G`z
+let CursorColumnI = 0 "the cursor column position in INSERT
+autocmd InsertEnter * let CursorColumnI = col('.')
+autocmd CursorMovedI * let CursorColumnI = col('.')
+autocmd InsertLeave * if col('.') != CursorColumnI | call cursor(0, col('.')+1) | endif"
+
+"Hit space to turn off highlighted search results
+nnoremap <silent> <Space> :nohlsearch<cr><ESC>
+
+"Indentation shifting: prevents de-select after shift
+vnoremap < <gv
+vnoremap > >gv
+
+"Switch between vertical/horizontal panes easier
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
 
 

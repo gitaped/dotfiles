@@ -1,10 +1,11 @@
 BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 BASH="$HOME/dotfiles/bash"
-YCM="YouCompleteMe"
+GIT="$HOME/dotfiles/git"
 
-plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline supertab vim-gitgutter vim-signify delimitMate neocomplete.vim vim-fugitive fonts )
-repos=( gmarik scrooloose scrooloose scrooloose bling ervandew airblade mhinz Raimondi Shougo tpope powerline )
+#TODO: merge these two repos into a hash map
+plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline vim-gitgutter vim-signify delimitMate neocomplete.vim tagbar fonts )
+repos=( gmarik scrooloose scrooloose scrooloose bling airblade mhinz Raimondi Shougo majutsushi powerline )
 total=${#plugins[*]}
 
 get_sudo(){
@@ -19,12 +20,17 @@ update_vim(){
 
 copy_dots(){
 	echo "Copying dotfiles"
+	cd $GIT
 	cp gitconfig "$HOME/.gitconfig"
 	cd $BASH
-	#chmod 777 ~/.bashrc
 	cp bash_aliases "$HOME/.bash_aliases"
-	#sudo cat bashrc >> "$HOME/.bashrc"
+	cp bash_profile "$HOME/.bash_profile"
+	cp bash_functions "$HOME/.bash_functions"
+	cp bashrc "$HOME/.bashrc"
 	. ~/.bash_aliases  
+	. ~/.bash_profile
+	. ~/.bash_functions
+	. ~/.bashrc
 }
 
 create_symlinks(){
@@ -58,22 +64,10 @@ install_plugins(){
 		fi
 	done
 
-	#echo "Installing YouCompleteMe"
-	#sudo apt-get install build-essential cmake
-	#sudo apt-get install python-dev
-
-	#if [ ! -d $YCM ]; then
-	#	git clone $GITHUB/Valloric/$YCM.git
-	#else
-	#	echo "YouCompleteMe already cloned"
-	#fi
-	#cd $BUNDLE/YouCompleteMe
-	#git submodule update --init --recursive
-	#./install.py --clang-completer
-
+	#sudo pip install jedi
 	vim +PluginInstall +qall
 	cd $BUNDLE/fonts
-	bash install.sh
+	#bash install.sh
 }
 
 essentials(){
@@ -82,6 +76,7 @@ essentials(){
 	sudo apt-get install pip
 	sudo apt-get install ruby
 	sudo apt-get install gem
+	sudo apt-get install exuberant-ctags
 }
 
 main(){

@@ -5,19 +5,22 @@ set nocompatible    "no Vi compatibility mode
 filetype off		"required for Vundle
 set runtimepath+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'		 "Let Vundle manage Vundle
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'scrooloose/nerdtree'	 "Filesystem tree
-Plugin 'scrooloose/syntastic'	 "Syntax checking
-Plugin 'scrooloose/nerdcommenter' "Orgasmic commenting
-Plugin 'bling/vim-airline'	     "Status/Tabline
-"Plugin 'ervandew/supertab'       "Tab Completion + cycle thru via YCM
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-signify'
-Plugin 'Raimondi/delimitMate'
-"Plugin 'kien/ctrlp'			"Try these at home
-"Plugin 'sjl/gundo'
-Plugin 'tpope/vim-fugitive'
+Plugin 'gmarik/Vundle.vim'			"Let Vundle manage Vundle
+Plugin 'scrooloose/nerdtree'		"Filesystem tree
+Plugin 'scrooloose/syntastic'		"Syntax checking
+Plugin 'scrooloose/nerdcommenter'	"Orgasmic commenting
+Plugin 'bling/vim-airline'			"Status/Tabline
+Plugin 'Shougo/neocomplete.vim'		"Autocompletion 
+Plugin 'airblade/vim-gitgutter'		"Display diff in gutter (git)
+Plugin 'mhinz/vim-signify'			"Display diff in gutter	(all VCS) 
+Plugin 'Raimondi/delimitMate'		"Autocompletion for quotes, parens, brackets
+Plugin 'majutsushi/tagbar'			"Displays tags in a window
+"Plugin 'kien/ctrlp'				"Fuzzy finder	
+"Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'vim-scripts/snipMate'
+"Plugin 'osyo-manga/Vim-marching'	"C-lang autocompletion support
+"
 
 call vundle#end()
 filetype plugin indent on

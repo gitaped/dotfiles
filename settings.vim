@@ -30,7 +30,6 @@ set colorcolumn=80
 set textwidth=80	"Wrap lines at column 80
 set showmatch
 set matchtime=1
-set pastetoggle=<F3>
 
 "-------
 "Sounds|
@@ -64,3 +63,4 @@ set noswapfile
 "Mapping|
 "--------
 set timeoutlen=1000
+
