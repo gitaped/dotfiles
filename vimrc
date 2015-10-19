@@ -1,3 +1,4 @@
+"------------------
 "Vim Configuartion|
 "Ansley Peduru    |
 "------------------
@@ -10,4 +11,4 @@ source $HOME/dotfiles/syntastic.vim
 source $HOME/dotfiles/airline.vim
 source $HOME/dotfiles/neocomplete.vim
 source $HOME/dotfiles/functions.vim
-source $HOME/dotfiles/languages.vim
+source $HOME/dotfiles/indent.vim

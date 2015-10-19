@@ -1,11 +1,12 @@
 BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 BASH="$HOME/dotfiles/bash"
+DOTFILES="$HOME/dotfiles"
 GIT="$HOME/dotfiles/git"
 
 #TODO: merge these two repos into a hash map
-plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline vim-gitgutter vim-signify delimitMate neocomplete.vim tagbar fonts )
-repos=( gmarik scrooloose scrooloose scrooloose bling airblade mhinz Raimondi Shougo majutsushi powerline )
+plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline vim-gitgutter vim-signify delimitMate neocomplete.vim tagbar vim-indent-guides fonts )
+repos=( gmarik scrooloose scrooloose scrooloose bling airblade mhinz Raimondi Shougo majutsushi nathanaelkane powerline )
 total=${#plugins[*]}
 
 get_sudo(){
@@ -39,8 +40,23 @@ create_symlinks(){
 	rm -rf  ~/.vim
 
 	echo "Creating symlinks to new location"
-	ln -sf ~/dotfiles/vimrc ~/.vimrc
-	ln -sf ~/dotfiles/vim ~/.vim
+	cd $DOTFILES
+	ln -sf $DOTFILES/vimrc ~/.vimrc
+	ln -sf $DOTFILES/vim ~/.vim
+	
+	cd $BASH
+	ln -sf $BASH/bash_aliases ~/.bash_aliases
+	ln -sf $BASH/bash_profile ~/.bash_profile
+	ln -sf $BASH/bash_functions ~/.bash_functions
+	ln -sf $BASH/bashrc ~/.bashrc
+	
+	. ~/.bash_aliases  
+	. ~/.bash_profile
+	. ~/.bash_functions
+	. ~/.bashrc
+
+	cd $GIT
+	ln -sf $GIT/gitconfig ~/.gitconfig 
 }
 
 install_plugins(){
@@ -64,28 +80,29 @@ install_plugins(){
 		fi
 	done
 
-	#sudo pip install jedi
 	vim +PluginInstall +qall
+}
+
+fonts(){
 	cd $BUNDLE/fonts
 	#bash install.sh
 }
 
 essentials(){
 	sudo apt-get install build-essential
-	sudo apt-get install python
-	sudo apt-get install pip
-	sudo apt-get install ruby
-	sudo apt-get install gem
 	sudo apt-get install exuberant-ctags
+	sudo pip install jedi
+	sudo apt-get install pyflakes
 }
 
 main(){
 	get_sudo
 	#update_vim
 	#essentials
-	copy_dots
+	#copy_dots
 	create_symlinks
 	install_plugins
+	#fonts
 }
 
 main

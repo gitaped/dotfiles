@@ -8,7 +8,9 @@ mkd() { mkdir -p "$1" && cd "$1"; }
 
 extract() {
 if [ -z "$1" ]; then
-	echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+	echo "Usage:"
+	echo "  extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+	echo
 else
 	if [ -f $1 ]; then
 		case $1 in
@@ -36,6 +38,7 @@ cdl() { cd "$@" && ls -F; }
 srcbsh() {
 	source ~/.bashrc
 	source ~/.bash_aliases
+	source ~/.bash_functions
 	source ~/.bash_profile
 }
 

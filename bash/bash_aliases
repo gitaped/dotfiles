@@ -8,7 +8,7 @@ alias gdf='git diff'
 alias gfu='git fetch upstream'
 alias glo='git log'
 alias gpl='git pull'
-alias gre='git remote -v'
+alias grv='git remote -v'
 alias gst='git status'
 
 #Directory
@@ -18,9 +18,13 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias doc='cd ~/Documents'
 alias down='cd ~/Downloads'
+alias dot='cd ~/dotfiles'
 
 #Python
 alias pipi='sudo pip install'
+
+#Ruby
+alias gemi='sudo gem install'
 
 #Networking 
 alias myip='curl ip.appspot.com'
@@ -28,5 +32,6 @@ alias myip='curl ip.appspot.com'
 #Screenshot
 alias shot='gnome-screenshot -a' 
 
-#Clear
+#Letters
 alias c='clear'
+alias v='vim'
