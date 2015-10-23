@@ -1,13 +1,18 @@
+#!/bin/bash
+
 BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
 BASH="$HOME/dotfiles/bash"
 DOTFILES="$HOME/dotfiles"
 GIT="$HOME/dotfiles/git"
+YCM="YouCompleteMe"
 
-#TODO: merge these two repos into a hash map
-plugins=( Vundle.vim nerdtree syntastic nerdcommenter vim-airline vim-gitgutter vim-signify delimitMate neocomplete.vim tagbar vim-indent-guides fonts )
-repos=( gmarik scrooloose scrooloose scrooloose bling airblade mhinz Raimondi Shougo majutsushi nathanaelkane powerline )
-total=${#plugins[*]}
+declare -A repos
+repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
+		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
+		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
+		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
+		[tpope]=vim-surround [kien]=ctrlp.vim )
 
 get_sudo(){
 	sudo -v
@@ -17,21 +22,6 @@ update_vim(){
 	sudo apt-get update
 	sudo apt-get install vim
 	sudo apt-get install vim-gnome #required for neocomplete.vim
-}
-
-copy_dots(){
-	echo "Copying dotfiles"
-	cd $GIT
-	cp gitconfig "$HOME/.gitconfig"
-	cd $BASH
-	cp bash_aliases "$HOME/.bash_aliases"
-	cp bash_profile "$HOME/.bash_profile"
-	cp bash_functions "$HOME/.bash_functions"
-	cp bashrc "$HOME/.bashrc"
-	. ~/.bash_aliases  
-	. ~/.bash_profile
-	. ~/.bash_functions
-	. ~/.bashrc
 }
 
 create_symlinks(){
@@ -69,16 +59,26 @@ install_plugins(){
 	fi
 	cd $BUNDLE
 
-	for (( p=0; p<=(( $total -1 )); p++ ))
+	for p in "${!repos[@]}"
 	do
-		echo "Installing ${plugins[$p]}"
-		if [ ! -d "${plugins[$p]}" ]
+		echo "Installing ${repos[$p]}"
+		if [ ! -d "${repos[$p]}" ]
 		then
-			git clone $GITHUB/"${repos[$p]}"/"${plugins[$p]}".git
+			git clone $GITHUB/"$p"/"${repos[$p]}".git
 		else
-			echo "${plugins[$p]} already cloned"
+			echo "${repos[$p]} already cloned"
 		fi
 	done
+	
+	#YouCompleteMe
+	#if [ ! -d "YCM" ]; then
+		#git clone $GITHUB/Valloric/"$YCM".git
+	#else
+		#echo "$YCM already cloned"
+	#fi
+	#cd $BUNDLE/$YCM
+	#git submodule update --init --recursive
+	#./install.py --clang-completer
 
 	vim +PluginInstall +qall
 }
@@ -89,7 +89,9 @@ fonts(){
 }
 
 essentials(){
+	sudo apt-get install python-dev
 	sudo apt-get install build-essential
+	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
 	sudo pip install jedi
 	sudo apt-get install pyflakes
@@ -99,7 +101,6 @@ main(){
 	get_sudo
 	#update_vim
 	#essentials
-	#copy_dots
 	create_symlinks
 	install_plugins
 	#fonts

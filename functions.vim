@@ -8,5 +8,4 @@ map <F4> :IndentGuidesToggle<CR>
 map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>  
 "Fix indentation
 map <F6> mzgg=G`z
-set pastetoggle=<F7>
 

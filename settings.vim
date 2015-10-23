@@ -9,7 +9,7 @@ let &titlestring = expand('%:p') "show full directory of working file
 set title	        "vim decides title of terminal
 set showmode    	"show current mode (insert,visual, etc)
 set laststatus=2    "display status line
-set mouse=r			"Allow mouse usage
+set mouse=a			"Allow mouse usage
 set completeopt-=preview
 
 "--------------

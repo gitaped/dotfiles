@@ -12,3 +12,4 @@ source $HOME/dotfiles/airline.vim
 source $HOME/dotfiles/neocomplete.vim
 source $HOME/dotfiles/functions.vim
 source $HOME/dotfiles/indent.vim
+source $HOME/dotfiles/ctrlp.vim

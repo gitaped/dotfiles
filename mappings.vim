@@ -27,12 +27,12 @@ nnoremap L $
 nnoremap t o<Esc>
 nnoremap T O<Esc>
 
-"yank to end of line
+"Yank to end of line
 nmap yL y$
-"yank to start of line
+"Yank to start of line
 nmap yH y^
 
-"Switching between buffers 
+"Save when switching between buffers 
 nmap <C-n> :w<Bar>:bn <CR>
 nmap <C-p> :w<Bar>:bp <CR>
 nmap <C-d> :w<Bar>:bd <CR>
@@ -50,10 +50,19 @@ vnoremap < <gv
 vnoremap > >gv
 
 "Switch between vertical/horizontal panes easier
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-H> <C-W>h
+nmap <C-L> <C-W>l
 
+"Delete mid way to end of line 
+"May also use <Shift> + d
+nnoremap dL d$
+"Delete mid way to start of line 
+nnoremap dH d^<Bar>x 
 
+"Typos
+nmap :qw<CR> :wq<CR>
 
+"Select Block
+nnoremap <leader>v V`}

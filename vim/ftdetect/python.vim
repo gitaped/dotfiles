@@ -1,1 +1,2 @@
-au BufRead,BufNewFile *.py set filetype=python
+autocmd BufRead,BufNewFile *.py set filetype=python
+

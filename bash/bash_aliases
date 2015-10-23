@@ -34,4 +34,8 @@ alias shot='gnome-screenshot -a'
 
 #Letters
 alias c='clear'
-alias v='vim'
+alias V='vim -O'
+alias v='vim -o'
+
+#Servers
+alias js='jekyll serve'
