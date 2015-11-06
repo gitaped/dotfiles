@@ -1,8 +1,12 @@
+"---------
+"Mappings|
+"---------
+
 let mapleader = ","
 
 "Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool)
 "TODO: find better alternative to ESC
-"
+
 "Arrow keys r 4 plebs
 nnoremap <up> :echoe "use k"<cr>
 nnoremap <down> :echoe "use j"<cr>
@@ -32,10 +36,15 @@ nmap yL y$
 "Yank to start of line
 nmap yH y^
 
+"Delete mid way to end of line (May also use <Shift> + d)
+nnoremap dL d$
+"Delete mid way to start of line 
+nnoremap dH d^<Bar>x 
+
 "Save when switching between buffers 
-nmap <C-n> :w<Bar>:bn <CR>
-nmap <C-p> :w<Bar>:bp <CR>
-nmap <C-d> :w<Bar>:bd <CR>
+nmap bn :w<Bar>:bn<CR>
+nmap bp :w<Bar>:bp<CR>
+nmap bd :w<Bar>:bd<CR>
 
 let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')
@@ -49,20 +58,17 @@ nnoremap <silent> <Space> :nohlsearch<cr><ESC>
 vnoremap < <gv
 vnoremap > >gv
 
-"Switch between vertical/horizontal panes easier
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-H> <C-W>h
-nmap <C-L> <C-W>l
-
-"Delete mid way to end of line 
-"May also use <Shift> + d
-nnoremap dL d$
-"Delete mid way to start of line 
-nnoremap dH d^<Bar>x 
-
-"Typos
-nmap :qw<CR> :wq<CR>
+"Save and switch between vertical/horizontal panes easier
+nmap <C-J> :w<CR><C-W>j
+nmap <C-K> :w<CR><C-W>k
+nmap <C-H> :w<CR><C-W>h
+nmap <C-L> :w<CR><C-W>l
 
 "Select Block
 nnoremap <leader>v V`}
+
+"Resize split windows
+nmap + <C-w>+
+nmap - <C-w>-
+nmap \| <C-w><
+nmap \  <C-w>>

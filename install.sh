@@ -12,7 +12,8 @@ repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
 		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
-		[tpope]=vim-surround [kien]=ctrlp.vim )
+		[tpope]=vim-surround [kien]=ctrlp.vim [Chiel92]=vim-autoformat 
+		[tpope]=vim-abolish [terryma]=vim-multiple-cursors )
 
 get_sudo(){
 	sudo -v
@@ -90,11 +91,14 @@ fonts(){
 
 essentials(){
 	sudo apt-get install python-dev
+	sudo apt-get install pyflakes
 	sudo apt-get install build-essential
 	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
-	sudo pip install jedi
-	sudo apt-get install pyflakes
+	sudo apt-get install tidy
+	sudo pip install --upgrade pep8
+	sudo pip install --upgrade autopep8
+	sudo pip install --upgrade jedi
 }
 
 main(){

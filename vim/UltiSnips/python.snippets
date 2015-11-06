@@ -34,7 +34,9 @@ endsnippet
 
 snippet cl "generic class"
 class ${1:ClassName}(${2:object}):
-	"""${3:docstring for $1}"""
+	"""
+	${3:docstring for $1}
+	"""
 	def __init__(self, ${4:arg}):
 		${5:super($1, self).__init__()}
 		self.$4 = $4
@@ -43,7 +45,9 @@ endsnippet
 
 snippet clt "test class"
 class ${1:TestClass}(${2:TestCase}):
-	"""${3:doctring for $1}"""
+	"""
+	${3:doctring for $1}
+	"""
 	def setUp(self):
 		$0
 		super($1, self).setUp()
@@ -52,20 +56,17 @@ class ${1:TestClass}(${2:TestCase}):
 		super($1, self).tearDown()
 endsnippet
 
-snippet def "def"
+snippet defc "def with docstring"
 def ${1:fname}(${2:`!v indent('.') ? 'self' : ''`}):
-	"""${3:docstring for $1}"""
+	"""
+	${3:docstring for $1}
+	"""
 	${4:pass}
 endsnippet
 
-snippet deff "deff"
-def ${1:fname}(${2:`!v indent('.') ? 'self' : ''`}):
-	${3}
-endsnippet
-
-snippet defs "defs"
+snippet defr "def return 0"
 def ${1:mname}(self, ${2:arg}):
-	${3:pass}
+	${3:return 0}
 endsnippet
 
 snippet property "property"
@@ -87,7 +88,7 @@ else:
 	${1:code...}
 endsnippet
 
-snippet ei "ei"
+snippet eli "ei"
 elif ${1:condition}:
 	${2:code...}
 endsnippet
@@ -124,7 +125,7 @@ except ${2:Exception}, ${3:e}:
 	${4:raise $3}
 endsnippet
 
-snippet try "Try/Except/Else"
+snippet trye "Try/Except/Else"
 try:
 	${1:pass}
 except ${2:Exception}, ${3:e}:
@@ -133,7 +134,7 @@ else:
 	${5:pass}
 endsnippet
 
-snippet try "Try/Except/Finally"
+snippet tryf "Try/Except/Finally"
 try:
 	${1:pass}
 except ${2:Exception}, ${3:e}:
@@ -142,7 +143,7 @@ finally:
 	${5:pass}
 endsnippet
 
-snippet try "Try/Except/Else/Finally"
+snippet tryef "Try/Except/Else/Finally"
 try:
 	${1:pass}
 except ${2:Exception}, ${3:e}:

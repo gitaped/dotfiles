@@ -9,7 +9,10 @@ source $HOME/dotfiles/mappings.vim
 source $HOME/dotfiles/nerd.vim
 source $HOME/dotfiles/syntastic.vim
 source $HOME/dotfiles/airline.vim
-source $HOME/dotfiles/neocomplete.vim
+"source $HOME/dotfiles/neocomplete.vim
 source $HOME/dotfiles/functions.vim
 source $HOME/dotfiles/indent.vim
 source $HOME/dotfiles/ctrlp.vim
+source $HOME/dotfiles/ultisnips.vim
+source $HOME/dotfiles/delimitmate.vim
+source $HOME/dotfiles/languages.vim
