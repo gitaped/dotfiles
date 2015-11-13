@@ -23,6 +23,7 @@ set autoindent
 set formatoptions-=t "Hack to prevent autowrapping
 set nowrap          
 set colorcolumn=80  
+set backspace=indent,eol,start
 
 "-----
 "Text|

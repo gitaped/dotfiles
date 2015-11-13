@@ -5,15 +5,17 @@
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 1
-let g:neocomplete#enable_fuzzy_completion = 0
+let g:neocomplete#enable_auto_select = 0
+let g:neocomplete#sources#syntax#min_keyword_length = 0
+let g:neocomplete#enable_fuzzy_completion = 1
+let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#enable_auto_delimiter = 1
+let g:neocomplete#max_list = 10
 
-
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 inoremap <expr> <C-g> neocomplete#undo_completion()
 inoremap <expr> <C-l> neocomplete#complete_common_string()
@@ -26,4 +28,14 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-n>": "\<TAB>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
 
 
+"Python
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
 
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+	let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+	

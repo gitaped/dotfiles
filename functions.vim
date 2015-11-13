@@ -1,6 +1,9 @@
 "----------
 "Functions|
 "----------
+inoremap <F1> <ESC> 
+nnoremap <F1> <ESC> 
+vnoremap <F1> <ESC> 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarOpenAutoClose<CR>
 map <F4> :IndentGuidesToggle<CR>

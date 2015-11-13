@@ -36,15 +36,17 @@ nmap yL y$
 "Yank to start of line
 nmap yH y^
 
-"Delete mid way to end of line (May also use <Shift> + d)
+"Delete to end of line (May also use <Shift> + d)
 nnoremap dL d$
-"Delete mid way to start of line 
+"Delete to start of line 
 nnoremap dH d^<Bar>x 
 
 "Save when switching between buffers 
-nmap bn :w<Bar>:bn<CR>
-nmap bp :w<Bar>:bp<CR>
-nmap bd :w<Bar>:bd<CR>
+nnoremap bn :w<Bar>:bn<CR>
+nnoremap bp :w<Bar>:bp<CR>
+nnoremap bd :w<Bar>:bd<CR>
+
+nmap q bd
 
 let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')

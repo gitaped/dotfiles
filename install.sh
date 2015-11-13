@@ -10,7 +10,7 @@ YCM="YouCompleteMe"
 declare -A repos
 repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
-		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
+		[mhinz]=vim-signify [jiangmiao]=auto-pairs [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
 		[tpope]=vim-surround [kien]=ctrlp.vim [Chiel92]=vim-autoformat 
 		[tpope]=vim-abolish [terryma]=vim-multiple-cursors )
@@ -71,7 +71,7 @@ install_plugins(){
 		fi
 	done
 	
-	#YouCompleteMe
+   # #YouCompleteMe
 	#if [ ! -d "YCM" ]; then
 		#git clone $GITHUB/Valloric/"$YCM".git
 	#else
@@ -79,14 +79,14 @@ install_plugins(){
 	#fi
 	#cd $BUNDLE/$YCM
 	#git submodule update --init --recursive
-	#./install.py --clang-completer
+   # ./install.py --clang-completer
 
 	vim +PluginInstall +qall
 }
 
 fonts(){
 	cd $BUNDLE/fonts
-	#bash install.sh
+	bash install.sh
 }
 
 essentials(){
@@ -98,7 +98,7 @@ essentials(){
 	sudo apt-get install tidy
 	sudo pip install --upgrade pep8
 	sudo pip install --upgrade autopep8
-	sudo pip install --upgrade jedi
+	sudo pip install --upgrade flake8
 }
 
 main(){
