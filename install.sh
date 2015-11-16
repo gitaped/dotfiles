@@ -22,7 +22,7 @@ get_sudo(){
 update_vim(){
 	sudo apt-get update
 	sudo apt-get install vim
-	sudo apt-get install vim-gnome #required for neocomplete.vim
+	sudo apt-get install vim-gnome
 }
 
 create_symlinks(){
@@ -41,10 +41,10 @@ create_symlinks(){
 	ln -sf $BASH/bash_functions ~/.bash_functions
 	ln -sf $BASH/bashrc ~/.bashrc
 	
-	. ~/.bash_aliases  
-	. ~/.bash_profile
-	. ~/.bash_functions
-	. ~/.bashrc
+	source ~/.bash_aliases  
+	source ~/.bash_profile
+	source ~/.bash_functions
+	source ~/.bashrc
 
 	cd $GIT
 	ln -sf $GIT/gitconfig ~/.gitconfig 
@@ -96,6 +96,12 @@ essentials(){
 	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
 	sudo apt-get install tidy
+	
+	#for line in $(cat requirements.txt)
+	#do
+		#sudo pip install --upgrade  $line
+	#done
+
 	sudo pip install --upgrade pep8
 	sudo pip install --upgrade autopep8
 	sudo pip install --upgrade flake8
@@ -103,8 +109,8 @@ essentials(){
 
 main(){
 	get_sudo
-	#update_vim
-	#essentials
+	update_vim
+	essentials
 	create_symlinks
 	install_plugins
 	#fonts
