@@ -13,7 +13,7 @@ let g:airline_theme='badwolf'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols={}
-let g:airline_symbols.paste = 'λ' "Cause lambdas are perfect for paste
+let g:airline_symbols.paste = 'λ' 
 
 function! AirlineInit()
 	let g:airline_section_a = airline#section#create_left(['mode'])

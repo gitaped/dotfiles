@@ -2,10 +2,10 @@
 "Neocomplete|
 "------------
 
-let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_select = 0
+let g:neocomplete#enable_underbar_completion = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 0
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#enable_refresh_always = 1
@@ -30,12 +30,15 @@ inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "Python
 autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-
+if !exists('g:neocomplete#sources#omni#functions')
+	let g:neocomplete#sources#omni#functions = {}
+endif
+let g:neocomplete#sources#omni#functions.python = 'jedi#completions'
 
 if !exists('g:neocomplete#force_omni_input_patterns')
 	let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 	
+
+let g:echodoc_enable_at_startup = 1

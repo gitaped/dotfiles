@@ -13,7 +13,8 @@ repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
 		[mhinz]=vim-signify [jiangmiao]=auto-pairs [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
 		[tpope]=vim-surround [kien]=ctrlp.vim [Chiel92]=vim-autoformat 
-		[tpope]=vim-abolish [terryma]=vim-multiple-cursors )
+		[tpope]=vim-abolish [terryma]=vim-multiple-cursors [tmhedberg]=SimpylFold 
+		[Shougo]=neocomplete.vim [davidhalter]=jedi-vim )
 
 get_sudo(){
 	sudo -v
@@ -95,7 +96,8 @@ essentials(){
 	sudo apt-get install build-essential
 	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
-	sudo apt-get install tidy
+	sudo apt-get install tidy	# HTML autoformatting
+	#sudo apt-get install ack-grep
 	
 	#for line in $(cat requirements.txt)
 	#do
@@ -109,8 +111,8 @@ essentials(){
 
 main(){
 	get_sudo
-	update_vim
-	essentials
+	#update_vim
+	#essentials
 	create_symlinks
 	install_plugins
 	#fonts

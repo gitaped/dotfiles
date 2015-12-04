@@ -46,8 +46,6 @@ nnoremap bn :w<Bar>:bn<CR>
 nnoremap bp :w<Bar>:bp<CR>
 nnoremap bd :w<Bar>:bd<CR>
 
-nmap q bd
-
 let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')
 autocmd CursorMovedI * let CursorColumnI = col('.')
@@ -74,3 +72,8 @@ nmap + <C-w>+
 nmap - <C-w>-
 nmap \| <C-w><
 nmap \  <C-w>>
+
+"Folding
+"Prevent accidently deleting a fold
+nmap zd <Nop> 
+nmap zE <Nop>
