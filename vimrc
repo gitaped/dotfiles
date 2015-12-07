@@ -19,3 +19,4 @@ source $HOME/dotfiles/languages.vim
 "source $HOME/dotfiles/youcompleteme.vim
 source $HOME/dotfiles/abolish.vim
 source $HOME/dotfiles/autopairs.vim
+source $HOME/dotfiles/autoformatter.vim

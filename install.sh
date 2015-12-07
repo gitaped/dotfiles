@@ -14,7 +14,7 @@ repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
 		[tpope]=vim-surround [kien]=ctrlp.vim [Chiel92]=vim-autoformat 
 		[tpope]=vim-abolish [terryma]=vim-multiple-cursors [tmhedberg]=SimpylFold 
-		[Shougo]=neocomplete.vim [davidhalter]=jedi-vim )
+		[Shougo]=neocomplete.vim [davidhalter]=jedi-vim [xolox]=vim-easytags )
 
 get_sudo(){
 	sudo -v
@@ -104,15 +104,22 @@ essentials(){
 		#sudo pip install --upgrade  $line
 	#done
 
+}
+
+python_essentials(){
 	sudo pip install --upgrade pep8
 	sudo pip install --upgrade autopep8
 	sudo pip install --upgrade flake8
 }
 
+node_essentials(){}
+
 main(){
 	get_sudo
 	#update_vim
 	#essentials
+	#python_essentials
+	#node_essentials
 	create_symlinks
 	install_plugins
 	#fonts

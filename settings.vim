@@ -53,6 +53,7 @@ set incsearch       "search as characters are entered
 set hlsearch        "search for all matches
 set ignorecase      "ignore case when searching
 set smartcase       "for unexpected results
+"set tags=./tags;$HOME
 
 "-------
 "Backup|

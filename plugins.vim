@@ -28,6 +28,7 @@ Plugin 'davidhalter/jedi-vim'
 "Plugin 'ervandew/supertab'
 "Plugin 'klen/python-mode'
 Plugin 'tmhedberg/SimpylFold'			"No-BS Python code folding
+"Plugin 'xolox/vim-easytags'
 
 call vundle#end()
 filetype plugin indent on	"Filetype detection after Vundle executes
