@@ -10,7 +10,7 @@ YCM="YouCompleteMe"
 declare -A repos
 repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
-		[mhinz]=vim-signify [jiangmiao]=auto-pairs [majutsushi]=tagbar 
+		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
 		[tpope]=vim-surround [kien]=ctrlp.vim [Chiel92]=vim-autoformat 
 		[tpope]=vim-abolish [terryma]=vim-multiple-cursors [tmhedberg]=SimpylFold 
@@ -91,34 +91,43 @@ fonts(){
 }
 
 essentials(){
-	sudo apt-get install python-dev
-	sudo apt-get install pyflakes
 	sudo apt-get install build-essential
 	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
 	sudo apt-get install tidy	# HTML autoformatting
 	#sudo apt-get install ack-grep
-	
-	#for line in $(cat requirements.txt)
-	#do
-		#sudo pip install --upgrade  $line
-	#done
-
 }
 
 python_essentials(){
 	sudo pip install --upgrade pep8
 	sudo pip install --upgrade autopep8
 	sudo pip install --upgrade flake8
+	sudo apt-get install python-dev
+	sudo apt-get install pyflakes
+
+	#git clone https://github.com/python-rope/rope
+	#cd rope
+	#python setup.py install
+	#cd ..
+	#rm -rf rope
+	
+	#for line in $(cat requirements.txt)
+	#do
+		#sudo pip install --upgrade  $line
+	#done
+
+
 }
 
-node_essentials(){}
+node_essentials(){
+	clear
+}
 
 main(){
 	get_sudo
 	#update_vim
 	#essentials
-	#python_essentials
+	python_essentials
 	#node_essentials
 	create_symlinks
 	install_plugins

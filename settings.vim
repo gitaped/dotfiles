@@ -64,10 +64,15 @@ set noswapfile
 "--------
 "Mapping|
 "--------
-set timeoutlen=1000
+set timeoutlen=1000	"Delay between commands in milliseconds
 
 "----------
 "Splitting|
 "----------
 set splitbelow
 set splitright
+
+"----------
+"Scrolling|
+"----------
+set scrolloff=20	"keeps cursor 20 lines above and below end and start of file

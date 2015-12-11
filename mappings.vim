@@ -36,9 +36,9 @@ nmap yL y$
 "Yank to start of line
 nmap yH y^
 
-"Delete to end of line (May also use <Shift> + d)
+"Delete to end of line
 nnoremap dL d$
-"Delete to start of line 
+"Delete to start of line
 nnoremap dH d^<Bar>x 
 
 "Save when switching between buffers 

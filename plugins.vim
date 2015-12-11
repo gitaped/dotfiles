@@ -14,8 +14,8 @@ Plugin 'scrooloose/nerdcommenter'		"Orgasmic commenting
 Plugin 'bling/vim-airline'				"Status/Tabline
 Plugin 'airblade/vim-gitgutter'			"Display diff in gutter (git)
 Plugin 'mhinz/vim-signify'				"Display diff in gutter	(all VCS) 
-"Plugin 'Raimondi/delimitMate'			"Autocompletion for quotes, parens, brackets
-Plugin 'jiangmiao/auto-pairs'			"Autocompletion for quotes, parens, brackets
+Plugin 'Raimondi/delimitMate'			"Autocompletion for quotes, parens, brackets
+"Plugin 'jiangmiao/auto-pairs'			"Autocompletion for quotes, parens, brackets
 Plugin 'majutsushi/tagbar'				"Displays tags in a window
 Plugin 'nathanaelkane/vim-indent-guides' "Visually display indentation levels
 Plugin 'kien/ctrlp.vim'					"Fuzzy finder	
