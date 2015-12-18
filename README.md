@@ -28,11 +28,6 @@ execute `bash install.sh`
 
 <kbd>F6</kbd> to autoformat 
 
-<kbd>Up</kbd> lol
-<kbd>Down</kbd> lol
-<kbd>Left</kbd> lol
-<kbd>Right</kbd> lol
-
 ##Cool Shortcuts 
 
 <kbd>guiw</kbd> Change current word to lowercase
@@ -54,4 +49,8 @@ execute `bash install.sh`
 
 
 ##TODO
+[Neovim](https://neovim.io)
+
 C-style language support
+
+Create a better installer (Make?)

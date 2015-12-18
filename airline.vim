@@ -1,3 +1,4 @@
+"--------
 "Airline|
 "--------
 "Important: Set terminal font to Ubuntu Mono derivative Powerline

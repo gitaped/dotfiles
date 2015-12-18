@@ -1,7 +1,7 @@
-"--------------
+"""""""""""""""
 "vimrc        |
 "Ansley Peduru|
-"--------------
+"""""""""""""""
 
 source $HOME/dotfiles/plugins.vim
 source $HOME/dotfiles/settings.vim
@@ -18,6 +18,6 @@ source $HOME/dotfiles/ultisnips.vim
 source $HOME/dotfiles/languages.vim
 "source $HOME/dotfiles/youcompleteme.vim
 source $HOME/dotfiles/abolish.vim
-"source $HOME/dotfiles/autopairs.vim
 source $HOME/dotfiles/autoformatter.vim
 source $HOME/dotfiles/delimitmate.vim
+source $HOME/dotfiles/gitgutter.vim

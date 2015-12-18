@@ -56,8 +56,10 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+export GIT_PS1_SHOWDIRTYSTATE=true
+
 if [ "$(tput colors)" -ge 8 ]; then
-	PS1='\[\033[38;5;208m\]\u@\h\[\033[38;5;006m\] \w\[\033[38;5;010m\] ~>\[\033[00m\] '
+	PS1='\[\033[38;5;208m\]\u@\h\[\033[38;5;038m\] \w\[\033[38;5;226m\]$(__git_ps1)\[\033[38;5;010m\] ~>\[\033[00m\] '
   else
 	PS1='\u@\h:\w\$ '
 fi
@@ -118,4 +120,3 @@ fi
 #export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 #export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 #source /usr/local/bin/virtualenvwrapper.sh
-

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 BUNDLE="$HOME/dotfiles/vim/bundle"
 GITHUB="https://github.com"
@@ -23,7 +23,7 @@ get_sudo(){
 update_vim(){
 	sudo apt-get update
 	sudo apt-get install vim
-	sudo apt-get install vim-gnome
+	sudo apt-get install vim-gnome #vim installed with lua
 }
 
 create_symlinks(){
@@ -36,6 +36,12 @@ create_symlinks(){
 	ln -sf $DOTFILES/vimrc ~/.vimrc
 	ln -sf $DOTFILES/vim ~/.vim
 	
+	cd $GIT
+	ln -sf $GIT/gitconfig ~/.gitconfig 
+	ln -sf $GIT/git-prompt.sh ~/.git-prompt.sh
+
+	source ~/.git-prompt.sh
+
 	cd $BASH
 	ln -sf $BASH/bash_aliases ~/.bash_aliases
 	ln -sf $BASH/bash_profile ~/.bash_profile
@@ -46,9 +52,6 @@ create_symlinks(){
 	source ~/.bash_profile
 	source ~/.bash_functions
 	source ~/.bashrc
-
-	cd $GIT
-	ln -sf $GIT/gitconfig ~/.gitconfig 
 }
 
 install_plugins(){
@@ -61,14 +64,15 @@ install_plugins(){
 	fi
 	cd $BUNDLE
 
-	for p in "${!repos[@]}"
+	for repo in "${!repos[@]}"
 	do
-		echo "Installing ${repos[$p]}"
-		if [ ! -d "${repos[$p]}" ]
+		echo "Installing ${repos[$repo]}"
+		if [ ! -d "${repos[$repo]}" ]
 		then
-			git clone $GITHUB/"$p"/"${repos[$p]}".git
+			git clone $GITHUB/"$repo"/"${repos[$repo]}".git
 		else
-			echo "${repos[$p]} already cloned"
+			echo "${repos[$repo]} already cloned, updating to latest master"
+			#git pull origin master
 		fi
 	done
 	
@@ -102,21 +106,10 @@ python_essentials(){
 	sudo pip install --upgrade pep8
 	sudo pip install --upgrade autopep8
 	sudo pip install --upgrade flake8
+	sudo pip install --upgrade virtualenv
+	sudo pip install --upgrade virtualenvwrapper
 	sudo apt-get install python-dev
 	sudo apt-get install pyflakes
-
-	#git clone https://github.com/python-rope/rope
-	#cd rope
-	#python setup.py install
-	#cd ..
-	#rm -rf rope
-	
-	#for line in $(cat requirements.txt)
-	#do
-		#sudo pip install --upgrade  $line
-	#done
-
-
 }
 
 node_essentials(){
@@ -127,7 +120,7 @@ main(){
 	get_sudo
 	#update_vim
 	#essentials
-	python_essentials
+	#python_essentials
 	#node_essentials
 	create_symlinks
 	install_plugins

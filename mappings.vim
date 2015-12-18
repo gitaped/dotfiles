@@ -7,6 +7,10 @@ let mapleader = ","
 "Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool)
 "TODO: find better alternative to ESC
 
+"Old habits die hard
+inoremap <silent> <ESC> <ESC>`^
+inoremap jk <ESC>
+
 "Arrow keys r 4 plebs
 nnoremap <up> :echoe "use k"<cr>
 nnoremap <down> :echoe "use j"<cr>
