@@ -64,7 +64,7 @@ set noswapfile
 "--------
 "Mapping|
 "--------
-set timeoutlen=1000	"Delay between commands in milliseconds
+set timeoutlen=500	"Delay between commands in milliseconds
 
 "----------
 "Splitting|

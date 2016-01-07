@@ -12,9 +12,9 @@ repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
 		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
-		[tpope]=vim-surround [kien]=ctrlp.vim [Chiel92]=vim-autoformat 
+		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat 
 		[tpope]=vim-abolish [terryma]=vim-multiple-cursors [tmhedberg]=SimpylFold 
-		[Shougo]=neocomplete.vim [davidhalter]=jedi-vim [xolox]=vim-easytags )
+		[xolox]=vim-easytags [helino]=vim-json [pangloss]=vim-javascript)
 
 get_sudo(){
 	sudo -v
@@ -76,7 +76,7 @@ install_plugins(){
 		fi
 	done
 	
-   # #YouCompleteMe
+   ## YouCompleteMe
 	#if [ ! -d "YCM" ]; then
 		#git clone $GITHUB/Valloric/"$YCM".git
 	#else
@@ -118,8 +118,8 @@ node_essentials(){
 
 main(){
 	get_sudo
-	#update_vim
-	#essentials
+	update_vim
+	essentials
 	#python_essentials
 	#node_essentials
 	create_symlinks
