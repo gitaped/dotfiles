@@ -38,19 +38,7 @@ execute `bash install.sh`
 
 <kbd>gUU</kbd> or <kbd>VU</kbd> change current line to uppercase
 
-##Folding
-<kbd>zo</kbd> Open fold under cursor 
-
-<kbd>zc</kbd> Close fold under cursor
-
-<kbd>zr</kbd> Close all folds
-
-<kbd>zm</kbd> Open all folds
-
-
 ##TODO
 [Neovim](https://neovim.io)
-
-C-style language support
 
 Create a better installer (Make?)

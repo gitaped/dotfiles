@@ -7,6 +7,7 @@ let mapleader = ","
 "Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool)
 "TODO: find better alternative to ESC
 
+
 "Old habits die hard
 inoremap <silent> <ESC> <ESC>`^
 inoremap jk <ESC>
@@ -82,4 +83,6 @@ nmap \  <C-w>>
 nmap zd <Nop> 
 nmap zE <Nop>
 
+"HACK:DelimitMate exit out of brackets/quotes
 imap <C-g> <Plug>delimitMateS-Tab
+

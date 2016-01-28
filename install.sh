@@ -11,7 +11,7 @@ declare -A repos
 repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
 		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
-		[nathanaelkane]=vim-indent-guides [powerline]=fonts [SirVer]=ultisnips 
+		[nathanaelkane]=vim-indent-guides [powerline]=fonts 
 		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat 
 		[tpope]=vim-abolish [terryma]=vim-multiple-cursors [tmhedberg]=SimpylFold 
 		[xolox]=vim-easytags [helino]=vim-json [pangloss]=vim-javascript)
@@ -23,7 +23,7 @@ get_sudo(){
 update_vim(){
 	sudo apt-get update
 	sudo apt-get install vim
-	sudo apt-get install vim-gnome #vim installed with lua
+	sudo apt-get install vim-gnome  #vim installed with lua
 }
 
 create_symlinks(){
@@ -99,7 +99,7 @@ essentials(){
 	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
 	sudo apt-get install tidy	# HTML autoformatting
-	#sudo apt-get install ack-grep
+	sudo apt-get install ack-grep
 }
 
 python_essentials(){
@@ -119,7 +119,7 @@ node_essentials(){
 main(){
 	get_sudo
 	update_vim
-	essentials
+	#essentials
 	#python_essentials
 	#node_essentials
 	create_symlinks

@@ -15,11 +15,10 @@ Plugin 'bling/vim-airline'				"Status/Tabline
 Plugin 'airblade/vim-gitgutter'			"Display diff in gutter (git)
 Plugin 'mhinz/vim-signify'				"Display diff in gutter	(all VCS) 
 Plugin 'Raimondi/delimitMate'			"Autocompletion for quotes, parens, brackets
-"Plugin 'jiangmiao/auto-pairs'			"Autocompletion for quotes, parens, brackets
 Plugin 'majutsushi/tagbar'				"Displays tags in a window
 Plugin 'nathanaelkane/vim-indent-guides' "Visually display indentation levels
 Plugin 'ctrlpvim/ctrlp.vim'				"Fuzzy finder	
-Plugin 'SirVer/ultisnips'				"The ultimate snippet solution
+"Plugin 'SirVer/ultisnips'				"The ultimate snippet solution
 Plugin 'tpope/vim-surround'				"Quoting/Parenthesizing made simple
 Plugin 'Chiel92/vim-autoformat'			"Integrating exisiting code formatters
 Plugin 'tpope/vim-abolish'				"Search, substitute, abbreviate word variants
