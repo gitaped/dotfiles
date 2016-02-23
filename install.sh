@@ -13,8 +13,8 @@ repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
 		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts 
 		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat 
-		[tpope]=vim-abolish [terryma]=vim-multiple-cursors [tmhedberg]=SimpylFold 
-		[xolox]=vim-easytags [helino]=vim-json [pangloss]=vim-javascript)
+		[tpope]=vim-abolish [tmhedberg]=SimpylFold 
+		[xolox]=vim-easytags [helino]=vim-json [pangloss]=vim-javascript )
 
 get_sudo(){
 	sudo -v

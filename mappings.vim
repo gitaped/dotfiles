@@ -4,10 +4,6 @@
 
 let mapleader = ","
 
-"Remap ESC (enable CAPS LOCK as CTRL using gnome tweak tool)
-"TODO: find better alternative to ESC
-
-
 "Old habits die hard
 inoremap <silent> <ESC> <ESC>`^
 inoremap jk <ESC>
@@ -44,12 +40,12 @@ nmap yH y^
 "Delete to end of line
 nnoremap dL d$
 "Delete to start of line
-nnoremap dH d^<Bar>x 
+nnoremap dH d^<Bar>x
 
-"Save when switching between buffers 
-nnoremap bn :w<Bar>:bn<CR>
-nnoremap bp :w<Bar>:bp<CR>
-nnoremap bd :w<Bar>:bd<CR>
+"Save when switching between buffers
+nnoremap nb :w<Bar>:bn<CR>
+nnoremap pb :w<Bar>:bp<CR>
+nnoremap qb :w<Bar>:bd<CR>
 
 "let CursorColumnI = 0 "the cursor column position in INSERT
 "autocmd InsertEnter * let CursorColumnI = col('.')
@@ -80,9 +76,15 @@ nmap \  <C-w>>
 
 "Folding
 "Prevent accidently deleting a fold
-nmap zd <Nop> 
+nmap zd <Nop>
 nmap zE <Nop>
 
 "HACK:DelimitMate exit out of brackets/quotes
 imap <C-g> <Plug>delimitMateS-Tab
 
+" Disabling man page on word hover
+map <S-k> <Nop>
+
+"Lazy/Typo
+cabbrev q1 q!
+cabbrev qw wq

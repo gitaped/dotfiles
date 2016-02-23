@@ -7,7 +7,6 @@ set runtimepath+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'				"Let Vundle manage Vundle
 Plugin 'Valloric/YouCompleteMe'			"Autocompletion
-"Plugin 'Shougo/neocomplete.vim'		"Autocompletion
 Plugin 'scrooloose/nerdtree'			"Filesystem tree
 Plugin 'scrooloose/syntastic'			"Syntax checking
 Plugin 'scrooloose/nerdcommenter'		"Orgasmic commenting
@@ -18,20 +17,16 @@ Plugin 'Raimondi/delimitMate'			"Autocompletion for quotes, parens, brackets
 Plugin 'majutsushi/tagbar'				"Displays tags in a window
 Plugin 'nathanaelkane/vim-indent-guides' "Visually display indentation levels
 Plugin 'ctrlpvim/ctrlp.vim'				"Fuzzy finder	
-"Plugin 'SirVer/ultisnips'				"The ultimate snippet solution
 Plugin 'tpope/vim-surround'				"Quoting/Parenthesizing made simple
 Plugin 'Chiel92/vim-autoformat'			"Integrating exisiting code formatters
 Plugin 'tpope/vim-abolish'				"Search, substitute, abbreviate word variants
-"Plugin 'terryma/vim-multiple-cursors'	"Sublime Text style multiple selections
-"Plugin 'davidhalter/jedi-vim'
-"Plugin 'ervandew/supertab'
-Plugin 'tmhedberg/SimpylFold'				"No-BS Python code folding
+Plugin 'tmhedberg/SimpylFold'			"No-BS Python code folding
 "Plugin 'xolox/vim-easytags'
 "Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'junegunn/vim-easy-align
 "Plugin 'terryma/vim-expand-region'
 "Plugin 'ntpeters/vim-better-whitespace'
-"Plugin YANKRING
+"Plugin 'vim-scripts/YankRing.vim'
 "Plugin 'itchyny/dictionary.vim'
 
 call vundle#end()
