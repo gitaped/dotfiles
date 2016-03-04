@@ -10,11 +10,11 @@ YCM="YouCompleteMe"
 declare -A repos
 repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
-		[mhinz]=vim-signify [Raimondi]=delimitMate [majutsushi]=tagbar 
+		[Raimondi]=delimitMate [majutsushi]=tagbar 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts 
 		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat 
-		[tpope]=vim-abolish [tmhedberg]=SimpylFold 
-		[xolox]=vim-easytags [helino]=vim-json [pangloss]=vim-javascript )
+		[tmhedberg]=SimpylFold )
+		#[xolox]=vim-easytags
 
 get_sudo(){
 	sudo -v
@@ -23,7 +23,7 @@ get_sudo(){
 update_vim(){
 	sudo apt-get update
 	sudo apt-get install vim
-	sudo apt-get install vim-gnome  #vim installed with lua
+	sudo apt-get install vim-gnome
 }
 
 create_symlinks(){
@@ -31,7 +31,7 @@ create_symlinks(){
 	rm  ~/.vimrc
 	rm -rf  ~/.vim
 
-	echo "Creating symlinks to new location"
+	echo "Creating symlinks to new locations"
 	cd $DOTFILES
 	ln -sf $DOTFILES/vimrc ~/.vimrc
 	ln -sf $DOTFILES/vim ~/.vim
@@ -112,16 +112,11 @@ python_essentials(){
 	sudo apt-get install pyflakes
 }
 
-node_essentials(){
-	clear
-}
-
 main(){
 	get_sudo
 	update_vim
 	#essentials
 	#python_essentials
-	#node_essentials
 	create_symlinks
 	install_plugins
 	#fonts

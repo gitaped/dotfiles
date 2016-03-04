@@ -33,18 +33,19 @@ nnoremap t o<Esc>
 nnoremap T O<Esc>
 
 "Yank to end of line
-nmap yL y$
+nnoremap yL y$
 "Yank to start of line
-nmap yH y^
+nnoremap yH y^
 
 "Delete to end of line
 nnoremap dL d$
 "Delete to start of line
-nnoremap dH d^<Bar>x
+"nnoremap dH d^<Bar>x
+nnoremap dH d^ 
 
 "Save when switching between buffers
-nnoremap nb :w<Bar>:bn<CR>
-nnoremap pb :w<Bar>:bp<CR>
+"nnoremap nb :w<Bar>:bn<CR>
+"nnoremap pb :w<Bar>:bp<CR>
 nnoremap qb :w<Bar>:bd<CR>
 
 "let CursorColumnI = 0 "the cursor column position in INSERT

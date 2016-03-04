@@ -19,7 +19,6 @@ Plugin 'nathanaelkane/vim-indent-guides' "Visually display indentation levels
 Plugin 'ctrlpvim/ctrlp.vim'				"Fuzzy finder	
 Plugin 'tpope/vim-surround'				"Quoting/Parenthesizing made simple
 Plugin 'Chiel92/vim-autoformat'			"Integrating exisiting code formatters
-Plugin 'tpope/vim-abolish'				"Search, substitute, abbreviate word variants
 Plugin 'tmhedberg/SimpylFold'			"No-BS Python code folding
 "Plugin 'xolox/vim-easytags'
 "Plugin 'jistr/vim-nerdtree-tabs'
