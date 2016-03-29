@@ -33,7 +33,7 @@ else
 fi
 }
 
-cdl() { cd "$@" && ls -F; }
+cl() { cd "$@" && la; }
 
 srcbsh() {
 	source ~/.bashrc

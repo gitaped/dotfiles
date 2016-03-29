@@ -10,11 +10,9 @@ YCM="YouCompleteMe"
 declare -A repos
 repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
 		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
-		[Raimondi]=delimitMate [majutsushi]=tagbar 
+		[Raimondi]=delimitMate [majutsushi]=tagbar [tmhedberg]=SimpylFold 
 		[nathanaelkane]=vim-indent-guides [powerline]=fonts 
-		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat 
-		[tmhedberg]=SimpylFold )
-		#[xolox]=vim-easytags
+		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat )
 
 get_sudo(){
 	sudo -v
@@ -47,6 +45,8 @@ create_symlinks(){
 	ln -sf $BASH/bash_profile ~/.bash_profile
 	ln -sf $BASH/bash_functions ~/.bash_functions
 	ln -sf $BASH/bashrc ~/.bashrc
+
+	ln -sf $DOTFILES/tmux.conf ~/.tmux.conf
 	
 	source ~/.bash_aliases  
 	source ~/.bash_profile
@@ -98,7 +98,7 @@ essentials(){
 	sudo apt-get install build-essential
 	sudo apt-get install cmake
 	sudo apt-get install exuberant-ctags
-	sudo apt-get install tidy	# HTML autoformatting
+	# sudo apt-get install tmux
 	sudo apt-get install ack-grep
 }
 

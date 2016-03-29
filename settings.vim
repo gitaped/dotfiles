@@ -2,6 +2,7 @@
 "User Interface|
 "---------------
 set number          "show line numbers
+set relativenumber  "show number of lines above and below
 set ruler	        "show current row and line
 set cursorline  	"highlight current line
 set showcmd         "show last command
@@ -15,14 +16,14 @@ set completeopt-=preview
 "--------------
 "Spaces & Tabs|
 "--------------
-set tabstop=4	   
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab        "use tabs at start of line, spaces eleswhere
 set autoindent
 set formatoptions-=t "Hack to prevent autowrapping
-set nowrap          
-set colorcolumn=80  
+set nowrap
+set colorcolumn=80
 set backspace=indent,eol,start
 
 "-----
@@ -39,7 +40,7 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 "---------------
-"Colors & Fonts|
+"Colours & Fonts|
 "---------------
 syntax enable
 set t_Co=256
@@ -53,7 +54,6 @@ set incsearch       "search as characters are entered
 set hlsearch        "search for all matches
 set ignorecase      "ignore case when searching
 set smartcase       "for unexpected results
-"set tags=./tags;$HOME
 
 "-------
 "Backup|
@@ -76,3 +76,11 @@ set splitright
 "Scrolling|
 "----------
 set scrolloff=20	"keeps cursor 20 lines above and below end and start of file
+
+"---------
+"Spelling|
+"---------
+set spelllang=en_gb
+set nospell
+"TODO: add this for git and markdown only
+" add words to 'spellfile' by hovering on word and	typing 'zg'
