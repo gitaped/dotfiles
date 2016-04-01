@@ -10,23 +10,21 @@ Plugin 'Valloric/YouCompleteMe'			"Autocompletion
 Plugin 'scrooloose/nerdtree'			"Filesystem tree
 Plugin 'scrooloose/syntastic'			"Syntax checking
 Plugin 'scrooloose/nerdcommenter'		"Orgasmic commenting
-Plugin 'bling/vim-airline'				"Status/Tabline
-Plugin 'airblade/vim-gitgutter'			"Display diff in gutter (git)
-Plugin 'mhinz/vim-signify'				"Display diff in gutter	(all VCS) 
-Plugin 'Raimondi/delimitMate'			"Autocompletion for quotes, parens, brackets
+Plugin 'vim-airline/vim-airline'		"Status/Tabline
+Plugin 'vim-airline/vim-airline-themes' "Status/Tabline themes
+Plugin 'mhinz/vim-signify'				"Display diff in gutter	(all VCS)
 Plugin 'majutsushi/tagbar'				"Displays tags in a window
-Plugin 'nathanaelkane/vim-indent-guides' "Visually display indentation levels
-Plugin 'ctrlpvim/ctrlp.vim'				"Fuzzy finder	
+Plugin 'ctrlpvim/ctrlp.vim'				"Fuzzy finder
 Plugin 'tpope/vim-surround'				"Quoting/Parenthesizing made simple
 Plugin 'Chiel92/vim-autoformat'			"Integrating exisiting code formatters
 Plugin 'tmhedberg/SimpylFold'			"No-BS Python code folding
+Plugin 'henrik/vim-indexed-search'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'cohama/lexima.vim'				"Autocompletion for quotes, parens, brackets
 "Plugin 'xolox/vim-easytags'
-"Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'junegunn/vim-easy-align
 "Plugin 'terryma/vim-expand-region'
-"Plugin 'ntpeters/vim-better-whitespace'
 "Plugin 'vim-scripts/YankRing.vim'
-"Plugin 'itchyny/dictionary.vim'
 
 call vundle#end()
 filetype plugin indent on	"Filetype detection after Vundle executes

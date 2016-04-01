@@ -32,6 +32,7 @@ set backspace=indent,eol,start
 set textwidth=80	"Wrap lines at column 80
 set showmatch
 set matchtime=1
+set clipboard=unnamedplus "allows vim to interact with system clipboard
 
 "-------
 "Sounds|
@@ -46,6 +47,7 @@ syntax enable
 set t_Co=256
 set background=dark	"for the longevity of my eyes
 colorscheme badwolf
+"set guifont =  Ubuntu\ Mono\ derivative\ Powerline\ Regular\ 13
 
 "----------
 "Searching|
@@ -83,4 +85,4 @@ set scrolloff=20	"keeps cursor 20 lines above and below end and start of file
 set spelllang=en_gb
 set nospell
 "TODO: add this for git and markdown only
-" add words to 'spellfile' by hovering on word and	typing 'zg'
+

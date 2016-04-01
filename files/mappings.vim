@@ -4,6 +4,9 @@
 
 let mapleader = ","
 
+"Reload vim anywhere
+"nnoremap <leader>r :source $MYVIMRC<CR>
+
 "Old habits die hard
 inoremap <silent> <ESC> <ESC>`^
 inoremap jk <ESC>
@@ -41,17 +44,11 @@ nnoremap yH y^
 nnoremap dL d$
 "Delete to start of line
 "nnoremap dH d^<Bar>x
-nnoremap dH d^ 
+nnoremap dH d^
 
 "Save when switching between buffers
-"nnoremap nb :w<Bar>:bn<CR>
-"nnoremap pb :w<Bar>:bp<CR>
-nnoremap qb :w<Bar>:bd<CR>
-
-"let CursorColumnI = 0 "the cursor column position in INSERT
-"autocmd InsertEnter * let CursorColumnI = col('.')
-"autocmd CursorMovedI * let CursorColumnI = col('.')
-"autocmd InsertLeave * if col('.') != CursorColumnI | call cursor(0, col('.')+1) | endif"
+nnoremap <Tab> :w<Bar>:bn<CR>
+nnoremap <C-Tab> :w<Bar>:bp<CR>
 
 "Hit space to turn off highlighted search results
 nnoremap <silent> <Space> :nohlsearch<cr><ESC>
@@ -79,9 +76,6 @@ nmap \  <C-w>>
 "Prevent accidently deleting a fold
 nmap zd <Nop>
 nmap zE <Nop>
-
-"HACK:DelimitMate exit out of brackets/quotes
-imap <C-g> <Plug>delimitMateS-Tab
 
 " Disabling man page on word hover
 map <S-k> <Nop>

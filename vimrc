@@ -3,17 +3,18 @@
 "Ansley Peduru|
 """""""""""""""
 
-source $HOME/dotfiles/plugins.vim
-source $HOME/dotfiles/settings.vim
-source $HOME/dotfiles/nerd.vim
-source $HOME/dotfiles/syntastic.vim
-source $HOME/dotfiles/airline.vim
-source $HOME/dotfiles/functions.vim
-source $HOME/dotfiles/indent.vim
-source $HOME/dotfiles/ctrlp.vim
-source $HOME/dotfiles/languages.vim
-source $HOME/dotfiles/youcompleteme.vim
-source $HOME/dotfiles/autoformatter.vim
-source $HOME/dotfiles/delimitmate.vim
-source $HOME/dotfiles/gitgutter.vim
-source $HOME/dotfiles/mappings.vim
+source $HOME/dotfiles/files/plugins.vim
+source $HOME/dotfiles/files/settings.vim
+source $HOME/dotfiles/files/nerd.vim
+source $HOME/dotfiles/files/syntastic.vim
+source $HOME/dotfiles/files/airline.vim
+source $HOME/dotfiles/files/functions.vim
+source $HOME/dotfiles/files/ctrlp.vim
+source $HOME/dotfiles/files/languages.vim
+source $HOME/dotfiles/files/youcompleteme.vim
+source $HOME/dotfiles/files/autoformatter.vim
+source $HOME/dotfiles/files/mappings.vim
+source $HOME/dotfiles/files/whitespace.vim
+source $HOME/dotfiles/files/lexi.vim
+source $HOME/dotfiles/files/tagbar.vim
+source $HOME/dotfiles/files/signify.vim

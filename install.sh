@@ -8,11 +8,18 @@ GIT="$HOME/dotfiles/git"
 YCM="YouCompleteMe"
 
 declare -A repos
-repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic 
-		[scrooloose]=nerdcommenter [bling]=vim-airline [airblade]=vim-gitgutter 
-		[Raimondi]=delimitMate [majutsushi]=tagbar [tmhedberg]=SimpylFold 
-		[nathanaelkane]=vim-indent-guides [powerline]=fonts 
-		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat )
+repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
+		[scrooloose]=nerdcommenter [powerline]=fonts
+		[majutsushi]=tagbar [tmhedberg]=SimpylFold [cohama]=lexima.vim
+		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat
+		[ntpeters]=vim-better-whitespace [cohama]=lexima.vim
+		[vim-airline]=vim-airline [vim-airline]=vim-airline-themes
+		[mhinz]=vim-signify [henrik]=vim-indexed-search )
+
+vim=( vim vim-gnome vim-gtk )
+packages=( build-essential shellcheck cmake exuberant-ctags tmux ack-grep
+			astyle python-dev pyflakes )
+python=( autopep8 pep8 virtualenv virtualenvwrapper)
 
 get_sudo(){
 	sudo -v
@@ -20,8 +27,11 @@ get_sudo(){
 
 update_vim(){
 	sudo apt-get update
-	sudo apt-get install vim
-	sudo apt-get install vim-gnome
+	for package in "${!vim[@]}"
+	do
+		echo "Installing ${vim[$package]}"
+		sudo apt-get -qq --yes install "${vim[$package]}"
+	done
 }
 
 create_symlinks(){
@@ -30,97 +40,100 @@ create_symlinks(){
 	rm -rf  ~/.vim
 
 	echo "Creating symlinks to new locations"
-	cd $DOTFILES
-	ln -sf $DOTFILES/vimrc ~/.vimrc
-	ln -sf $DOTFILES/vim ~/.vim
-	
-	cd $GIT
-	ln -sf $GIT/gitconfig ~/.gitconfig 
-	ln -sf $GIT/git-prompt.sh ~/.git-prompt.sh
+	cd "$DOTFILES"
+	ln -sf "$DOTFILES"/vimrc ~/.vimrc
+	ln -sf "$DOTFILES"/vim ~/.vim
+	ln -sf "$DOTFILES"/tmux.conf ~/.tmux.conf
+
+	cd "$GIT"
+	ln -sf "$GIT"/gitconfig ~/.gitconfig
+	ln -sf "$GIT"/git-prompt.sh ~/.git-prompt.sh
 
 	source ~/.git-prompt.sh
 
-	cd $BASH
-	ln -sf $BASH/bash_aliases ~/.bash_aliases
-	ln -sf $BASH/bash_profile ~/.bash_profile
-	ln -sf $BASH/bash_functions ~/.bash_functions
-	ln -sf $BASH/bashrc ~/.bashrc
+	cd "$BASH"
+	ln -sf "$BASH"/bash_aliases ~/.bash_aliases
+	ln -sf "$BASH"/bash_profile ~/.bash_profile
+	ln -sf "$BASH"/bash_functions ~/.bash_functions
+	ln -sf "$BASH"/bashrc ~/.bashrc
 
-	ln -sf $DOTFILES/tmux.conf ~/.tmux.conf
-	
-	source ~/.bash_aliases  
-	source ~/.bash_profile
-	source ~/.bash_functions
-	source ~/.bashrc
+	source ~/*.bash
+	#source ~/.bash_aliases
+	#source ~/.bash_profile
+	#source ~/.bash_functions
+	#source ~/.bashrc
 }
 
 install_plugins(){
 	echo "Installing Vundle plugins"
 	if [ ! -d "$BUNDLE" ]
 	then
-		mkdir $BUNDLE
+		mkdir "$BUNDLE"
 	else
 		echo "bundle directory already created"
 	fi
-	cd $BUNDLE
+	cd "$BUNDLE"
 
 	for repo in "${!repos[@]}"
 	do
 		echo "Installing ${repos[$repo]}"
 		if [ ! -d "${repos[$repo]}" ]
 		then
-			git clone $GITHUB/"$repo"/"${repos[$repo]}".git
+			git clone $GITHUB/"$repo"/"${repos[$repo]}".git &> /dev/null
 		else
 			echo "${repos[$repo]} already cloned, updating to latest master"
-			#git pull origin master
+			cd "$BUNDLE"/"${repos[$repo]}" || exit
+			git pull origin master &> /dev/null
+			cd ..
 		fi
 	done
-	
-   ## YouCompleteMe
-	#if [ ! -d "YCM" ]; then
-		#git clone $GITHUB/Valloric/"$YCM".git
-	#else
-		#echo "$YCM already cloned"
-	#fi
-	#cd $BUNDLE/$YCM
-	#git submodule update --init --recursive
-   # ./install.py --clang-completer
 
+	# YouCompleteMe
+	if [ "$1" == ycm ]; then
+		if [ ! -d "$YCM" ]; then
+			git clone "$GITHUB"/Valloric/"$YCM".git
+		else
+			echo "$YCM already cloned"
+		fi
+		cd "$BUNDLE"/"$YCM"
+		git submodule update --init --recursive
+		./install.py --clang-completer
+	fi
+
+	vim +PluginUpdate +qall
 	vim +PluginInstall +qall
 }
 
 fonts(){
-	cd $BUNDLE/fonts
+	cd "$BUNDLE"/fonts
 	bash install.sh
 }
 
 essentials(){
-	sudo apt-get install build-essential
-	sudo apt-get install cmake
-	sudo apt-get install exuberant-ctags
-	# sudo apt-get install tmux
-	sudo apt-get install ack-grep
+	for package in "${!packages[@]}"
+	do
+		echo "Installing ${packages[$package]}"
+		sudo apt-get -qq --yes install "${packages[$package]}"
+	done
 }
 
 python_essentials(){
-	sudo pip install --upgrade pep8
-	sudo pip install --upgrade autopep8
-	sudo pip install --upgrade flake8
-	sudo pip install --upgrade virtualenv
-	sudo pip install --upgrade virtualenvwrapper
-	sudo apt-get install python-dev
-	sudo apt-get install pyflakes
+	for package in "${!python[@]}"
+	do
+		echo "Installing ${python[$package]}"
+		sudo pip install --quiet --upgrade "${python[$package]}"
+	done
 }
 
 main(){
-	get_sudo
-	update_vim
+	#get_sudo
+	#update_vim
 	#essentials
 	#python_essentials
-	create_symlinks
-	install_plugins
+	#create_symlinks
+	install_plugins "$@"
 	#fonts
 }
 
-main
+main "$@"
 clear
