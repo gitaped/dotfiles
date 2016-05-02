@@ -13,11 +13,11 @@ conflict with some settings already configured on your system. Tread lightly.
 
 `cd ~`
 
-then `git clone https://github.com/apeduru/dotfiles`
+`git clone https://github.com/apeduru/dotfiles`
 
 `cd dotfiles`
 
-execute `bash install.sh ycm`
+`sudo bash install.sh ycm`
 
 ##Mappings
 
@@ -30,5 +30,7 @@ execute `bash install.sh ycm`
 ##Misc
 
 [Neovim](https://neovim.io)
+
 [Astyle](http://astyle.sourceforge.net/)
+
 [Autopep8](https://pypi.python.org/pypi/autopep8)

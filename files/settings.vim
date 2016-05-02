@@ -22,6 +22,8 @@ set shiftwidth=4
 set smarttab        "use tabs at start of line, spaces eleswhere
 set autoindent
 set formatoptions-=t "Hack to prevent autowrapping
+set formatoptions+=c "Format Comments
+set formatoptions+=r "Continue comments by default
 set nowrap
 set colorcolumn=80
 set backspace=indent,eol,start
@@ -82,7 +84,6 @@ set scrolloff=20	"keeps cursor 20 lines above and below end and start of file
 "---------
 "Spelling|
 "---------
+"TODO: add this for git and markdown only
 set spelllang=en_gb
 set nospell
-"TODO: add this for git and markdown only
-

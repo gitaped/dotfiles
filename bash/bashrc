@@ -3,6 +3,9 @@
 # for examples
 
 # If not running interactively, don't do anything
+
+[[ $TERM != "screen" ]] && exec tmux
+
 case $- in
     *i*) ;;
       *) return;;

@@ -1,45 +1,62 @@
 #!/usr/bin/bash
 
-BUNDLE="$HOME/dotfiles/vim/bundle"
+PLUGGED="$HOME/dotfiles/vim/plugged"
 GITHUB="https://github.com"
 BASH="$HOME/dotfiles/bash"
+ZSH="$HOME/dotfiles/zsh"
 DOTFILES="$HOME/dotfiles"
 GIT="$HOME/dotfiles/git"
 YCM="YouCompleteMe"
 
-declare -A repos
-repos=( [gmarik]=Vundle.vim [scrooloose]=nerdtree [scrooloose]=syntastic
-		[scrooloose]=nerdcommenter [powerline]=fonts
-		[majutsushi]=tagbar [tmhedberg]=SimpylFold [cohama]=lexima.vim
-		[tpope]=vim-surround [ctrlpvim]=ctrlp.vim [Chiel92]=vim-autoformat
-		[ntpeters]=vim-better-whitespace [cohama]=lexima.vim
-		[vim-airline]=vim-airline [vim-airline]=vim-airline-themes
-		[mhinz]=vim-signify [henrik]=vim-indexed-search )
-
+# hooray for Vim 8.0
 vim=( vim vim-gnome vim-gtk )
 packages=( build-essential shellcheck cmake exuberant-ctags tmux ack-grep
-			astyle python-dev pyflakes )
+			astyle python-dev pyflakes latexmk zsh )
 python=( autopep8 pep8 virtualenv virtualenvwrapper)
 
 get_sudo(){
-	sudo -v
+	if [[ $UID != 0 ]]; then
+		echo "Please run this script with sudo"
+		echo "sudo bash $0"
+		exit 1
+	fi
+}
+
+confirm_success(){
+	echo -en "\r"
+	if [ $? -eq 0 ]; then
+		echo "[✓] Installed $1 "
+	else
+		echo "[✖] Installing $1 failed "
+	fi
+}
+
+newline(){
+	printf "\n"
 }
 
 update_vim(){
-	sudo apt-get update
+	echo "Updating Packages..."
+	sudo apt-get -qq update
+	newline
+	echo "Installing Vim essentials..."
 	for package in "${!vim[@]}"
 	do
-		echo "Installing ${vim[$package]}"
+		echo -n "[.] Installing ${vim[$package]}"
 		sudo apt-get -qq --yes install "${vim[$package]}"
+		confirm_success "${vim[$package]}"
 	done
 }
 
 create_symlinks(){
-	echo "Deleting exisiting vim configurations"
-	rm  ~/.vimrc
-	rm -rf  ~/.vim
+	newline
+	#echo "Deleting exisiting dot configurations..."
+	#rm  ~/.vimrc
+	#rm ~/.zshrc
+	#rm ~/.bashrc
+	#rm -rf  ~/.vim
 
-	echo "Creating symlinks to new locations"
+	echo "Creating symlinks to new locations..."
 	cd "$DOTFILES"
 	ln -sf "$DOTFILES"/vimrc ~/.vimrc
 	ln -sf "$DOTFILES"/vim ~/.vim
@@ -57,51 +74,33 @@ create_symlinks(){
 	ln -sf "$BASH"/bash_functions ~/.bash_functions
 	ln -sf "$BASH"/bashrc ~/.bashrc
 
-	source ~/*.bash
-	#source ~/.bash_aliases
-	#source ~/.bash_profile
-	#source ~/.bash_functions
-	#source ~/.bashrc
+	source ~/.bash_aliases
+	source ~/.bash_profile
+	source ~/.bash_functions
+	source ~/.bashrc
+
+	ln -sf "$ZSH"/zshrc ~/.zshrc
+	#ln -sf "$ZSH"/zsh_aliases ~/.zshrc
+	#ln -sf "$ZSH"/zsh_functions ~/.zshrc
 }
 
 install_plugins(){
-	echo "Installing Vundle plugins"
-	if [ ! -d "$BUNDLE" ]
-	then
-		mkdir "$BUNDLE"
-	else
-		echo "bundle directory already created"
-	fi
-	cd "$BUNDLE"
-
-	for repo in "${!repos[@]}"
-	do
-		echo "Installing ${repos[$repo]}"
-		if [ ! -d "${repos[$repo]}" ]
-		then
-			git clone $GITHUB/"$repo"/"${repos[$repo]}".git &> /dev/null
-		else
-			echo "${repos[$repo]} already cloned, updating to latest master"
-			cd "$BUNDLE"/"${repos[$repo]}" || exit
-			git pull origin master &> /dev/null
-			cd ..
-		fi
-	done
+	newline
+	echo "Installing Plugins..."
+	vim +PlugInstall +qall
 
 	# YouCompleteMe
+	# Only install YCM ONCE, when the time comes YCM will prompt you
+	# (internally) in vim to recompile
 	if [ "$1" == ycm ]; then
-		if [ ! -d "$YCM" ]; then
-			git clone "$GITHUB"/Valloric/"$YCM".git
-		else
-			echo "$YCM already cloned"
-		fi
-		cd "$BUNDLE"/"$YCM"
-		git submodule update --init --recursive
-		./install.py --clang-completer
+		echo -n "[.] Installing $YCM"
+		git clone "$GITHUB"/Valloric/"$YCM".git &> /dev/null
+		cd "$PLUGGED"/"$YCM"
+		git submodule update --init --recursive &> /dev/null
+		./install.py --clang-completer &> /dev/null
+		confirm_success $YCM
 	fi
 
-	vim +PluginUpdate +qall
-	vim +PluginInstall +qall
 }
 
 fonts(){
@@ -110,30 +109,37 @@ fonts(){
 }
 
 essentials(){
+	newline
+	echo "Installing essential packages..."
 	for package in "${!packages[@]}"
 	do
-		echo "Installing ${packages[$package]}"
+		echo -n "[.] Installing ${packages[$package]}"
 		sudo apt-get -qq --yes install "${packages[$package]}"
+		confirm_success "${packages[$package]}"
 	done
 }
 
 python_essentials(){
+	newline
+	echo "Installing Python packages..."
 	for package in "${!python[@]}"
 	do
-		echo "Installing ${python[$package]}"
+		echo -n "[.] Installing ${python[$package]}"
 		sudo pip install --quiet --upgrade "${python[$package]}"
+		confirm_success "${python[$package]}"
 	done
 }
 
 main(){
-	#get_sudo
+	get_sudo
 	#update_vim
 	#essentials
 	#python_essentials
-	#create_symlinks
-	install_plugins "$@"
+	create_symlinks
+	#install_plugins "$@"
 	#fonts
 }
 
 main "$@"
-clear
+newline
+echo "dotfiles...Done"
