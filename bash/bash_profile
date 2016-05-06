@@ -3,3 +3,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 source ~/.bash_functions
+source ~/.bashrc

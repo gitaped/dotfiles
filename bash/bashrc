@@ -4,7 +4,8 @@
 
 # If not running interactively, don't do anything
 
-[[ $TERM != "screen" ]] && exec tmux
+# DO NOT use this
+#[[ $TERM != "screen" ]] && exec tmux
 
 case $- in
     *i*) ;;
@@ -19,8 +20,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# Unlimited bash history
+HISTSIZE=HISTFILESIZE=
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -62,7 +63,7 @@ fi
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 if [ "$(tput colors)" -ge 8 ]; then
-	PS1='\[\033[38;5;208m\]\u@\h\[\033[38;5;038m\] \w\[\033[38;5;226m\]$(__git_ps1)\[\033[38;5;010m\] ~>\[\033[00m\] '
+	PS1='\[\033[38;5;208m\]\u@\h\[\033[38;5;038m\] \w\[\033[38;5;226m\]$(__git_ps1)\[\033[38;5;010m\]\n$\[\033[00m\] '
   else
 	PS1='\u@\h:\w\$ '
 fi
@@ -119,8 +120,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#export WORKON_HOME=$HOME/.virtualenvs
-#export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#source /usr/local/bin/virtualenvwrapper.sh
 set -o vi
+
+if [[ $TERM == xterm ]]; then
+    TERM=xterm-256color
+fi

@@ -12,7 +12,7 @@ YCM="YouCompleteMe"
 vim=( vim vim-gnome vim-gtk )
 packages=( build-essential shellcheck cmake exuberant-ctags tmux ack-grep
 			astyle python-dev pyflakes latexmk zsh )
-python=( autopep8 pep8 virtualenv virtualenvwrapper)
+python=( autopep8 pep8)
 
 get_sudo(){
 	if [[ $UID != 0 ]]; then
@@ -50,11 +50,11 @@ update_vim(){
 
 create_symlinks(){
 	newline
-	#echo "Deleting exisiting dot configurations..."
-	#rm  ~/.vimrc
-	#rm ~/.zshrc
-	#rm ~/.bashrc
-	#rm -rf  ~/.vim
+	echo "Deleting exisiting dot configurations..."
+	rm  ~/.vimrc
+	rm ~/.zshrc
+	rm ~/.bashrc
+	rm -rf  ~/.vim
 
 	echo "Creating symlinks to new locations..."
 	cd "$DOTFILES"
@@ -79,15 +79,13 @@ create_symlinks(){
 	source ~/.bash_functions
 	source ~/.bashrc
 
-	ln -sf "$ZSH"/zshrc ~/.zshrc
-	#ln -sf "$ZSH"/zsh_aliases ~/.zshrc
-	#ln -sf "$ZSH"/zsh_functions ~/.zshrc
+	ln -sf "$DOTFILES"/ackrc ~/.ackrc
 }
 
+# TODO: fix this
 install_plugins(){
 	newline
 	echo "Installing Plugins..."
-	vim +PlugInstall +qall
 
 	# YouCompleteMe
 	# Only install YCM ONCE, when the time comes YCM will prompt you
@@ -101,11 +99,14 @@ install_plugins(){
 		confirm_success $YCM
 	fi
 
+	vim +PlugInstall +qall
+
 }
 
 fonts(){
-	cd "$BUNDLE"/fonts
-	bash install.sh
+	echo
+	#cd "$BUNDLE"/fonts
+	#bash install.sh
 }
 
 essentials(){
@@ -132,12 +133,12 @@ python_essentials(){
 
 main(){
 	get_sudo
-	#update_vim
-	#essentials
-	#python_essentials
+	update_vim
+#	essentials
+#	python_essentials
 	create_symlinks
-	#install_plugins "$@"
-	#fonts
+	install_plugins "$@"
+	# fonts
 }
 
 main "$@"

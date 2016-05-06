@@ -1,0 +1,12 @@
+#-------
+# ackrc|
+#-------
+
+# Ignore case
+--ignore-case
+
+# Don't send output through pager e.g. less
+--nopager
+
+# Sort the files
+--sort-files

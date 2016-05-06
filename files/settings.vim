@@ -12,6 +12,7 @@ set showmode    	"show current mode (insert,visual, etc)
 set laststatus=2    "display status line
 set mouse=a			"Allow mouse usage
 set completeopt-=preview
+set term=screen-256color
 
 "--------------
 "Spaces & Tabs|
@@ -87,3 +88,5 @@ set scrolloff=20	"keeps cursor 20 lines above and below end and start of file
 "TODO: add this for git and markdown only
 set spelllang=en_gb
 set nospell
+
+set shortmess+=slfc

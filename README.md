@@ -34,3 +34,18 @@ conflict with some settings already configured on your system. Tread lightly.
 [Astyle](http://astyle.sourceforge.net/)
 
 [Autopep8](https://pypi.python.org/pypi/autopep8)
+
+
+##Known Issues
+
+Terminal colours
+
+In BASH: xterm
+
+In tmux: screen-256colour
+
+Patch 7.4.314
+
+## TODO
+
+Build Vim from source
