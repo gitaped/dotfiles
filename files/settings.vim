@@ -80,13 +80,21 @@ set splitright
 "----------
 "Scrolling|
 "----------
-set scrolloff=20	"keeps cursor 20 lines above and below end and start of file
+set scrolloff=20
+set sidescrolloff=10
 
 "---------
 "Spelling|
 "---------
-"TODO: add this for git and markdown only
 set spelllang=en_gb
 set nospell
 
+"--------
+"Message|
+"--------
 set shortmess+=slfc
+
+"-----
+"Grep|
+"-----
+set grepprg=ack

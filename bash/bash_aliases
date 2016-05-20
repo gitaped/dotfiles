@@ -1,4 +1,4 @@
-#Git
+# Git
 alias gad='git add'
 alias gbr='git branch'
 alias gch='git checkout'
@@ -10,34 +10,35 @@ alias gpl='git pull'
 alias grv='git remote -v'
 alias gst='git status'
 
-#Directory
-alias ..='cd ..'
+# Directory
+alias ..='cd ../'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias doc='cd ~/Documents'
-alias down='cd ~/Downloads'
-alias dot='cd ~/dotfiles'
-alias box='cd ~/Dropbox'
-alias evertz='cd ~/evertz'
-alias src='cd ~/src'
+alias doc='cd ~/Documents && ls'
+alias down='cd ~/Downloads && ls'
+alias dot='cd ~/dotfiles && ls'
+alias bash='cd ~/dotfiles/bash && ls'
+alias box='cd ~/Dropbox && ls'
+alias evertz='cd ~/evertz && ls'
+alias src='cd ~/src && ls'
 
-#Networking
+# Networking
 alias myip='curl ip.appspot.com'
 
-#Screenshot
+# Screenshot
 alias shot='gnome-screenshot -a'
 
-#Letters
+# Letters
 alias c='clear'
-alias h='cat ~/.bash_history'
+alias h='history | less'
 
-#Servers
+# Servers
 alias js='jekyll serve'
 
-#tmux - tmux force support 256 colours
+# tmux - tmux force support 256 colours
 alias tmux='tmux -2'
 
-#Ack - sometimes ack by itself doesn't work
+# Ack - sometimes ack by itself doesn't work
 alias ack='ack-grep'

@@ -5,8 +5,31 @@
 # Ignore case
 --ignore-case
 
-# Don't send output through pager e.g. less
+# Suppress error messages about nonexistent or unreadable files
+-s
+
+# Show number of lines matching per file
+#-c
+
+# Print filename for each match
+-H
+
+# Don't send output through pager i.e. less
 --nopager
 
 # Sort the files
---sort-files
+#--sort-files
+
+# Group files
+--group
+
+# Ignore file types
+--ignore-file=is:.pyc
+--ignore-file=is:.o
+--ignore-file=is:.svn
+--ignore-file=is:.git
+
+# Ignore directories
+--ignore-dir=build
+--ignore-dir=venv
+--ignore-dir=debian

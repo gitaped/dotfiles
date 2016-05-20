@@ -9,11 +9,6 @@ GIT="$HOME/dotfiles/git"
 YCM="YouCompleteMe"
 
 # hooray for Vim 8.0
-vim=( vim vim-gnome vim-gtk )
-packages=( build-essential shellcheck cmake exuberant-ctags tmux ack-grep
-			astyle python-dev pyflakes latexmk zsh )
-python=( autopep8 pep8)
-
 get_sudo(){
 	if [[ $UID != 0 ]]; then
 		echo "Please run this script with sudo"
@@ -52,6 +47,7 @@ create_symlinks(){
 	newline
 	echo "Deleting exisiting dot configurations..."
 	rm  ~/.vimrc
+	rm -rf ~/.vim
 	rm ~/.zshrc
 	rm ~/.bashrc
 	rm -rf  ~/.vim
@@ -103,12 +99,6 @@ install_plugins(){
 
 }
 
-fonts(){
-	echo
-	#cd "$BUNDLE"/fonts
-	#bash install.sh
-}
-
 essentials(){
 	newline
 	echo "Installing essential packages..."
@@ -134,11 +124,10 @@ python_essentials(){
 main(){
 	get_sudo
 	update_vim
-#	essentials
-#	python_essentials
+	essentials
+	python_essentials
 	create_symlinks
 	install_plugins "$@"
-	# fonts
 }
 
 main "$@"

@@ -20,5 +20,3 @@ let g:airline_theme='hybridline'
 
 let g:airline_symbols={}
 let g:airline_symbols.paste = 'λ'
-
-"let g:airline_section_c = '%{getcwd()}/%t'

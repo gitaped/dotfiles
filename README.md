@@ -1,7 +1,7 @@
 #dotfiles
 ![](https://img.shields.io/badge/works%20on-Ubuntu-DD4814.svg)
 
-ViM dev environment config files
+ViM dev environment
 
 Optimized for Python, C, C++ development
 
@@ -19,21 +19,23 @@ conflict with some settings already configured on your system. Tread lightly.
 
 `sudo bash install.sh ycm`
 
+
 ##Mappings
 
 <kbd>F2</kbd> to toggle NERDTree
 
 <kbd>F3</kbd> to open TagBar
 
+<kbd>F4</kbd> to do code search using Ack
+
 <kbd>F5</kbd> to autoformat (Python, C++)
 
-##Misc
 
-[Neovim](https://neovim.io)
+##Debugging
 
-[Astyle](http://astyle.sourceforge.net/)
+`vim --startuptime vim.log`
 
-[Autopep8](https://pypi.python.org/pypi/autopep8)
+`cat vim.log | sort -k 2`
 
 
 ##Known Issues
@@ -44,8 +46,15 @@ In BASH: xterm
 
 In tmux: screen-256colour
 
-Patch 7.4.314
-
-## TODO
-
 Build Vim from source
+
+
+##Misc
+
+[Neovim](https://neovim.io)
+
+[Astyle](http://astyle.sourceforge.net/)
+
+[Autopep8](https://pypi.python.org/pypi/autopep8)/[PEP8](https://www.python.org/dev/peps/pep-0008/)
+
+[Ack](https://beyondgrep.com/)

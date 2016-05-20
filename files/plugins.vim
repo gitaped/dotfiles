@@ -54,6 +54,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Raimondi/delimitMate'
 "Plug 'Townk/vim-autoclose'
 
+"Ack wrapper
+Plug 'mileszs/ack.vim'
 
 "Vim git wrapper
 Plug 'tpope/vim-fugitive'

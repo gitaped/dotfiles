@@ -11,11 +11,11 @@ let mapleader = ","
 inoremap <silent> <ESC> <ESC>`^
 inoremap jk <ESC>
 
-"Arrow keys r 4 plebs
-nnoremap <up> :echoe "use k"<cr>
-nnoremap <down> :echoe "use j"<cr>
-nnoremap <left> :echoe "use h"<cr>
-nnoremap <right> :echoe "use l"<cr>
+"Arrow keys r 4 plebs, except when someone wants to use your keyboard
+"nnoremap <up> :echoe "use k"<cr>
+"nnoremap <down> :echoe "use j"<cr>
+"nnoremap <left> :echoe "use h"<cr>
+"nnoremap <right> :echoe "use l"<cr>
 
 "Use semicolon in normal mode without shifting
 nnoremap ; :
@@ -83,3 +83,6 @@ map <S-k> <Nop>
 "Lazy/Typo
 cabbrev q1 q!
 cabbrev qw wq
+
+"Add space without entering and exiting insert mode
+nnoremap <leader><space> i<space><ESC>
