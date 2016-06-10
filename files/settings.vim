@@ -5,11 +5,12 @@ set number          "show line numbers
 set relativenumber  "show number of lines above and below
 set ruler	        "show current row and line
 set cursorline  	"highlight current line
-set showcmd         "show last command
+"set showcmd         "show last command
 let &titlestring = expand('%:p') "show full directory of working file
 set title	        "vim decides title of terminal
 set showmode    	"show current mode (insert,visual, etc)
 set laststatus=2    "display status line
+set statusline+=%F
 set mouse=a			"Allow mouse usage
 set completeopt-=preview
 set term=screen-256color
@@ -22,7 +23,7 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab        "use tabs at start of line, spaces eleswhere
 set autoindent
-set formatoptions-=t "Hack to prevent autowrapping
+set formatoptions-=t "Prevent autowrapping
 set formatoptions+=c "Format Comments
 set formatoptions+=r "Continue comments by default
 set nowrap
@@ -66,10 +67,11 @@ set smartcase       "for unexpected results
 set nobackup
 set noswapfile
 
-"--------
-"Mapping|
-"--------
+"-------
+"Timing|
+"-------
 set timeoutlen=500	"Delay between commands in milliseconds
+set ttimeoutlen=0
 
 "----------
 "Splitting|

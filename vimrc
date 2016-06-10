@@ -19,3 +19,4 @@ source $HOME/dotfiles/files/tagbar.vim
 source $HOME/dotfiles/files/signify.vim
 source $HOME/dotfiles/files/expand.vim
 source $HOME/dotfiles/files/ackgrep.vim
+source $HOME/dotfiles/files/easytags.vim

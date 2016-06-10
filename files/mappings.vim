@@ -9,13 +9,7 @@ let mapleader = ","
 
 "Old habits die hard
 inoremap <silent> <ESC> <ESC>`^
-inoremap jk <ESC>
-
-"Arrow keys r 4 plebs, except when someone wants to use your keyboard
-"nnoremap <up> :echoe "use k"<cr>
-"nnoremap <down> :echoe "use j"<cr>
-"nnoremap <left> :echoe "use h"<cr>
-"nnoremap <right> :echoe "use l"<cr>
+inoremap jk <ESC>l
 
 "Use semicolon in normal mode without shifting
 nnoremap ; :
@@ -46,9 +40,9 @@ nnoremap dL d$
 "nnoremap dH d^<Bar>x
 nnoremap dH d^
 
-"Save when switching between buffers
-nnoremap <Tab> :w<Bar>:bn<CR>
-nnoremap <C-Tab> :w<Bar>:bp<CR>
+"Switching between buffers
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
 
 "Hit space to turn off highlighted search results
 nnoremap <silent> <Space> :nohlsearch<cr><ESC>

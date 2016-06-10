@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/ansley/dotfiles/vim/plugged'
 let g:netrw_dirhist_2='/home/ansley/dotfiles/vim'
 let g:netrw_dirhist_3='/home/ansley/src/configshell/configshell/lib'
 let g:netrw_dirhist_4='/home/ansley/src/configshell/configshell/dialog'
+let g:netrw_dirhist_5='/home/ansley/dotfiles/tmux'
+let g:netrw_dirhist_6='/home/ansley/src/magadmin/build/magadmin-0.1.0.dev20160601~7432a63'
+let g:netrw_dirhist_7='/home/ansley/dotfiles/tmux'

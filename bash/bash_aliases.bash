@@ -1,17 +1,18 @@
+# unalias 'alias_name' if stuck
+
 # Git
-alias gad='git add'
 alias gbr='git branch'
-alias gch='git checkout'
 alias gcl='git clone'
-alias gco='git commit'
 alias gdf='git diff'
-alias glo='git log'
-alias gpl='git pull'
+alias gdm='git diff master..$(git name-rev --name-only HEAD)'
+alias gfa='git fetch --all'
+alias glg='git log --graph --oneline'
 alias grv='git remote -v'
+alias gsh='git show'
 alias gst='git status'
 
 # Directory
-alias ..='cd ../'
+alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
@@ -19,20 +20,13 @@ alias ......='cd ../../../../..'
 alias doc='cd ~/Documents && ls'
 alias down='cd ~/Downloads && ls'
 alias dot='cd ~/dotfiles && ls'
-alias bash='cd ~/dotfiles/bash && ls'
 alias box='cd ~/Dropbox && ls'
 alias evertz='cd ~/evertz && ls'
 alias src='cd ~/src && ls'
 
-# Networking
-alias myip='curl ip.appspot.com'
-
-# Screenshot
-alias shot='gnome-screenshot -a'
-
 # Letters
 alias c='clear'
-alias h='history | less'
+alias h='history | less +G'
 
 # Servers
 alias js='jekyll serve'
@@ -40,5 +34,11 @@ alias js='jekyll serve'
 # tmux - tmux force support 256 colours
 alias tmux='tmux -2'
 
-# Ack - sometimes ack by itself doesn't work
+# Ack is different on Ubuntu
 alias ack='ack-grep'
+
+# Grep
+alias gri='grep -Hinr --exclude-dir=".git" --color=always'
+
+# Number of lines of code
+alias lines='find . | wc -l'

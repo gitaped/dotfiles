@@ -17,18 +17,20 @@ conflict with some settings already configured on your system. Tread lightly.
 
 `cd dotfiles`
 
-`sudo bash install.sh ycm`
+`sudo ./install.sh ycm`
 
 
 ##Mappings
 
 <kbd>F2</kbd> to toggle NERDTree
 
-<kbd>F3</kbd> to open TagBar
+<kbd>F3</kbd> to toggle TagBar
 
-<kbd>F4</kbd> to do code search using Ack
+<kbd>F4</kbd> to autoformat (Python, C++)
 
-<kbd>F5</kbd> to autoformat (Python, C++)
+<kbd>F5</kbd> to strip whitespace
+
+<kbd>F6</kbd> to do code search using Ack
 
 
 ##Debugging
@@ -38,15 +40,25 @@ conflict with some settings already configured on your system. Tread lightly.
 `cat vim.log | sort -k 2`
 
 
+`:{n,i,v}map` for {normal, insert, visual} mode mappings
+
+
+`$ tmux attach`
+
+`protocol version mismatch (client 7, server 6)`
+
+`$ pgrep tmux`
+
+`3429`
+
+`$ /proc/3429/exe attach`
+
+
 ##Known Issues
 
-Terminal colours
-
-In BASH: xterm
-
-In tmux: screen-256colour
-
 Build Vim from source
+
+Find alternative to Ctrl-[h, j, k, l] for navigation
 
 
 ##Misc
@@ -58,3 +70,5 @@ Build Vim from source
 [Autopep8](https://pypi.python.org/pypi/autopep8)/[PEP8](https://www.python.org/dev/peps/pep-0008/)
 
 [Ack](https://beyondgrep.com/)
+
+[Ctags](http://ctags.sourceforge.net/)

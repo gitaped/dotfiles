@@ -1,9 +1,8 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 PLUGGED="$HOME/dotfiles/vim/plugged"
 GITHUB="https://github.com"
 BASH="$HOME/dotfiles/bash"
-ZSH="$HOME/dotfiles/zsh"
 DOTFILES="$HOME/dotfiles"
 GIT="$HOME/dotfiles/git"
 YCM="YouCompleteMe"
@@ -15,6 +14,10 @@ get_sudo(){
 		echo "sudo bash $0"
 		exit 1
 	fi
+}
+
+invalidate_sudo(){
+	sudo -K
 }
 
 confirm_success(){
@@ -65,15 +68,15 @@ create_symlinks(){
 	source ~/.git-prompt.sh
 
 	cd "$BASH"
-	ln -sf "$BASH"/bash_aliases ~/.bash_aliases
-	ln -sf "$BASH"/bash_profile ~/.bash_profile
-	ln -sf "$BASH"/bash_functions ~/.bash_functions
+	ln -sf "$BASH"/bash_aliases.bash ~/.bash_aliases.bash
+	ln -sf "$BASH"/bash_profile.bash ~/.bash_profile.bash
+	ln -sf "$BASH"/bash_functions.bash ~/.bash_functions.bash
 	ln -sf "$BASH"/bashrc ~/.bashrc
 
-	source ~/.bash_aliases
-	source ~/.bash_profile
-	source ~/.bash_functions
 	source ~/.bashrc
+	source ~/.bash_aliases.bash
+	source ~/.bash_functions.bash
+	source ~/.bash_profile.bash
 
 	ln -sf "$DOTFILES"/ackrc ~/.ackrc
 }
@@ -99,35 +102,12 @@ install_plugins(){
 
 }
 
-essentials(){
-	newline
-	echo "Installing essential packages..."
-	for package in "${!packages[@]}"
-	do
-		echo -n "[.] Installing ${packages[$package]}"
-		sudo apt-get -qq --yes install "${packages[$package]}"
-		confirm_success "${packages[$package]}"
-	done
-}
-
-python_essentials(){
-	newline
-	echo "Installing Python packages..."
-	for package in "${!python[@]}"
-	do
-		echo -n "[.] Installing ${python[$package]}"
-		sudo pip install --quiet --upgrade "${python[$package]}"
-		confirm_success "${python[$package]}"
-	done
-}
-
 main(){
 	get_sudo
 	update_vim
-	essentials
-	python_essentials
 	create_symlinks
 	install_plugins "$@"
+	invalidate_sudo
 }
 
 main "$@"

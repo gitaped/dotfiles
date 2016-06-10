@@ -9,5 +9,5 @@ let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
 "LaTeX
-let g:vimtex_enabled = 1
-let g:vimtex_latexmk_continuous = 1
+"let g:vimtex_enabled = 1
+"let g:vimtex_latexmk_continuous = 1

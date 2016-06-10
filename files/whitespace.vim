@@ -1,7 +1,7 @@
 "-----------
 "Whitespace|
 "-----------
-autocmd BufWritePre * StripWhitespace
+"autocmd BufWritePre * StripWhitespace
 highlight ExtraWhitespace ctermbg=blue
 
 

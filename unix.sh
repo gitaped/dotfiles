@@ -2,20 +2,15 @@
 
 
 gnome=(gnome-session-flashback)
-sys_tools=(gnome-tweak-tool ack)
-#ui=(plank conky-manager)
-#deb_repos=(ricotz/docky teejee2008/ppa)
+sys_tools=(gnome-tweak-tool ack nmap )
 git_repos=(  )
+pi-rho/dev
+
 vim=( vim vim-gnome vim-gtk )
 packages=( build-essential shellcheck cmake exuberant-ctags tmux ack-grep
 			astyle python-dev pyflakes latexmk zsh )
-python=( autopep8 pep8)
+python=( autopep8 pycodestyle )
 
-
-
-
-
-sudo apt-get update
 sudo apt-get install -y
 
 get_sudo(){
@@ -42,6 +37,11 @@ install_packages(){
 		apt-get install ${package}
 
 }
+
+install_python_packages(){
+	for package in python:
+		pip install ${package}
+} 
 
 main(){
 	get_sudo

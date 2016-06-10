@@ -28,8 +28,10 @@
 --ignore-file=is:.o
 --ignore-file=is:.svn
 --ignore-file=is:.git
+--ignore-file=is:tags
 
 # Ignore directories
 --ignore-dir=build
 --ignore-dir=venv
 --ignore-dir=debian
+--ignore-dir=tests
