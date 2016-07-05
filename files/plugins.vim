@@ -10,26 +10,20 @@ call plug#begin('~/dotfiles/vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 ", { 'do':'./install.py --clang-completer' }
 
-"Filesystem tree
-Plug 'scrooloose/nerdtree', {'on':'NERDTreeToggle' }
-
 "Syntax checking
 Plug 'scrooloose/syntastic'
 
 "Orgasmic commenting
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 
-"Status/Tabline
-Plug 'vim-airline/vim-airline'
-
-"Status/Tabline themes
-Plug 'vim-airline/vim-airline-themes'
+"Filesystem tree
+Plug 'scrooloose/nerdtree'
 
 "Display diff in gutter	(all VCS)
-Plug 'mhinz/vim-signify'
-
-"Displays tags in a window
-Plug 'majutsushi/tagbar'
+"Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 
 "Quoting/Parenthesizing made simple
 Plug 'tpope/vim-surround'
@@ -55,20 +49,28 @@ Plug 'mileszs/ack.vim'
 "Seamlessly switch between vim and tmux
 Plug 'christoomey/vim-tmux-navigator'
 
-"Select larger regions of text in visual mode
-Plug 'terryma/vim-expand-region'
-
 "Controls and updates tags for source code
-Plug 'xolox/vim-easytags'
+"Plug 'xolox/vim-easytags'
 
 "Miscellaneous auto-load vim scripts ~> required for vim-easytags
-Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-misc'
+
+"Vim git wrapper
+"Plug 'tpope/vim-fugitive'
+
+
+"Displays tags in a window
+"Plug 'majutsushi/tagbar'
+
+"Select larger regions of text in visual mode
+"Plug 'terryma/vim-expand-region'
 
 "Maintains history of previous yanks/deletions
 "Plug 'vim-scripts/YankRing.vim'
 
-"Vim git wrapper
-"Plug 'tpope/vim-fugitive'
+"Statusline
+"Plug 'taohex/lightline-buffer'
+"Plug 'maciakl/vim-neatstatus'
 
 
 call plug#end()
@@ -80,4 +82,3 @@ call plug#end()
 " :PlugInstall		-installs plugins
 " :PlugUpdate		-update plugins
 " :PlugClean		-confirms removal of unused plugins
-

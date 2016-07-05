@@ -41,8 +41,8 @@ nnoremap dL d$
 nnoremap dH d^
 
 "Switching between buffers
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
 
 "Hit space to turn off highlighted search results
 nnoremap <silent> <Space> :nohlsearch<cr><ESC>
@@ -80,3 +80,9 @@ cabbrev qw wq
 
 "Add space without entering and exiting insert mode
 nnoremap <leader><space> i<space><ESC>
+
+"vim-commentary hack
+nnoremap gcc gcc<Esc>
+
+"Just highlights a word, does not jump to next search
+map * *<S-n>

@@ -22,15 +22,13 @@ conflict with some settings already configured on your system. Tread lightly.
 
 ##Mappings
 
-<kbd>F2</kbd> to toggle NERDTree
-
 <kbd>F3</kbd> to toggle TagBar
 
 <kbd>F4</kbd> to autoformat (Python, C++)
 
 <kbd>F5</kbd> to strip whitespace
 
-<kbd>F6</kbd> to do code search using Ack
+<kbd>Ctrl+f</kbd> to do code search using Ack
 
 
 ##Debugging

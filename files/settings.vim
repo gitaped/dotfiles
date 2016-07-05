@@ -14,6 +14,8 @@ set statusline+=%F
 set mouse=a			"Allow mouse usage
 set completeopt-=preview
 set term=screen-256color
+set ttyfast
+set lazyredraw
 
 "--------------
 "Spaces & Tabs|

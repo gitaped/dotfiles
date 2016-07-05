@@ -2,6 +2,7 @@
 
 # Git
 alias gbr='git branch'
+alias gch='git checkout'
 alias gcl='git clone'
 alias gdf='git diff'
 alias gdm='git diff master..$(git name-rev --name-only HEAD)'
