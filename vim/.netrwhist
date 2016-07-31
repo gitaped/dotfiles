@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/ansley/src/magcucumber'
 let g:netrw_dirhist_2='/home/ansley/src/magcucumber/magcucumber'
 let g:netrw_dirhist_3='/home/ansley/dotfiles/files'
 let g:netrw_dirhist_4='/home/ansley/src/magrootfs/rootfs/rootfs.skel/usr/lib/magnum/magkeysrv'
+let g:netrw_dirhist_5='/home/ansley/dotfiles'

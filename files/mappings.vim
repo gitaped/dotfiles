@@ -84,5 +84,6 @@ nnoremap <leader><space> i<space><ESC>
 "vim-commentary hack
 nnoremap gcc gcc<Esc>
 
-"Just highlights a word, does not jump to next search
-map * *<S-n>
+"Yank/Delete entire buffer
+nnoremap yY :%y<c-r>=v:register<cr><cr>
+nnoremap dD :%d<c-r>=v:register<cr><cr>

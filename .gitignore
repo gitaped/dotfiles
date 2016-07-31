@@ -1,3 +1,4 @@
-vim/plugged/
+vim/plugged/*
+vim/__pycache__/
 *.swp
 

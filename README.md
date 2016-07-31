@@ -22,7 +22,6 @@ conflict with some settings already configured on your system. Tread lightly.
 
 ##Mappings
 
-<kbd>F3</kbd> to toggle TagBar
 
 <kbd>F4</kbd> to autoformat (Python, C++)
 

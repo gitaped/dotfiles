@@ -18,9 +18,6 @@ Plug 'scrooloose/syntastic'
 "Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-commentary'
 
-"Filesystem tree
-Plug 'scrooloose/nerdtree'
-
 "Display diff in gutter	(all VCS)
 "Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
@@ -57,7 +54,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 "Vim git wrapper
 "Plug 'tpope/vim-fugitive'
-
 
 "Displays tags in a window
 "Plug 'majutsushi/tagbar'
