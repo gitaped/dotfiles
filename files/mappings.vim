@@ -82,8 +82,10 @@ cabbrev qw wq
 nnoremap <leader><space> i<space><ESC>
 
 "vim-commentary hack
-nnoremap gcc gcc<Esc>
+nnoremap gcc gcc<Esc><Esc>
 
 "Yank/Delete entire buffer
 nnoremap yY :%y<c-r>=v:register<cr><cr>
 nnoremap dD :%d<c-r>=v:register<cr><cr>
+
+"TODO: remap normal mode Backspace

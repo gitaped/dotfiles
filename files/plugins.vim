@@ -7,8 +7,7 @@ filetype indent on
 call plug#begin('~/dotfiles/vim/plugged')
 
 "Autocompletion
-Plug 'Valloric/YouCompleteMe'
-", { 'do':'./install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do':'./install.py --clang-completer' }
 
 "Syntax checking
 Plug 'scrooloose/syntastic'
@@ -25,7 +24,7 @@ Plug 'airblade/vim-gitgutter'
 "Quoting/Parenthesizing made simple
 Plug 'tpope/vim-surround'
 
-" Code autoformatter
+" Code formatter
 Plug 'Chiel92/vim-autoformat', { 'for': ['python','cpp'] }
 "
 "No-BS Python code folding

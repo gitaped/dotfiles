@@ -10,8 +10,11 @@ alias gfa='git fetch --all'
 alias glg='git log --graph --oneline'
 alias gpl='git pull'
 alias grv='git remote -v'
-alias gsh='git show'
 alias gst='git status'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
+alias gss='git stash save'
+alias gsp='git stash pop'
 
 # Directory
 alias ..='cd ..'
@@ -19,12 +22,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias doc='cd ~/Documents && ls'
-alias down='cd ~/Downloads && ls'
-alias dot='cd ~/dotfiles && ls'
-alias box='cd ~/Dropbox && ls'
-alias evertz='cd ~/evertz && ls'
-alias src='cd ~/src && ls'
+alias doc='cd ~/Documents && l'
+alias down='cd ~/Downloads && l'
+alias dot='cd ~/dotfiles && l'
+alias box='cd ~/Dropbox && l'
+alias evertz='cd ~/evertz && l'
+alias src='cd ~/src && l'
 
 # Letters
 alias c='clear'
@@ -42,5 +45,5 @@ alias ack='ack-grep'
 # Grep
 alias gri='grep -Hinr --exclude-dir=".git" --color=always'
 
-# Number of lines of code
+# Lines of code in current directory
 alias lines='find . | wc -l'
