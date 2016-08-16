@@ -1,8 +1,8 @@
-#1/bin/sh
+#!/bin/sh
 
-cd ~
-git clone https://github.com/vim/vim.git
-cd vim
+TMP=$(mktemp)
+git clone https://github.com/vim/vim.git "$TMP"
+cd "$TMP"/vim
 ./configure --with-features=huge \
             --enable-multibyte \
             --enable-rubyinterp \
@@ -13,3 +13,4 @@ cd vim
             --enable-gui=gtk2 --enable-cscope --prefix=/usr
 make VIMRUNTIMEDIR=/usr/share/vim/vim74
 sudo make install
+rm -rf "$TMP"

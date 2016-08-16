@@ -102,10 +102,16 @@ install_plugins(){
 
 }
 
+fzf(){
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
+}
+
 main(){
 	get_sudo
 	update_vim
 	create_symlinks
+	# fzf
 	install_plugins "$@"
 	invalidate_sudo
 }

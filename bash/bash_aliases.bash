@@ -2,10 +2,12 @@
 
 # Git
 alias gbr='git branch'
+alias gbv='git branch -avv'
 alias gch='git checkout'
 alias gcl='git clone'
 alias gdf='git diff'
-alias gdm='git diff master..$(git name-rev --name-only HEAD)'
+# alias gdm='git diff master..$(git name-rev --name-only HEAD)'
+alias gdm='git diff master'
 alias gfa='git fetch --all'
 alias glg='git log --graph --oneline'
 alias gpl='git pull'
@@ -13,8 +15,7 @@ alias grv='git remote -v'
 alias gst='git status'
 alias grh='git reset --hard'
 alias grs='git reset --soft'
-alias gss='git stash save'
-alias gsp='git stash pop'
+alias gsh='git stash'
 
 # Directory
 alias ..='cd ..'

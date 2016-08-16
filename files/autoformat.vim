@@ -1,6 +1,6 @@
-"""""""""""""""
-"Autoformatter|
-"""""""""""""""
+""""""""""""
+"Autoformat|
+""""""""""""
 
 "Python
 let g:formatters_python = ['autopep8']

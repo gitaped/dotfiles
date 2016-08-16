@@ -124,11 +124,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-set -o vi
-
 if [[ $TERM == xterm ]]; then
     TERM=xterm-256color
 fi
 
 # Expand command after !!
 bind Space:magic-space
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

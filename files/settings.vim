@@ -39,6 +39,7 @@ set textwidth=80	"Wrap lines at column 80
 set showmatch
 set matchtime=1
 set clipboard=unnamedplus "allows vim to interact with system clipboard
+set autowrite "automatically save buffer changes, swap out with hidden, confirm
 
 "-------
 "Sounds|

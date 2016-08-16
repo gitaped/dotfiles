@@ -11,6 +11,11 @@ let mapleader = ","
 inoremap <silent> <ESC> <ESC>`^
 inoremap jk <ESC>l
 
+"Function keys
+map <F3> :Autoformat<CR><CR>
+map <F4> :StripWhitespace<CR>
+map <F5> :buffers<CR>:buffer<Space>
+
 "Use semicolon in normal mode without shifting
 nnoremap ; :
 
@@ -51,11 +56,11 @@ nnoremap <silent> <Space> :nohlsearch<cr><ESC>
 vnoremap < <gv
 vnoremap > >gv
 
-"Save and switch between vertical/horizontal panes easier
-nmap <C-J> :w<CR><C-W>j
-nmap <C-K> :w<CR><C-W>k
-nmap <C-H> :w<CR><C-W>h
-nmap <C-L> :w<CR><C-W>l
+"Sane pane switching
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-H> <C-W>h
+nmap <C-L> <C-W>l
 
 "Select Block
 nnoremap <leader>v V`}
@@ -80,6 +85,7 @@ cabbrev qw wq
 
 "Add space without entering and exiting insert mode
 nnoremap <leader><space> i<space><ESC>
+" nnoremap <leader><space> a<space><ESC>
 
 "vim-commentary hack
 nnoremap gcc gcc<Esc><Esc>
@@ -87,5 +93,10 @@ nnoremap gcc gcc<Esc><Esc>
 "Yank/Delete entire buffer
 nnoremap yY :%y<c-r>=v:register<cr><cr>
 nnoremap dD :%d<c-r>=v:register<cr><cr>
+
+" Search word under cursor
+map <C-d> :Ack! <C-r><C-w><space>
+" General search
+map <C-f> :Ack!<space>
 
 "TODO: remap normal mode Backspace
