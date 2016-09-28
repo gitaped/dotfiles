@@ -31,26 +31,29 @@ nnoremap H ^
 nnoremap L $
 
 "Create blank line above and below without entering Insert mode
-nnoremap t o<Esc>
-nnoremap T O<Esc>
+nmap <leader>o o<Esc>
+nmap <leader>O O<Esc>
 
 "Yank to end of line
-nnoremap yL y$
+nmap yL y$
 "Yank to start of line
-nnoremap yH y^
+nmap yH y^
 
 "Delete to end of line
-nnoremap dL d$
+nmap dL d$
 "Delete to start of line
 "nnoremap dH d^<Bar>x
-nnoremap dH d^
+nmap dH d^
 
 "Switching between buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
 
 "Hit space to turn off highlighted search results
-nnoremap <silent> <Space> :nohlsearch<cr><ESC>
+nnoremap <silent> <Space> :nohlsearch<CR><ESC>
+
+"Clear the screen and redraw
+nnoremap <silent> <CR> :redraw!<CR><ESC>
 
 "Indentation shifting: prevents de-select after shift
 vnoremap < <gv
@@ -98,5 +101,3 @@ nnoremap dD :%d<c-r>=v:register<cr><cr>
 map <C-d> :Ack! <C-r><C-w><space>
 " General search
 map <C-f> :Ack!<space>
-
-"TODO: remap normal mode Backspace

@@ -11,6 +11,7 @@ Plug 'Valloric/YouCompleteMe', { 'do':'./install.py --clang-completer' }
 
 "Syntax checking
 Plug 'scrooloose/syntastic'
+" Plug 'alfredodeza/khuno.vim', { 'for': 'python' }
 
 "Orgasmic commenting
 "Plug 'scrooloose/nerdcommenter'
@@ -22,13 +23,14 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 
 "Quoting/Parenthesizing made simple
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 " Code formatter
 Plug 'Chiel92/vim-autoformat', { 'for': ['python','cpp'] }
 "
 "No-BS Python code folding
-Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+" Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'Konfekt/FastFold'
 
 "Show number of returned searches
 Plug 'henrik/vim-indexed-search'
@@ -45,28 +47,16 @@ Plug 'mileszs/ack.vim'
 "Seamlessly switch between vim and tmux
 Plug 'christoomey/vim-tmux-navigator'
 
-"Controls and updates tags for source code
-"Plug 'xolox/vim-easytags'
-
-"Miscellaneous auto-load vim scripts ~> required for vim-easytags
-"Plug 'xolox/vim-misc'
-
-"Vim git wrapper
-"Plug 'tpope/vim-fugitive'
-
-"Displays tags in a window
-"Plug 'majutsushi/tagbar'
+"Vim notetaking
+" Plug 'xolox/vim-notes', {'on': 'Note'}
+"Miscellaneous auto-load vim scripts
+" Plug 'xolox/vim-misc', {'on': 'Note'}
 
 "Select larger regions of text in visual mode
 "Plug 'terryma/vim-expand-region'
 
 "Maintains history of previous yanks/deletions
 "Plug 'vim-scripts/YankRing.vim'
-
-"Statusline
-"Plug 'taohex/lightline-buffer'
-"Plug 'maciakl/vim-neatstatus'
-
 
 call plug#end()
 "-----------

@@ -1,5 +1,3 @@
-# unalias 'alias_name' if stuck
-
 # Git
 alias gbr='git branch'
 alias gbv='git branch -avv'
@@ -27,7 +25,6 @@ alias doc='cd ~/Documents && l'
 alias down='cd ~/Downloads && l'
 alias dot='cd ~/dotfiles && l'
 alias box='cd ~/Dropbox && l'
-alias evertz='cd ~/evertz && l'
 alias src='cd ~/src && l'
 
 # Letters
@@ -48,3 +45,5 @@ alias gri='grep -Hinr --exclude-dir=".git" --color=always'
 
 # Lines of code in current directory
 alias lines='find . | wc -l'
+
+# unalias 'alias_name' if stuck

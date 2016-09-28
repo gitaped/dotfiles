@@ -25,7 +25,7 @@ confirm_success(){
 	if [ $? -eq 0 ]; then
 		echo "[✓] Installed $1 "
 	else
-		echo "[✖] Installing $1 failed "
+		echo "[✗] Installing $1 failed "
 	fi
 }
 
