@@ -5,7 +5,6 @@ ViM dev environment
 
 Optimized for Python, C, C++ development
 
-
 ##Installation
 
 **WARNING**: Some of these configurations are intended for my personal use, it may
@@ -17,18 +16,17 @@ conflict with some settings already configured on your system. Tread lightly.
 
 `cd dotfiles`
 
-`sudo ./install.sh ycm`
-
+`sudo ./install.sh`
 
 ##Mappings
 
+<kbd>F3</kbd> to strip whitespace
 
-<kbd>F4</kbd> to autoformat (Python, C++)
+<kbd>F4</kbd> to view and select open buffers
 
-<kbd>F5</kbd> to strip whitespace
+<kbd>Ctrl+f</kbd> to do code search using `Ack`
 
-<kbd>Ctrl+f</kbd> to do code search using Ack
-
+<kbd>Ctrl+d</kbd> to do code search using `Ack` with text currently under cursor
 
 ##Debugging
 
@@ -50,13 +48,9 @@ conflict with some settings already configured on your system. Tread lightly.
 
 `$ /proc/3429/exe attach`
 
-
 ##Known Issues
 
 Build Vim from source
-
-Find alternative to Ctrl-[h, j, k, l] for navigation
-
 
 ##Misc
 

@@ -1,5 +1,4 @@
 #!/bin/sh
 
-packages=( build-essential shellcheck cmake exuberant-ctags tmux ack-grep
-			     astyle python-dev pyflakes latexmk )
+packages=( build-essential tmux ack-grep python-dev pyflakes )
 python=( autopep8 pep8 virtualenv virtualenvwrapper )

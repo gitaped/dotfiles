@@ -1,11 +1,9 @@
 #!/bin/sh
 
-PLUGGED="$HOME/dotfiles/vim/plugged"
-GITHUB="https://github.com"
+GIT="$HOME/dotfiles/git"
 BASH="$HOME/dotfiles/bash"
 DOTFILES="$HOME/dotfiles"
-GIT="$HOME/dotfiles/git"
-YCM="YouCompleteMe"
+PLUGGED="$HOME/dotfiles/vim/plugged"
 
 # hooray for Vim 8.0
 get_sudo(){
@@ -49,11 +47,9 @@ update_vim(){
 create_symlinks(){
 	newline
 	echo "Deleting exisiting dot configurations..."
-	rm  ~/.vimrc
+	rm -f ~/.vimrc
 	rm -rf ~/.vim
-	rm ~/.zshrc
-	rm ~/.bashrc
-	rm -rf  ~/.vim
+	rm -f ~/.bashrc
 
 	echo "Creating symlinks to new locations..."
 	cd "$DOTFILES"
@@ -81,25 +77,8 @@ create_symlinks(){
 	ln -sf "$DOTFILES"/ackrc ~/.ackrc
 }
 
-# TODO: fix this
 install_plugins(){
-	newline
-	echo "Installing Plugins..."
-
-	# YouCompleteMe
-	# Only install YCM ONCE, when the time comes YCM will prompt you
-	# (internally) in vim to recompile
-	if [ "$1" == ycm ]; then
-		echo -n "[.] Installing $YCM"
-		git clone "$GITHUB"/Valloric/"$YCM".git &> /dev/null
-		cd "$PLUGGED"/"$YCM"
-		git submodule update --init --recursive &> /dev/null
-		./install.py --clang-completer &> /dev/null
-		confirm_success $YCM
-	fi
-
 	vim +PlugInstall +qall
-
 }
 
 fzf(){
@@ -112,10 +91,10 @@ main(){
 	update_vim
 	create_symlinks
 	# fzf
-	install_plugins "$@"
+	install_plugins
 	invalidate_sudo
 }
 
-main "$@"
+main
 newline
 echo "dotfiles...Done"
