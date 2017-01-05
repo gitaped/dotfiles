@@ -22,17 +22,18 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias doc='cd ~/Documents && l'
-alias down='cd ~/Downloads && l'
 alias dot='cd ~/dotfiles && l'
 alias box='cd ~/Dropbox && l'
 alias src='cd ~/src && l'
+alias tmp='cd /tmp && l'
+alias down='cd ~/Downloads && l'
 
 # Letters
 alias c='clear'
 alias h='history | less +G'
 
 # Servers
-alias js='jekyll serve'
+# alias js='jekyll serve'
 
 # tmux - tmux force support 256 colours
 alias tmux='tmux -2'
@@ -46,4 +47,4 @@ alias gri='grep -Hinr --exclude-dir=".git" --color=always'
 # Lines of code in current directory
 alias lines='find . | wc -l'
 
-# unalias 'alias_name' if stuck
+# use unalias 'alias_name' if stuck

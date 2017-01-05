@@ -1,26 +1,32 @@
-"--------------
-"vimrc        |
-"Ansley Peduru|
-"--------------
-
+"---------------
+"Ansley's vimrc|
+"---------------
+set nocompatible    "no Vi compatibility mode
 "---------
 "Settings|
 "---------
 
-"User Interface
+"Line
 set number               " Show line numbers
 set relativenumber       " Show number of lines above and below
 set ruler	               " Show current row and line
+set nostartofline        " Don't always start at the start of a line
 set cursorline  	       " Highlight current line
+
+"UI
 set title	               " Vim decides title of terminal
 set showmode    	       " Show current mode (insert,visual, etc)
-set laststatus=2         " Display status line
-set mouse=a			         " Allow mouse usage
+set laststatus=2         " Always display status line, set this back to 2 later
 set completeopt-=preview " Don't show preview window
 set term=screen-256color " Use 256 colours
 set ttyfast              " Fast terminal connection
 set lazyredraw           " Screen will not redraw immediately
-" set cmdheight=2
+set colorcolumn=80       " Bar at 80 character mark
+set hidden
+
+"Mouse
+set mouse=a	  " Allow mouse usage
+set mousehide " Hide the mouse while typing
 
 "Spaces & Tabs
 set tabstop=4                  " Default spaces in a <TAB>
@@ -30,7 +36,6 @@ set smarttab                   " Use tabs at start of line, spaces eleswhere
 set expandtab                  " Insert spaces whenever tab key is pressed
 set autoindent                 " Copy indent from current line when starting new line
 set nowrap                     " Do not wrap long lines
-set colorcolumn=80             " Bar at 80 character mark
 set backspace=indent,eol,start " Allow backspace key
 
 "Formatting
@@ -49,8 +54,8 @@ set autowrite " Automatically save file when buffer changes
 set autoread  " Automatically read changed files
 
 "Sounds
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+set noerrorbells visualbell t_vb=        " This setting turns off sounds...
+autocmd GUIEnter * set visualbell t_vb=  " ...I think.
 
 "Colours & Fonts
 syntax enable       " Turn on syntax highlighting
@@ -59,7 +64,7 @@ set background=dark	" For the longevity of my eyes
 colorscheme badwolf
 
 "Command Line
-set wildmenu                                     " Better command-line completion
+set wildmenu                                     " Better cmd completion
 set wildmode=list:full
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
@@ -96,8 +101,8 @@ set nospell           " Turn off spell checking
 
 "Message
 set shortmess=   " Statusline messages
-set shortmess+=s " Don't give search hit BOTTOM, continuing at TOP or search hit TOP, continuing at BOTTOM" messages
-set shortmess+=l " Use 999L, 888C instead of "999 lines, 888 characters
+set shortmess+=s " Don't give search hit BOTTOM, continuing at TOP or search hit TOP, continuing at BOTTOM messages
+set shortmess+=l " Use 999L, 888C instead of 999 lines, 888 characters
 set shortmess+=f " Use (3 of 5) instead of (file 3 of 5)
 set shortmess+=c " Don't give ins-completion-menu messages
 
@@ -130,8 +135,8 @@ map <C-z> <Nop>
 
 "Function keys
 nnoremap <F1> <nop>
-map <F3> :StripWhitespace<CR>
-map <F4> :buffers<CR>:buffer<Space>
+map <F2> :StripWhitespace<CR>
+map <F3> :buffers<CR>:buffer<Space>
 
 "General search
 map <C-f> :Ack!<space>
@@ -217,15 +222,21 @@ nmap dD :%d<c-r>=v:register<cr><cr>
 " :PlugUpdate		update plugins
 " :PlugClean		confirms removal of unused plugins
 
-set nocompatible    "no Vi compatibility mode
 filetype indent on
 call plug#begin('~/dotfiles/vim/plugged')
 
-"Language Autocompletion
+"Autocompletion
+" Plug 'lifepillar/vim-mucomplete'
+" REQUIRES VIM 8
+Plug 'maralla/completor.vim'
+
+"Language
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-"Plug 'Rip-Rip/clang_complete', { 'do': 'make install', 'for': ['c','cpp'] }
-"Plug 'justmao945/vim-clang', { 'for': 'c' }
-"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
+" Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+" Plug 'justmao945/vim-clang', { 'for': 'c' }
 
 "Syntax checking
 Plug 'scrooloose/syntastic'
@@ -238,12 +249,13 @@ Plug 'airblade/vim-gitgutter'
 
 "No-BS Python code folding
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+" TODO: generic languague code folding
 
 "Show number of returned searches
 Plug 'henrik/vim-indexed-search'
 
 "Whitespace removal
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace', {'on': 'StripWhitespace' }
 
 "Autocompletion for quotes, parens, brackets
 Plug 'jiangmiao/auto-pairs'
@@ -258,9 +270,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 "Vim notetaking
-" Plug 'vimwiki/vimwiki', { 'for': 'wiki' }
-Plug 'xolox/vim-notes', { 'for':'txt', 'on': 'Note' }
-" Plug 'xolox/vim-misc', { 'for':'txt', 'on': 'Note' }
+"Plug 'junegunn/vim-journal'
 
 call plug#end()
 
@@ -304,16 +314,30 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol =  "✖"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_rust_checkers = ['rustc']
+" let g:syntastic_sh_checkers = ['shellcheck']
 
 "-----------
 "Whitespace|
 "-----------
 highlight ExtraWhitespace ctermbg=blue
 
-"------
-"Notes|
-"------
+"-----
+"Rust|
+"-----
+let g:rust_recommended_style = 1
+let g:rustfmt_autosave=1
+let g:rust_fold=1
+" let g:racer_cmd ="/home/ansley/.cargo/bin/racer"
+" let $RUST_SRC_PATH="~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"
+" let g:racer_experimental_completer = 1
 
-let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/CLAS100/Notes']
-let g:notes_suffix = '.txt'
-let g:notes_title_sync = 'rename_file'
+"-----------
+" Completor|
+"-----------
+" let g:completor_racer_binary='~/.cargo/bin/racer'
+let g:completor_racer_binary = $HOME.'/.cargo/bin/racer'
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"

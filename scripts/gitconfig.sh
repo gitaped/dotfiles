@@ -7,8 +7,8 @@ GITCONFIG="$HOME"/.gitconfig
 USER_NAME=$(git config --file "$GITCONFIG" user.name)
 if [ -z "$USER_NAME" ]; then
   echo "Enter full name: "
-  read -r FULL_NAME
-  git config --file "$GITCONFIG" user.name "$FULL_NAME"
+  read -r USER_NAME
+  git config --file="$GITCONFIG" user.name "$USER_NAME"
 else
   echo "user.name=$USER_NAME"
 fi
@@ -16,20 +16,20 @@ fi
 USER_EMAIL=$(git config --file "$GITCONFIG" user.email)
 if [ -z "$USER_EMAIL" ]; then
   echo "Enter email:"
-  read -r EMAIL
-  git config --file "$GITCONFIG" user.email "$EMAIL"
+  read -r USER_EMAIL
+  git config --file="$GITCONFIG" user.email "$USER_EMAIL"
 else
-  echo "user.email=$EMAIL"
+  echo "user.email=$USER_EMAIL"
 fi
 
-GITHUB_USER=$(git config --file "$GITCONFIG_USER" github.user)
-if [ -z "$GITHUB_USER" ]; then
-  echo "Enter GitHub username:"
-  read -r GITHUB_USERNAME
-  git config --file "$GITCONFIG" github.user "$GITHUB_USERNAME"
-else
-  echo "github.user=$GITHUB_USERNAME"
-fi
+# GITHUB_USERNAME=$(git config --file "$GITCONFIG_USER" github.user)
+# if [ -z "$GITHUB_USERNAME" ]; then
+#   echo "Enter GitHub username:"
+#   read -r GITHUB_USERNAME
+#   git config --file "$GITCONFIG" github.user "$GITHUB_USERNAME"
+# else
+#   echo "github.user=$GITHUB_USERNAME"
+# fi
 
 # color
 git config --file "$GITCONFIG" color.ui "auto"

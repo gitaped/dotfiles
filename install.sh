@@ -1,46 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
 GIT="$HOME/dotfiles/git"
 BASH="$HOME/dotfiles/bash"
 DOTFILES="$HOME/dotfiles"
-PLUGGED="$HOME/dotfiles/vim/plugged"
 
-# hooray for Vim 8.0
-get_sudo(){
-	if [[ $UID != 0 ]]; then
-		echo "Please run this script with sudo"
-		echo "sudo bash $0"
-		exit 1
-	fi
-}
+# TODO: Rust tools and stuff
+# rust=()
 
-invalidate_sudo(){
-	sudo -K
-}
-
-confirm_success(){
-	echo -en "\r"
-	if [ $? -eq 0 ]; then
-		echo "[✓] Installed $1 "
-	else
-		echo "[✗] Installing $1 failed "
-	fi
-}
-
-newline(){
-	printf "\n"
-}
-
-update_vim(){
+packages=( vim build-essential tmux ack-grep python-dev pyflakes clang )
+install_packages(){
 	echo "Updating Packages..."
 	sudo apt-get -qq update
 	newline
 	echo "Installing Vim essentials..."
-	for package in "${!vim[@]}"
+	for package in "${!packages[@]}"
 	do
-		echo -n "[.] Installing ${vim[$package]}"
-		sudo apt-get -qq --yes install "${vim[$package]}"
-		confirm_success "${vim[$package]}"
+		echo -"Installing ${packages[$package]}"
+		sudo apt-get -qq --yes install "${packages[$package]}"
+		confirm_success "${packages[$package]}"
 	done
 }
 
@@ -81,16 +58,11 @@ install_plugins(){
 	vim +PlugInstall +qall
 }
 
-fzf(){
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install
-}
-
 main(){
 	get_sudo
 	update_vim
+  install_packages
 	create_symlinks
-	# fzf
 	install_plugins
 	invalidate_sudo
 }

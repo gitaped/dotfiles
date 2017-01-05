@@ -131,4 +131,8 @@ fi
 # Expand command after !!
 bind Space:magic-space
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Rust
+if [ -d ~/.cargo/bin/ ]; then
+  export PATH=$PATH:~/.cargo/bin/
+  export RUST_SRC_PATH=~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
+fi
