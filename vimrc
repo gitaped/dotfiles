@@ -44,7 +44,7 @@ set formatoptions+=c "Format Comments
 set formatoptions+=r "Continue comments by default
 
 "Text
-" set textwidth=80	        "Wrap lines at column 80
+set textwidth=80	        "Wrap lines at column 80
 set showmatch             " Highlight matching paren
 set matchtime=1           " 0.1 seconds to show matching paren
 set clipboard=unnamedplus " Allows vim to interact with system clipboard
@@ -70,6 +70,7 @@ set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " Image types
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.pyc                            " python bytecode
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 
@@ -92,8 +93,8 @@ set splitbelow      "Split new horizontal window below current one
 set splitright      "Split new vertical window to the right of curretnt one
 
 "Scrolling
-set scrolloff=8     " Minimum number of lines to keep above and below cursor
-set sidescrolloff=8 " Minimum number of columns to keep to left and right of cursor"
+set scrolloff=20     " Minimum number of lines to keep above and below cursor
+set sidescrolloff=10 " Minimum number of columns to keep to left and right of cursor"
 
 "Spelling
 set spelllang=en_gb   " Use Commonwealth dictionary
@@ -128,7 +129,7 @@ let mapleader = ","
 
 "Remap ESC
 inoremap <silent> <ESC> <ESC>`^
-inoremap jk <ESC>l
+" inoremap jk <ESC>l
 
 "Disable exit
 map <C-z> <Nop>
@@ -227,16 +228,17 @@ call plug#begin('~/dotfiles/vim/plugged')
 
 "Autocompletion
 " Plug 'lifepillar/vim-mucomplete'
-" REQUIRES VIM 8
 Plug 'maralla/completor.vim'
 
 "Language
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'fs111/pydoc.vim', { 'for': 'python' }
+" Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 " Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+" Plug 'justmao945/vim-clang', { 'for': 'c' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
-" Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-" Plug 'justmao945/vim-clang', { 'for': 'c' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 "Syntax checking
 Plug 'scrooloose/syntastic'
@@ -249,7 +251,6 @@ Plug 'airblade/vim-gitgutter'
 
 "No-BS Python code folding
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
-" TODO: generic languague code folding
 
 "Show number of returned searches
 Plug 'henrik/vim-indexed-search'
@@ -263,37 +264,18 @@ Plug 'jiangmiao/auto-pairs'
 "Ack wrapper
 Plug 'mileszs/ack.vim'
 
-"Fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
-
-"Seamlessly switch between vim and tmux
-Plug 'christoomey/vim-tmux-navigator'
-
-"Vim notetaking
-"Plug 'junegunn/vim-journal'
-
 call plug#end()
 
 "----
 "Ack|
 "----
-
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
 let g:ack_default_options = ' -s -H --nocolor --nogroup --ignore-case'
 
-"------
-"CtrlP|
-"------
-
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-
 "----------
 "GitGutter|
 "----------
-
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 let g:gitgutter_max_signs = 500
@@ -302,7 +284,6 @@ let g:gitgutter_map_keys = 1
 "---------------
 "Indexed Search|
 "---------------
-
 let g:indexed_search_dont_move = 1
 
 "----------
@@ -316,7 +297,6 @@ let g:syntastic_warning_symbol = "!"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_rust_checkers = ['rustc']
-" let g:syntastic_sh_checkers = ['shellcheck']
 
 "-----------
 "Whitespace|
@@ -329,14 +309,10 @@ highlight ExtraWhitespace ctermbg=blue
 let g:rust_recommended_style = 1
 let g:rustfmt_autosave=1
 let g:rust_fold=1
-" let g:racer_cmd ="/home/ansley/.cargo/bin/racer"
-" let $RUST_SRC_PATH="~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"
-" let g:racer_experimental_completer = 1
 
 "-----------
 " Completor|
 "-----------
-" let g:completor_racer_binary='~/.cargo/bin/racer'
 let g:completor_racer_binary = $HOME.'/.cargo/bin/racer'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
