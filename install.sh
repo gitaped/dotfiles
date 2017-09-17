@@ -1,72 +1,55 @@
 #!/bin/bash
 
+set -e
+
 GIT="$HOME/dotfiles/git"
 BASH="$HOME/dotfiles/bash"
 DOTFILES="$HOME/dotfiles"
 
-# TODO: Rust tools and stuff
-# rust=()
+packages=( vim-gtk terminator build-essential tmux ack-grep python-dev pyflakes ipcalc gdebi )
+echo "Updating Packages Database"
+sudo apt-get -qq update
+echo "Installing essential packages"
+for package in "${!packages[@]}"
+do
+  echo "Installing ${packages[$package]}"
+  sudo apt-get -qqq --yes install "${packages[$package]}"
+done
 
-packages=( vim build-essential tmux ack-grep python-dev pyflakes clang )
-install_packages(){
-	echo "Updating Packages..."
-	sudo apt-get -qq update
-	newline
-	echo "Installing Vim essentials..."
-	for package in "${!packages[@]}"
-	do
-		echo -"Installing ${packages[$package]}"
-		sudo apt-get -qq --yes install "${packages[$package]}"
-		confirm_success "${packages[$package]}"
-	done
-}
+echo "Deleting exisiting dot configurations"
+rm -f ~/.vimrc
+rm -rf ~/.vim
+rm -f ~/.bashrc
+rm -f ~/.tmux.conf
 
-create_symlinks(){
-	newline
-	echo "Deleting exisiting dot configurations..."
-	rm -f ~/.vimrc
-	rm -rf ~/.vim
-	rm -f ~/.bashrc
+echo "Creating symlinks to new locations"
+ln -sf "$DOTFILES"/vimrc ~/.vimrc
+ln -sf "$DOTFILES"/vim ~/.vim
+ln -sf "$DOTFILES"/tmux.conf ~/.tmux.conf
 
-	echo "Creating symlinks to new locations..."
-	cd "$DOTFILES"
-	ln -sf "$DOTFILES"/vimrc ~/.vimrc
-	ln -sf "$DOTFILES"/vim ~/.vim
-	ln -sf "$DOTFILES"/tmux.conf ~/.tmux.conf
+ln -sf "$GIT"/gitconfig ~/.gitconfig
+cp "$GIT"/git-prompt.sh ~/.git-prompt.sh
+source ~/.git-prompt.sh
 
-	cd "$GIT"
-	ln -sf "$GIT"/gitconfig ~/.gitconfig
-	ln -sf "$GIT"/git-prompt.sh ~/.git-prompt.sh
+ln -sf "$BASH"/bash_aliases ~/.bash_aliases
+ln -sf "$BASH"/bash_profile ~/.bash_profile
+ln -sf "$BASH"/bash_functions ~/.bash_functions
+ln -sf "$BASH"/bashrc ~/.bashrc
+source ~/.bashrc
+source ~/.bash_aliases
+source ~/.bash_functions
+source ~/.bash_profile
 
-	source ~/.git-prompt.sh
+ln -sf "$DOTFILES"/ackrc ~/.ackrc
 
-	cd "$BASH"
-	ln -sf "$BASH"/bash_aliases.bash ~/.bash_aliases.bash
-	ln -sf "$BASH"/bash_profile.bash ~/.bash_profile.bash
-	ln -sf "$BASH"/bash_functions.bash ~/.bash_functions.bash
-	ln -sf "$BASH"/bashrc ~/.bashrc
+mkdir -p ~/.config/terminator
+ln -sf "$DOTFILES"/terminator_config ~/.config/terminator/config
 
-	source ~/.bashrc
-	source ~/.bash_aliases.bash
-	source ~/.bash_functions.bash
-	source ~/.bash_profile.bash
+echo "Creating src directory"
+mkdir ~/src
 
-	ln -sf "$DOTFILES"/ackrc ~/.ackrc
-}
+echo "Installing Vim plugins"
+vim +PlugInstall +qall
 
-install_plugins(){
-	vim +PlugInstall +qall
-}
-
-main(){
-	get_sudo
-	update_vim
-  install_packages
-	create_symlinks
-	install_plugins
-	invalidate_sudo
-}
-
-main
-newline
-echo "dotfiles...Done"
+echo "Success!!!"
+echo "dotfiles...done"
