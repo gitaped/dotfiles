@@ -294,9 +294,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol =  "✖"
 let g:syntastic_warning_symbol = "!"
+let g:syntastic_auto_jump = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_rust_checkers = ['cargo']
 
 "-----------
 "Whitespace|
@@ -313,7 +315,7 @@ let g:rust_fold=1
 "-----------
 " Completor|
 "-----------
-let g:completor_racer_binary = $HOME.'/.cargo/bin/racer'
+let g:completor_racer_binary = '~/.cargo/bin/racer'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"

@@ -2,19 +2,16 @@
 
 set -e
 
-GIT="$HOME/dotfiles/git"
-BASH="$HOME/dotfiles/bash"
 DOTFILES="$HOME/dotfiles"
+GIT="$DOTFILES/git"
+BASH="$DOTFILES/bash"
 
-packages=( vim-gtk terminator build-essential tmux ack-grep python-dev pyflakes ipcalc gdebi )
 echo "Updating Packages Database"
-sudo apt-get -qq update
-echo "Installing essential packages"
-for package in "${!packages[@]}"
-do
-  echo "Installing ${packages[$package]}"
-  sudo apt-get -qqq --yes install "${packages[$package]}"
-done
+sudo apt-get -qqq update
+echo "Installing essential Debian packages"
+cat "$DOTFILES"/packages.list | xargs sudo apt-get -qqq --yes install
+echo "Installing global Python packages"
+pip install -r "$DOTFILES"/requirements.txt
 
 echo "Deleting exisiting dot configurations"
 rm -f ~/.vimrc
@@ -46,7 +43,7 @@ mkdir -p ~/.config/terminator
 ln -sf "$DOTFILES"/terminator_config ~/.config/terminator/config
 
 echo "Creating src directory"
-mkdir ~/src
+mkdir "$HOME"/src
 
 echo "Installing Vim plugins"
 vim +PlugInstall +qall

@@ -1,0 +1,12 @@
+vim-gtk
+terminator
+build-essential
+tmux
+ack-grep
+python-dev
+python-pip
+pyflakes
+ipcalc
+gdebi
+htop
+preload
