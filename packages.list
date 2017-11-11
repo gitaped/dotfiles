@@ -10,3 +10,9 @@ ipcalc
 gdebi
 htop
 preload
+network-manager-openvpn-gnome
+net-tools
+nmap
+locate
+tcpdump
+traceroute
