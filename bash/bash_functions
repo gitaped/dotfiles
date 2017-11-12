@@ -1,3 +1,5 @@
+# vim: set ft=sh:
+
 # Generic extraction tool
 extract() {
 	if [ -z "$1" ] || [ "$#" -ne 1 ]; then
@@ -93,7 +95,3 @@ rme(){
 	ls | grep -v "$1" | xargs rm >/dev/null 2>&1
 }
 
-# Vim Notetaking
-note(){
-  vim note:"$1"
-}

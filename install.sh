@@ -1,15 +1,30 @@
 #!/bin/bash
 
 set -e
+echo "Creating dotfiles..."
 
+REPO="https://github.com/apeduru/dotfiles.git"
 DOTFILES="$HOME/dotfiles"
 GIT="$DOTFILES/git"
 BASH="$DOTFILES/bash"
 
+echo "Creating directories"
+mkdir "$HOME"/src "$HOME"/notes
+
 echo "Updating Packages Database"
-sudo apt-get -qqq update
+apt-get -qqq update
+
+echo "Verifying git is installed"
+if [ -z "$(which git)" ]; then
+  apt install git
+fi
+
+echo "Cloning dotfiles repo"
+git clone --quiet "$REPO" "$DOTFILES"
+
 echo "Installing essential Debian packages"
-cat "$DOTFILES"/packages.list | xargs sudo apt-get -qqq --yes install
+cat "$DOTFILES"/packages.list | xargs apt-get -qqq --yes install
+
 echo "Installing global Python packages"
 pip install -r "$DOTFILES"/requirements.txt
 
@@ -42,11 +57,9 @@ ln -sf "$DOTFILES"/ackrc ~/.ackrc
 mkdir -p ~/.config/terminator
 ln -sf "$DOTFILES"/terminator_config ~/.config/terminator/config
 
-echo "Creating src directory"
-mkdir "$HOME"/src
-
 echo "Installing Vim plugins"
 vim +PlugInstall +qall
 
-echo "Success!!!"
-echo "dotfiles...done"
+echo "Success!!!\n...done"
+
+exit 0

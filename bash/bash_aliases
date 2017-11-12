@@ -1,3 +1,5 @@
+# vim: set ft=sh:
+
 # Git
 alias gbr='git branch'
 alias gbv='git branch -avv'
@@ -35,4 +37,9 @@ alias gri='grep -Hinr --exclude-dir=".git" --color=always'
 # Lines of code in current directory
 alias lines='find . | wc -l'
 
-# use unalias 'alias_name' if stuck
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ltr='ls -ltr'
+

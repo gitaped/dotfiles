@@ -121,6 +121,9 @@ set statusline+=%{&fileformat}]              " file format
 set statusline+=%=                           " right align
 set statusline+=%-4.(%l,%c%V%)\ %<%P         " offset
 
+"File
+set modeline
+
 "---------
 "Mappings|
 "---------
