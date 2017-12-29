@@ -78,20 +78,3 @@ colours() {
 	done
 	printf "\n"
 }
-
-# Find file by extension
-ffe(){
-	if [ -z "$1" ];then
-		echo "Usage:"
-		echo " ffe <file-extension>"
-		echo
-	else
-		find . -type f -name \*."$1"
-	fi
-}
-
-# Remove all except 1 file
-rme(){
-	ls | grep -v "$1" | xargs rm >/dev/null 2>&1
-}
-

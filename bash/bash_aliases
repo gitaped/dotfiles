@@ -23,6 +23,7 @@ alias box='cd ~/Dropbox && l'
 alias src='cd ~/src && l'
 alias tmp='cd /tmp && l'
 alias down='cd ~/Downloads && l'
+alias notes='cd ~/notes && l'
 
 # Letters
 alias c='clear'
@@ -33,9 +34,6 @@ alias tmux='tmux -2'
 
 # Grep
 alias gri='grep -Hinr --exclude-dir=".git" --color=always'
-
-# Lines of code in current directory
-alias lines='find . | wc -l'
 
 # some more ls aliases
 alias ll='ls -alF'

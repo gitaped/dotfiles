@@ -1,32 +1,25 @@
 #!/bin/bash
 
-set -e
+set -xe
+
 echo "Creating dotfiles..."
 
-REPO="https://github.com/apeduru/dotfiles.git"
-DOTFILES="$HOME/dotfiles"
+DOTFILES="~/dotfiles"
 GIT="$DOTFILES/git"
 BASH="$DOTFILES/bash"
 
+echo $DOTFILES
 echo "Creating directories"
-mkdir "$HOME"/src "$HOME"/notes
+mkdir -p ~/src ~/notes
 
 echo "Updating Packages Database"
 apt-get -qqq update
-
-echo "Verifying git is installed"
-if [ -z "$(which git)" ]; then
-  apt install git
-fi
-
-echo "Cloning dotfiles repo"
-git clone --quiet "$REPO" "$DOTFILES"
 
 echo "Installing essential Debian packages"
 cat "$DOTFILES"/packages.list | xargs apt-get -qqq --yes install
 
 echo "Installing global Python packages"
-pip install -r "$DOTFILES"/requirements.txt
+sudo pip install -r "$DOTFILES"/requirements.txt
 
 echo "Deleting exisiting dot configurations"
 rm -f ~/.vimrc
@@ -51,8 +44,6 @@ source ~/.bashrc
 source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash_profile
-
-ln -sf "$DOTFILES"/ackrc ~/.ackrc
 
 mkdir -p ~/.config/terminator
 ln -sf "$DOTFILES"/terminator_config ~/.config/terminator/config

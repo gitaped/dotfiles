@@ -107,9 +107,6 @@ set shortmess+=l " Use 999L, 888C instead of 999 lines, 888 characters
 set shortmess+=f " Use (3 of 5) instead of (file 3 of 5)
 set shortmess+=c " Don't give ins-completion-menu messages
 
-"Grep
-set grepprg=ack  "Use Ack as search tool
-
 "Statusline
 set statusline=                              " clear the statusline
 set statusline+=%-3.3n\                      " buffer number
@@ -145,7 +142,7 @@ map <F3> :buffers<CR>:buffer<Space>
 "General search
 map <C-f> :Ack!<space>
 "Search word under cursor
-map <C-d> :Ack! <C-r><C-w><space>
+map <C-d> :Ack! <C-r><C-w>
 
 "Use semicolon in normal mode without shifting
 nnoremap ; :
@@ -212,8 +209,9 @@ map <S-k> <Nop>
 "Add space without entering and exiting insert mode
 nmap <leader><space> i<space><ESC>
 
-"Yank/Delete entire buffer
+"Yank entire buffer
 nmap yY :%y<c-r>=v:register<cr><cr>
+"Delete entire buffer
 nmap dD :%d<c-r>=v:register<cr><cr>
 
 "---------------
@@ -230,15 +228,9 @@ filetype indent on
 call plug#begin('~/dotfiles/vim/plugged')
 
 "Autocompletion
-" Plug 'lifepillar/vim-mucomplete'
 Plug 'maralla/completor.vim'
 
 "Language
-" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-" Plug 'fs111/pydoc.vim', { 'for': 'python' }
-" Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-" Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-" Plug 'justmao945/vim-clang', { 'for': 'c' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
@@ -274,7 +266,7 @@ call plug#end()
 "----
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
-let g:ack_default_options = ' -s -H --nocolor --nogroup --ignore-case'
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 "----------
 "GitGutter|
@@ -292,12 +284,11 @@ let g:indexed_search_dont_move = 1
 "----------
 "Syntastic|
 "----------
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol =  "✖"
 let g:syntastic_warning_symbol = "!"
-let g:syntastic_auto_jump = 0
+let g:syntastic_auto_jump = 3
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
@@ -312,13 +303,13 @@ highlight ExtraWhitespace ctermbg=blue
 "Rust|
 "-----
 let g:rust_recommended_style = 1
-let g:rustfmt_autosave=1
 let g:rust_fold=1
 
 "-----------
 " Completor|
 "-----------
 let g:completor_racer_binary = '~/.cargo/bin/racer'
+let g:completor_python_binary = '/usr/bin/python3'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"

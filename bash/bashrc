@@ -64,7 +64,6 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 
 if [ "$(tput colors)" -ge 8 ]; then
 	PS1='\[\033[38;5;038m\]\w\[\033[38;5;208m\]$(__git_ps1)\[\033[38;5;010m\]\n$\[\033[00m\] '
-	# PS1='\[\033[38;5;208m\]\u@\h\[\033[38;5;038m\] \w\[\033[38;5;226m\]$(__git_ps1)\[\033[38;5;010m\]\n$\[\033[00m\] '
 else
 	PS1='\u@\h:\w\$ '
 fi
@@ -128,4 +127,5 @@ bind Space:magic-space
 if [ -d ~/.cargo/bin/ ]; then
   export PATH=$PATH:~/.cargo/bin/
   export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+  export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib
 fi
