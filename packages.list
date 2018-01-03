@@ -8,7 +8,6 @@ pyflakes
 ipcalc
 gdebi
 htop
-preload
 network-manager-openvpn-gnome
 net-tools
 nmap
@@ -19,3 +18,4 @@ git
 curl
 cmake
 pkg-config
+dnsutils
