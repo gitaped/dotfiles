@@ -19,3 +19,5 @@ curl
 cmake
 pkg-config
 dnsutils
+strace
+binutils

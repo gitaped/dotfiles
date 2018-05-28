@@ -174,9 +174,6 @@ nmap dH d^
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprev<CR>
 
-"Hit space to turn off highlighted search results
-nnoremap <silent> <Space> :nohlsearch<CR><ESC>
-
 " Enter does nothing in normal mode
 nmap <silent> <CR> <nop>
 
@@ -235,8 +232,8 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
-"Syntax checking
-Plug 'scrooloose/syntastic'
+"Asynchronous Lint Engine
+Plug 'w0rp/ale'
 
 "Commenting
 Plug 'tpope/vim-commentary'
@@ -258,7 +255,7 @@ Plug 'jiangmiao/auto-pairs'
 
 "Ack wrapper
 Plug 'mileszs/ack.vim'
-
+Plug 'solarnz/thrift.vim'
 call plug#end()
 
 "----
@@ -281,18 +278,12 @@ let g:gitgutter_map_keys = 1
 "---------------
 let g:indexed_search_dont_move = 1
 
-"----------
-"Syntastic|
-"----------
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol =  "✖"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_auto_jump = 3
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_rust_checkers = ['cargo']
+""----
+""Ale|
+""----
+let g:ale_sign_column_always = 1
+let g:ale_sign_error="✖"
+let g:ale_sign_warning="!"
 
 "-----------
 "Whitespace|
