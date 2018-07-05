@@ -231,6 +231,9 @@ Plug 'maralla/completor.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'}
+Plug 'solarnz/thrift.vim', {'for': 'thrift'}
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 
 "Asynchronous Lint Engine
 Plug 'w0rp/ale'
@@ -240,9 +243,6 @@ Plug 'tpope/vim-commentary'
 
 "Display git diff in gutter
 Plug 'airblade/vim-gitgutter'
-
-"No-BS Python code folding
-Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 
 "Show number of returned searches
 Plug 'henrik/vim-indexed-search'
@@ -255,7 +255,7 @@ Plug 'jiangmiao/auto-pairs'
 
 "Ack wrapper
 Plug 'mileszs/ack.vim'
-Plug 'solarnz/thrift.vim'
+
 call plug#end()
 
 "----
