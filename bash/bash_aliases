@@ -7,7 +7,7 @@ alias gch='git checkout'
 alias gdf='git diff'
 alias gdm='git diff master'
 alias gfa='git fetch --all'
-alias glg='git log --graph --oneline'
+alias glg='git log --graph --all --oneline --decorate'
 alias grv='git remote -v'
 alias gst='git status'
 
