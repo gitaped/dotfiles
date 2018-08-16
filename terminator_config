@@ -13,6 +13,7 @@
   go_left = <Primary>h
   go_right = <Primary>l
   go_up = <Primary>k
+  help = None
 [layouts]
   [[default]]
     [[[child1]]]
