@@ -1,21 +1,25 @@
 #!/bin/bash
 
+sudo -v || exit
+
 set -xe
 
 DOTFILES=~/dotfiles
 GIT=$DOTFILES/git
 BASH=$DOTFILES/bash
 
-mkdir -p ~/src ~/notes
+# TODO: prompt for installing packages
+# pip install -r $DOTFILES/requirements.txt
+# curl https://sh.rustup.rs -sSf | bash -s -- -y
+# cat $DOTFILES/cargo.list | xargs cargo install
 
-apt-get update
+# apt update
+# cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+# mkdir -p ~/.config/terminator
+# ln -sf $DOTFILES/terminator_config ~/.config/terminator/config
 
-cat $DOTFILES/packages.list | xargs apt-get --yes install
 
-pip install -r $DOTFILES/requirements.txt
-
-curl https://sh.rustup.rs -sSf | bash -s -- -y
-cat $DOTFILES/cargo.list | xargs cargo install
+mkdir -p ~/src
 
 rm -f ~/.vimrc
 rm -rf ~/.vim
@@ -38,9 +42,6 @@ source ~/.bashrc
 source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash_profile
-
-mkdir -p ~/.config/terminator
-ln -sf $DOTFILES/terminator_config ~/.config/terminator/config
 
 vim +PlugInstall +qall
 
