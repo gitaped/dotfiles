@@ -234,6 +234,7 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'}
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 
 "Asynchronous Lint Engine
 Plug 'w0rp/ale'
