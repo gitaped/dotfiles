@@ -69,3 +69,14 @@ colours() {
 	done
 	printf "\n"
 }
+
+gnb () {
+  if [ -n "$1" ]; then
+    title="$1"
+  else
+    title="untitled"
+  fi
+  branch="wip/$(date +%Y-%m-%d)/${1:-$title-$(date +%H%M)}"
+  upstream="${2:-origin/master}"
+  git checkout --track -b $branch $upstream
+}
