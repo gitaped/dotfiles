@@ -23,7 +23,6 @@ mkdir -p ~/src
 
 rm -f ~/.vimrc
 rm -rf ~/.vim
-rm -f ~/.bashrc
 rm -f ~/.tmux.conf
 
 ln -sf $DOTFILES/vimrc ~/.vimrc
@@ -33,15 +32,6 @@ ln -sf $DOTFILES/tmux.conf ~/.tmux.conf
 ln -sf $GIT/gitconfig ~/.gitconfig
 cp $GIT/git-prompt.sh ~/.git-prompt.sh
 source ~/.git-prompt.sh
-
-ln -sf $BASH/bash_aliases ~/.bash_aliases
-ln -sf $BASH/bash_profile ~/.bash_profile
-ln -sf $BASH/bash_functions ~/.bash_functions
-ln -sf $BASH/bashrc ~/.bashrc
-source ~/.bashrc
-source ~/.bash_aliases
-source ~/.bash_functions
-source ~/.bash_profile
 
 vim +PlugInstall +qall
 
