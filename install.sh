@@ -46,10 +46,9 @@ ln -sf $DOTFILES/ripgreprc ~/.config/ripgrep/ripgreprc
 
 ln -sf $GIT/gitconfig ~/.gitconfig
 
-mkdir -p ~/.config/fish/functions
+mkdir -p ~/.config/fish/
 ln -sf $FISH/config.fish ~/.config/fish/config.fish
 ln -sf $FISH/work.fish ~/.config/fish/work.fish
-ln -sf $FISH/functions/* ~/.config/fish/functions
 source ~/.config/fish/config.fish
 
 # Set local git config for the dotfiles repo

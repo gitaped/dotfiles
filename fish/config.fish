@@ -1,6 +1,7 @@
 set -U EDITOR vim
 
 set -x -U DOTFILES ~/dotfiles
+set -x -U FISH ~/dotfiles/fish
 
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
@@ -57,12 +58,16 @@ function fish_prompt
     echo -e $normal'$ '
 end
 
-function srcfish
-    source ~/.config/fish/config.fish
+function ll
+    ls -lh $argv
 end
 
 function dot
-    cd ~/dotfiles; and ls
+    cd $DOTFILES; and ls
+end
+
+function down
+    cd ~/Downloads; and ls
 end
 
 function gdf
@@ -76,4 +81,23 @@ end
 function gst
     git status
 end
+
+function ...
+    cd ../../
+end
+
+function ....
+    cd ../../../
+end
+
+function .....
+    cd ../../../../
+end
+
+function srcfish -d "Source fish configuration"
+    ln -sf $FISH/config.fish ~/.config/fish/config.fish
+    ln -sf $FISH/work.fish ~/.config/fish/work.fish
+    source ~/.config/fish/config.fish
+end
+
 
