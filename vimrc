@@ -242,7 +242,10 @@ Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
-
+Plug 'fatih/vim-go', { 'for': 'go'  }
+Plug 'hashivim/vim-terraform', {'for': 'terraform'}
+Plug 'google/vim-jsonnet', {'for': 'jsonnet'}
+Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 
 "Asynchronous Lint Engine
 Plug 'w0rp/ale'
@@ -313,3 +316,8 @@ let g:completor_python_binary = '/usr/bin/python3'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+
+"----------
+"Terraform|
+"----------
+let g:terraform_fmt_on_save=1"
