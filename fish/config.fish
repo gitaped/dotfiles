@@ -5,7 +5,7 @@ function srcfish
 end
 
 function dot
-    cd ~/dotfiles && ll
+    cd ~/dotfiles; and ls
 end
 
 function gdf
