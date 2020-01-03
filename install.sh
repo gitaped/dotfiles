@@ -4,6 +4,8 @@ sudo -v || exit
 
 set -xe
 
+# TODO: try using rcm https://github.com/thoughtbot/rcm
+
 DOTFILES=~/dotfiles
 GIT=$DOTFILES/git
 FISH=$DOTFILES/fish
@@ -31,7 +33,7 @@ mkdir -p ~/go
 rm -f ~/.vimrc
 rm -rf ~/.vim
 rm -f ~/.tmux.conf
-rm -rf ~/.config/fish
+rm -rf ~/.config/fish/*
 
 ln -sf $DOTFILES/vimrc ~/.vimrc
 ln -sf $DOTFILES/vim ~/.vim
