@@ -16,16 +16,18 @@ FISH=$DOTFILES/fish
 # cat $DOTFILES/cargo.list | xargs cargo install
 
 if [ "$(uname)" == "Darwin"  ]; then
+  if  [ ! -e $(which brew) ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
   brew update
+  brew cask install iterm2
   cat $DOTFILES/macos.list | xargs brew install
-  # TODO: set iterm configuration
 else
   apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
   mkdir -p ~/.config/terminator
   ln -sf $DOTFILES/terminator_config ~/.config/terminator/config
 fi
-
 
 mkdir -p ~/src
 mkdir -p ~/go
