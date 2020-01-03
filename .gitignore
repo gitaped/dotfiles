@@ -4,3 +4,4 @@ vim/__pycache__/
 *.pyc
 vim/.netrwhist
 git/gitconfig
+fish/work.fish
