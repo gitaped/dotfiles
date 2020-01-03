@@ -33,7 +33,7 @@ mkdir -p ~/go
 rm -f ~/.vimrc
 rm -rf ~/.vim
 rm -f ~/.tmux.conf
-rm -rf ~/.config/fish/*
+rm -rf ~/.config/fish
 
 ln -sf $DOTFILES/vimrc ~/.vimrc
 ln -sf $DOTFILES/vim ~/.vim
@@ -44,8 +44,11 @@ ln -sf $DOTFILES/ripgreprc ~/.config/ripgrep/ripgreprc
 
 ln -sf $GIT/gitconfig ~/.gitconfig
 
+mkdir -p ~/.config/fish/functions
 ln -sf $FISH/config.fish ~/.config/fish/config.fish
 ln -sf $FISH/work.fish ~/.config/fish/work.fish
+ln -sf $FISH/functions/* ~/.config/fish/functions
+source ~/.config/fish/config.fish
 
 # Set local git config for the dotfiles repo
 git config user.name "Ansley Peduru"
