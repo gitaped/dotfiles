@@ -38,8 +38,7 @@ function fish_prompt
     set -l lblue (set_color 00AAFF)
 
     # set path
-    set _cwd $cyan(prompt_pwd)
-    set -l cwd "$_cwd "
+    set -l cwd $cyan(prompt_pwd)
 
     # if git branch
     if [ (_git_branch_name)  ]
@@ -54,7 +53,7 @@ function fish_prompt
     end
 
     echo -s "$prompt"
-    echo -s "$cwd$git_info"
+    echo -s "$cwd $git_info"
     echo -e $normal'$ '
 end
 
