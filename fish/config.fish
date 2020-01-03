@@ -69,6 +69,10 @@ function down
     cd ~/Downloads; and ls
 end
 
+function src
+    cd ~/src; and ls
+end
+
 function gdf
     git diff $argv
 end
