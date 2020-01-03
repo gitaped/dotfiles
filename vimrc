@@ -47,7 +47,13 @@ set formatoptions+=r "Continue comments by default
 set textwidth=80	        "Wrap lines at column 80
 set showmatch             " Highlight matching paren
 set matchtime=1           " 0.1 seconds to show matching paren
-set clipboard=unnamedplus " Allows vim to interact with system clipboard
+
+" Allows vim to interact with system clipboard
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed
+else
+  set clipboard=unnamedplus
+endif
 
 "Read/Write
 set autowrite " Automatically save file when buffer changes
