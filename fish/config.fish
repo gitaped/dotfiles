@@ -85,6 +85,10 @@ function gst
     git status
 end
 
+function gnb -d "Quickly create a new git branch"
+    git checkout --track -b $argv[1] origin/master
+end
+
 function ...
     cd ../../
 end
