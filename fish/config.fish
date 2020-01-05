@@ -62,15 +62,15 @@ function ll
 end
 
 function dot
-    cd $DOTFILES; and ls
+    clear; cd $DOTFILES; ls
 end
 
 function down
-    cd ~/Downloads; and ls
+    clear; cd ~/Downloads; ls
 end
 
 function src
-    cd ~/src; and ls
+    clear; cd ~/src; ls
 end
 
 function gdf
