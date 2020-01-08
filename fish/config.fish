@@ -61,6 +61,10 @@ function ll
     ls -lh $argv
 end
 
+function l
+    ls -G $argv
+end
+
 function dot
     clear; cd $DOTFILES; ls
 end
