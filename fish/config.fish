@@ -81,10 +81,6 @@ function gdf
     git diff $argv
 end
 
-function gbr
-    git branch
-end
-
 function gst
     git status
 end
