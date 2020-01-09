@@ -93,6 +93,10 @@ function gap -d "List all my git branches"
     git branch --list "ap/*"
 end
 
+function gdlb -d "Delete local branches already mereged to master"
+    git branch --merged master --no-color | grep -v '^[*]*master$' | xargs git branch -d
+end
+
 function ...
     cd ../../
 end
