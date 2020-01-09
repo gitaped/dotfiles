@@ -47,6 +47,7 @@ ln -sf $DOTFILES/ripgreprc ~/.config/ripgrep/ripgreprc
 ln -sf $GIT/gitconfig ~/.gitconfig
 
 mkdir -p ~/.config/fish/
+touch $FISH/work.fish
 ln -sf $FISH/config.fish ~/.config/fish/config.fish
 ln -sf $FISH/work.fish ~/.config/fish/work.fish
 source ~/.config/fish/config.fish
