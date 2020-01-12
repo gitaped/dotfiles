@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xe
+set -e
 
 DOTFILES=~/dotfiles
 
@@ -8,6 +8,10 @@ DOTFILES=~/dotfiles
 # pip install -r $DOTFILES/requirements.txt
 # curl https://sh.rustup.rs -sSf | bash -s -- -y
 # cat $DOTFILES/cargo.list | xargs cargo install
+
+# Set local git config for the dotfiles repo
+git config user.name "Ansley Peduru"
+git config user.email "ansleypeduru96@gmail.com"
 
 if [ ! -d $DOTFILES ]; then
     git clone git@github.com:apeduru/dotfiles.git $DOTFILES
@@ -27,9 +31,5 @@ else
   apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 fi
-
-# Set local git config for the dotfiles repo
-git config user.name "Ansley Peduru"
-git config user.email "ansleypeduru96@gmail.com"
 
 exit 0

@@ -1,3 +1,3 @@
 # dotfiles
 
-curl -L https://raw.githubusercontent.com/apeduru/dotfiles/master/install.sh | bash
+`curl -Ls https://raw.githubusercontent.com/apeduru/dotfiles/master/install.sh | bash`
