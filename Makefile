@@ -5,5 +5,5 @@ down:
 	rcdn -d ~/dotfiles -v
 
 install:
-	bash install.sh
+	bash install
 
