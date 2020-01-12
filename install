@@ -9,13 +9,15 @@ DOTFILES=~/dotfiles
 # curl https://sh.rustup.rs -sSf | bash -s -- -y
 # cat $DOTFILES/cargo.list | xargs cargo install
 
-# Set local git config for the dotfiles repo
-git config user.name "Ansley Peduru"
-git config user.email "ansleypeduru96@gmail.com"
-
+echo "Cloning dotfiles repo"
 if [ ! -d $DOTFILES ]; then
     git clone git@github.com:apeduru/dotfiles.git $DOTFILES
 fi
+
+cd $DOTFILES
+echo "Setting local git config for the dotfiles repo"
+git config user.name "Ansley Peduru"
+git config user.email "ansleypeduru96@gmail.com"
 
 if [ "$(uname)" == "Darwin"  ]; then
   if  [ ! -e $(which brew) ]; then
