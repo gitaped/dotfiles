@@ -3,14 +3,15 @@
 set -e
 
 DOTFILES=~/dotfiles
+echo "Installing $DOTFILES"
 
 # TODO: prompt for installing packages
 # pip install -r $DOTFILES/requirements.txt
 # curl https://sh.rustup.rs -sSf | bash -s -- -y
 # cat $DOTFILES/cargo.list | xargs cargo install
 
-echo "Cloning dotfiles repo"
 if [ ! -d $DOTFILES ]; then
+    echo "Cloning dotfiles repo"
     git clone git@github.com:apeduru/dotfiles.git $DOTFILES
 fi
 
@@ -29,5 +30,7 @@ else
   apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 fi
+
+rcup -d $DOTFILES -v
 
 exit 0
