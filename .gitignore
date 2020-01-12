@@ -7,5 +7,4 @@ vim/colors/badwolf.vim
 vim/plugged
 gitconfig
 config/fish/work.fish
-fish/work.fish
 Brewfile.lock.json
