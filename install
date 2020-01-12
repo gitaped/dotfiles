@@ -24,9 +24,7 @@ if [ "$(uname)" == "Darwin"  ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   brew update
-  brew cask install iterm2
-  brew tap thoughtbot/formulae
-  cat $DOTFILES/packages/macos.list | xargs brew install
+  brew bundle
 else
   apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
