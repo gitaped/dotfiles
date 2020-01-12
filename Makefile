@@ -1,3 +1,6 @@
+ls:
+	lsrc -d ~/dotfiles
+
 up:
 	rcup -d ~/dotfiles -v
 
