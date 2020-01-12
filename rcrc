@@ -1,1 +1,1 @@
-EXCLUDES="Makefile README.md iterm bash fish packages install.sh git"
+EXCLUDES="Makefile README.md iterm bash packages install.sh git"
