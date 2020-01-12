@@ -237,8 +237,6 @@ Plug 'maralla/completor.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'}
-Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
