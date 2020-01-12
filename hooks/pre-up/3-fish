@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ROOT=$(git rev-parse --show-toplevel)
+
+echo "Creating work.fish"
+touch $ROOT/config/work.fish
+
+exit 0

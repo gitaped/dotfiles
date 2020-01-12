@@ -1,6 +1,9 @@
 #!/bin/bash
 
-curl -fLo ~/dotfiles/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -fLo ~/dotfiles/vim/colors/badwolf.vim --create-dirs https://bitbucket.org/sjl/badwolf/raw/tip/colors/badwolf.vim
+echo "Downloading vim-plug config file"
+curl --silent -fLo ~/dotfiles/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "Downloading badwold colorscheme"
+curl --silent -fLo ~/dotfiles/vim/colors/badwolf.vim --create-dirs https://bitbucket.org/sjl/badwolf/raw/tip/colors/badwolf.vim
 
 exit 0
