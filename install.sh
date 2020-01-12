@@ -17,8 +17,6 @@ if [ ! -d $DOTFILES ]; then
     git clone git@github.com:apeduru/dotfiles.git $DOTFILES
 fi
 
-exit 1
-
 if [ "$(uname)" == "Darwin"  ]; then
   if  [ ! -e $(which brew) ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
