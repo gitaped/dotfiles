@@ -3,5 +3,6 @@ vim/__pycache__/
 *.swp
 *.pyc
 vim/.netrwhist
-git/gitconfig
+gitconfig
+config/fish/work.fish
 fish/work.fish
