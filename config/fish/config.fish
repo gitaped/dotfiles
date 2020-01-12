@@ -1,7 +1,6 @@
 set -U EDITOR vim
 
 set -x -U DOTFILES ~/dotfiles
-set -x -U FISH ~/dotfiles/fish
 
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
@@ -110,8 +109,6 @@ function .....
 end
 
 function srcfish -d "Source fish configuration"
-    ln -sf $FISH/config.fish ~/.config/fish/config.fish
-    ln -sf $FISH/work.fish ~/.config/fish/work.fish
     source ~/.config/fish/config.fish
 end
 
