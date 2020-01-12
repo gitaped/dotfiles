@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p ~/src
+mkdir -p ~/go
+
+exit 0
