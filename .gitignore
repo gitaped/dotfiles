@@ -3,6 +3,9 @@ vim/__pycache__/
 *.swp
 *.pyc
 vim/.netrwhist
+vim/autoload/plug.vim
+vim/colors/badwolf.vim
+vim/plugged
 gitconfig
 config/fish/work.fish
 fish/work.fish
