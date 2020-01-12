@@ -4,8 +4,6 @@ sudo -v || exit
 
 set -xe
 
-# TODO: try using rcm https://github.com/thoughtbot/rcm
-
 DOTFILES=~/dotfiles
 GIT=$DOTFILES/git
 FISH=$DOTFILES/fish
@@ -21,7 +19,8 @@ if [ "$(uname)" == "Darwin"  ]; then
   fi
   brew update
   brew cask install iterm2
-  cat $DOTFILES/macos.list | xargs brew install
+  brew tap thoughtbot/formulae
+  cat $DOTFILES/packages/macos.list | xargs brew install
 else
   apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install

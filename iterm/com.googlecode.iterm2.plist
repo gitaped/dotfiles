@@ -12,6 +12,10 @@
 	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>D5F16459-FD06-42E4-BC90-10842D282897</string>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>FlashTabBarInFullscreen</key>
@@ -39,6 +43,34 @@ Close</string>
 			<integer>28</integer>
 			<key>Text</key>
 			<string>D5F16459-FD06-42E4-BC90-10842D282897</string>
+		</dict>
+		<key>0x68-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>18</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x6a-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>21</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x6b-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>20</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x6c-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>19</integer>
+			<key>Text</key>
+			<string></string>
 		</dict>
 		<key>0x6f-0x100000</key>
 		<dict>
@@ -152,7 +184,7 @@ Close</string>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles</string>
+	<string>~/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -198,6 +230,12 @@ Close</string>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>155 93 570 452 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>176 70 570 452 0 0 1440 900 </string>
+	<key>NeverWarnAboutShortLivedSessions_D5F16459-FD06-42E4-BC90-10842D282897</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_D5F16459-FD06-42E4-BC90-10842D282897_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -363,7 +401,7 @@ Close</string>
 			<key>Background Image Location</key>
 			<string></string>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -1521,6 +1559,14 @@ Close</string>
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>secret-env</string>
+		<string>secret-senv</string>
+		<string>secret_</string>
+		<string>daytona</string>
+		<string>VAULT_SECRETS_GULP</string>
+	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>599701033.97915494</real>
 	<key>PointerActions</key>
@@ -1557,7 +1603,7 @@ Close</string>
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/ansley.peduru/dotfiles</string>
+	<string>/Users/ansley.peduru/dotfiles/iterm</string>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1568,18 +1614,24 @@ Close</string>
 	<true/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
+	<key>SeparateWindowTitlePerTab</key>
+	<true/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.22349844858156032</real>
 	<key>TabsHaveCloseButton</key>
 	<true/>
 	<key>UseBorder</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.7</string>
 </dict>
