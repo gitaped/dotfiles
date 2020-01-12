@@ -108,8 +108,3 @@ function .....
     cd ../../../../
 end
 
-function srcfish -d "Source fish configuration"
-    source ~/.config/fish/config.fish
-end
-
-
