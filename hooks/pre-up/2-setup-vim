@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=~/dotfiles
+DOTFILES=$(git rev-parse --show-toplevel)
 
 if [ ! -e $DOTFILES/vim/autoload/plug.vim ]; then
     echo "Downloading vim-plug config file"
