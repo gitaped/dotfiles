@@ -26,11 +26,14 @@ if [ "$(uname)" == "Darwin"  ]; then
   fi
   brew update
   brew bundle
+
+  rcup -d $DOTFILES -v
 else
   apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+
+  rcup -d $DOTFILES -t linux -v
 fi
 
-rcup -d $DOTFILES -v
 
 exit 0
