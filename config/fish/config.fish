@@ -2,6 +2,21 @@ set -U EDITOR vim
 
 set -x -U DOTFILES ~/dotfiles
 
+function select -d "Read the elements of an array (1-indexed)"
+    read --local --array --null arr
+    echo $arr[$argv]
+end
+
+# shortcuts for colors
+set -g cyan (set_color cyan)
+set -g red (set_color red)
+set -g kubeblue (set_color 326CE5)
+set -g orange (set_color FFA500)
+set -g green (set_color 008000)
+set -g normal (set_color normal)
+set -g grey (set_color 878787)
+set -g lblue (set_color 00AAFF)
+
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
 end
@@ -25,16 +40,6 @@ function fish_prompt
     if not set -q __fish_prompt_hostname
         set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
     end
-
-    # shortcuts for colors
-    set -l cyan (set_color cyan)
-    set -l red (set_color red)
-    set -l kubeblue (set_color 326CE5)
-    set -l orange (set_color FFA500)
-    set -l green (set_color 008000)
-    set -l normal (set_color normal)
-    set -l grey (set_color 878787)
-    set -l lblue (set_color 00AAFF)
 
     # set path
     set -l cwd $cyan(prompt_pwd)
