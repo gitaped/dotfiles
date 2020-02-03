@@ -51,7 +51,10 @@ function fish_prompt
         end
     end
 
-    echo -s "$prompt"
+    if not functions --query "$__set_prompt"
+        __set_prompt
+    end
+
     echo -s "$cwd $git_info"
     echo -e $normal'$ '
 end
