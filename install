@@ -35,5 +35,7 @@ else
   rcup -d $DOTFILES -t linux -v
 fi
 
+# TODO: gitconfig setup
+
 
 exit 0
