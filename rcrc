@@ -1,1 +1,1 @@
-EXCLUDES="Makefile Brewfile Brewfile.lock.json README.md iterm bash packages install vim/plugged vim/colors"
+EXCLUDES="Makefile Brewfile Brewfile.lock.json README.md iterm bash packages install vim/plugged"
