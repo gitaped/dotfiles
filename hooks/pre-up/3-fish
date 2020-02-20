@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ROOT=$(git rev-parse --show-toplevel)
+DOTFILES=$(git rev-parse --show-toplevel)
 
-if [ ! -e $ROOT/config/fish/work.fish ]; then
+if [ ! -e $DOTFILES/config/fish/work.fish ]; then
     echo "Creating work.fish"
-    touch $ROOT/config/fish/work.fish
+    touch $DOTFILES/config/fish/work.fish
 fi
 
 exit 0

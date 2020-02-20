@@ -1,8 +1,9 @@
 #!/bin/bash
 
-ROOT=$(git rev-parse --show-toplevel)
-SOURCE="$ROOT/rcrc"
+DOTFILES=$(git rev-parse --show-toplevel)
+SOURCE="$DOTFILES/rcrc"
 DESTINATION="$HOME/.rcrc"
+
 if [ ! -f "$DESTINATION" ] && [ -f "$SOURCE" ]; then
     if command ln -sf "$SOURCE" "$DESTINATION"; then
         echo "Successfully installed the initial rcm configuration file"
