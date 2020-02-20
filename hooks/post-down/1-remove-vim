@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DOTFILES=$(git rev-parse --show-toplevel)
+
+echo "Removing vim/"
+rm -rf $DOTFILES/vim
+
+exit 0
