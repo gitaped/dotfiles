@@ -1,0 +1,9 @@
+#!/bin/bash
+
+WORK_GITCONFIG=$(git rev-parse --show-toplevel)/git/work-gitconfig
+
+echo "Creating work-gitconfig"
+touch $WORK_GITCONFIG
+echo "# vim: set ft=gitconfig:" >> $WORK_GITCONFIG
+
+exit 0

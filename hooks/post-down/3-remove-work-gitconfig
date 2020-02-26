@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DOTFILES=$(git rev-parse --show-toplevel)
+
+if [ ! -e $DOTFILES/gitconfig-work ]; then
+    echo "Deleting work gitconfig"
+    rm -f $DOTFILES/gitconfig-work
+fi
+
+exit 0
