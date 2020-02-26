@@ -5,6 +5,6 @@ vim/.netrwhist
 vim/autoload/plug.vim
 vim/colors/badwolf.vim
 vim/plugged
-gitconfig
 config/fish/work.fish
 Brewfile.lock.json
+gitconfig-work
