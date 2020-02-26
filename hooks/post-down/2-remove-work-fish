@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DOTFILES=$(git rev-parse --show-toplevel)
+
+if [ ! -e $DOTFILES/config/fish/work.fish ]; then
+    echo "Deleting work.fish"
+    rm -f $DOTFILES/config/fish/work.fish
+fi
+
+exit 0
