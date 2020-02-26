@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORK_GITCONFIG=$(git rev-parse --show-toplevel)/git/work-gitconfig
+WORK_GITCONFIG=$(git rev-parse --show-toplevel)/gitconfig-work
 
 echo "Creating work-gitconfig"
 touch $WORK_GITCONFIG
