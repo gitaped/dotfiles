@@ -16,10 +16,6 @@ if [ ! -d $DOTFILES ]; then
 fi
 
 cd $DOTFILES
-echo "Setting local git config for the dotfiles repo"
-git config user.name "Ansley Peduru"
-git config user.email "ansleypeduru96@gmail.com"
-
 if [ "$(uname)" == "Darwin"  ]; then
   if  [ ! -e $(which brew) ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
