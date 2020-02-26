@@ -2,6 +2,8 @@ set -U EDITOR vim
 
 set -x -U DOTFILES ~/dotfiles
 
+set -x -U GPG_TTY (tty)
+
 function select -d "Read the elements of an array (1-indexed)"
     read --local --array --null arr
     echo $arr[$argv]
