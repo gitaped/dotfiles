@@ -6,9 +6,9 @@ DESTINATION="$HOME/.rcrc"
 
 if [ ! -f "$DESTINATION" ] && [ -f "$SOURCE" ]; then
     if command ln -sf "$SOURCE" "$DESTINATION"; then
-        echo "Successfully installed the initial rcm configuration file"
+        echo "[1]: Successfully installed the initial rcm configuration file"
     else
-        echo "Failed installing initial rcm configuration file"
+        echo "[1]: Failed installing initial rcm configuration file"
         exit 1
     fi
 fi

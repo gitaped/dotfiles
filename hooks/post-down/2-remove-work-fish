@@ -2,7 +2,7 @@
 
 DOTFILES=$(git rev-parse --show-toplevel)
 
-echo "Deleting work.fish"
+echo "[2]: Deleting work.fish"
 rm -f $DOTFILES/config/fish/work.fish
 
 exit 0

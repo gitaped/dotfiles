@@ -2,7 +2,7 @@
 
 DOTFILES=$(git rev-parse --show-toplevel)
 
-echo "Removing vim/"
+echo "[1]: Removing vim/"
 rm -rf $DOTFILES/vim
 
 exit 0

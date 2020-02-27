@@ -3,7 +3,7 @@
 DOTFILES=$(git rev-parse --show-toplevel)
 
 if [ ! -e $DOTFILES/config/fish/work.fish ]; then
-    echo "Creating work.fish"
+    echo "[3]: Creating work.fish"
     touch $DOTFILES/config/fish/work.fish
 fi
 

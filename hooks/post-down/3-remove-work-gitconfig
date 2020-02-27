@@ -2,7 +2,7 @@
 
 DOTFILES=$(git rev-parse --show-toplevel)
 
-echo "Deleting work gitconfig"
+echo "[3]: Deleting work gitconfig"
 rm -f $DOTFILES/gitconfig-work
 
 exit 0
