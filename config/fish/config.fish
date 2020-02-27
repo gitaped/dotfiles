@@ -1,6 +1,7 @@
 set -U EDITOR vim
 
 set -x -U DOTFILES ~/dotfiles
+set -x -U WOTFILES ~/wotfiles
 
 set -x -U GPG_TTY (tty)
 
@@ -77,6 +78,11 @@ end
 function dot
     clear; cd $DOTFILES; ls
 end
+
+function wot
+    clear; cd $WOTFILES; ls
+end
+
 
 function down
     clear; cd ~/Downloads; ls
