@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[2]: Creating ~/src and ~/go"
+echo "[1]: Creating ~/src and ~/go"
 mkdir -p ~/src ~/go
 
 exit 0

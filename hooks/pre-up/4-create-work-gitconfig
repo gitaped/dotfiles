@@ -2,8 +2,12 @@
 
 WORK_GITCONFIG=$(git rev-parse --show-toplevel)/gitconfig-work
 
-echo "[4]: Creating work-gitconfig"
-touch $WORK_GITCONFIG
-echo "# vim: set ft=gitconfig:" >> $WORK_GITCONFIG
+if [ ! -e $WORK_GITCONFIG ]; then
+  echo "[4]: Creating gitconfig-work"
+  touch $WORK_GITCONFIG
+  echo "# vim: set ft=gitconfig:" >> $WORK_GITCONFIG
+else
+  echo "[4]: Already existing gitconfig-work"
+fi
 
 exit 0

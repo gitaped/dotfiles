@@ -1,10 +1,12 @@
 #!/bin/bash
 
-DOTFILES=$(git rev-parse --show-toplevel)
+WORK_FISH=$(git rev-parse --show-toplevel)/config/fish/work.fish
 
-if [ ! -e $DOTFILES/config/fish/work.fish ]; then
+if [ ! -e $WORK_FISH ]; then
     echo "[3]: Creating work.fish"
-    touch $DOTFILES/config/fish/work.fish
+    touch $WORK_FISH
+else
+    echo "[3]: Already existing work.fish"
 fi
 
 exit 0

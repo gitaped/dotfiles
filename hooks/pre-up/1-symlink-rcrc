@@ -4,13 +4,11 @@ DOTFILES=$(git rev-parse --show-toplevel)
 SOURCE="$DOTFILES/rcrc"
 DESTINATION="$HOME/.rcrc"
 
-if [ ! -f "$DESTINATION" ] && [ -f "$SOURCE" ]; then
-    if command ln -sf "$SOURCE" "$DESTINATION"; then
-        echo "[1]: Successfully installed the initial rcm configuration file"
-    else
-        echo "[1]: Failed installing initial rcm configuration file"
-        exit 1
-    fi
+if [ ! -L "$DESTINATION" ]; then
+  ln -sf "$SOURCE" "$DESTINATION"
+  echo "[1]: Symlinked the rcm config file"
+else
+  echo "[1]: Already symlinked the rcm configuration file"
 fi
 
 exit 0
