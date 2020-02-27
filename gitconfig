@@ -1,13 +1,13 @@
 # vim: set ft=gitconfig:
 
 [includeIf "gitdir:~/dotfiles/"]
-  path = .gitconfig-personal
+  path = ~/.gitconfig-personal
 
 [includeIf "gitdir:~/src/"]
-  path = .gitconfig-work
+  path = ~/.gitconfig-work
 
 [includeIf "gitdir:~/go/"]
-  path = .gitconfig-work
+  path = ~/.gitconfig-work
 
 [color]
     ui = true
