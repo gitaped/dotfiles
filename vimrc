@@ -228,7 +228,7 @@ nmap dD :%d<c-r>=v:register<cr><cr>
 " :PlugClean		confirms removal of unused plugins
 
 filetype indent on
-call plug#begin('~/dotfiles/vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 "Autocompletion
 Plug 'maralla/completor.vim'
