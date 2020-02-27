@@ -3,11 +3,11 @@ ls:
 
 up:
 ifeq ($(shell uname),Darwin)
-	rcup -d ~/dotfiles -vv
+	rcup -d ~/dotfiles -v
 else
-	rcup -d ~/dotfiles -t linux -vv
+	rcup -d ~/dotfiles -t linux -v
 endif
 
 down:
-	rcdn -d ~/dotfiles -vv
+	rcdn -d ~/dotfiles -v
 
