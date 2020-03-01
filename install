@@ -3,7 +3,8 @@
 set -e
 
 DOTFILES=~/dotfiles
-echo "Installing $DOTFILES"
+WOTFILES=~/wotfiles
+echo "Installing $DOTFILES and $WOTFILES (if applicable)"
 
 # TODO: prompt for installing packages
 # pip install -r $DOTFILES/requirements.txt
@@ -23,12 +24,12 @@ if [ "$(uname)" == "Darwin"  ]; then
   brew update
   brew bundle
 
-  rcup -d $DOTFILES -v
+  rcup -d $DOTFILES -d $WOTFILES -v
 else
   sudo apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 
-  rcup -d $DOTFILES -t linux -v
+  rcup -d $DOTFILES -f $WOTFILES -t linux -v
 fi
 
 exit 0
