@@ -8,5 +8,6 @@ brew "jq"
 brew "ripgrep"
 brew "shfmt"
 brew "gpg"
+brew "htop"
 
 cask "iterm2"
