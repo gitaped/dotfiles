@@ -32,7 +32,7 @@ function fish_prompt
     if not set -q -g __fish_git_functions_defined
         set -g __fish_git_functions_defined
         function _git_branch_name
-            echo (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+            echo (git rev-parse --symbolic-full-name --abbrev-ref HEAD)
         end
         function _is_git_dirty
             echo (git status -s --ignore-submodules=dirty ^/dev/null)
