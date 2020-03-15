@@ -32,7 +32,7 @@ function fish_prompt
     if not set -q -g __fish_git_functions_defined
         set -g __fish_git_functions_defined
         function _git_branch_name
-            echo (git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git rev-parse --symbolic-full-name --abbrev-ref HEAD)
+            echo (git rev-parse --git-dir >/dev/null 2>&1 && git rev-parse --symbolic-full-name --abbrev-ref HEAD)
         end
         function _is_git_dirty
             echo (git status -s --ignore-submodules=dirty ^/dev/null)
