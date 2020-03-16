@@ -240,10 +240,11 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'fatih/vim-go', { 'for': 'go'  }
+Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl']  }
 Plug 'hashivim/vim-terraform', {'for': 'terraform'}
 Plug 'google/vim-jsonnet', {'for': 'jsonnet'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
+Plug 'towolf/vim-helm', {'for': 'helm'}
 
 "Asynchronous Lint Engine
 Plug 'w0rp/ale'
@@ -319,3 +320,5 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
 "Terraform|
 "----------
 let g:terraform_fmt_on_save=1"
+
+au BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
