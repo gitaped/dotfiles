@@ -9,5 +9,6 @@ brew "ripgrep"
 brew "shfmt"
 brew "gpg"
 brew "htop"
+brew "screenfetch"
 
 cask "iterm2"
