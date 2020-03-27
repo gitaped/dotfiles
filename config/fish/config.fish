@@ -124,3 +124,6 @@ function .....
     cd ../../../../
 end
 
+function unset
+  set --erase $argv
+end
