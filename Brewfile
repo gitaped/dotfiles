@@ -10,5 +10,6 @@ brew "shfmt"
 brew "gpg"
 brew "htop"
 brew "screenfetch"
+brew "watch"
 
 cask "iterm2"
