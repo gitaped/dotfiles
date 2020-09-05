@@ -11,5 +11,6 @@ brew "gpg"
 brew "htop"
 brew "screenfetch"
 brew "watch"
+brew "tflint"
 
 cask "iterm2"
