@@ -29,7 +29,7 @@ else
   sudo apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 
-  rcup -d $DOTFILES -f $WOTFILES -t linux -v
+  rcup -d $DOTFILES -d $WOTFILES -t linux -v
 fi
 
 exit 0
