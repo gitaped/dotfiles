@@ -18,6 +18,9 @@
 [includeIf "gitdir:~/journal/"]
   path = ~/.gitconfig-work
 
+[branch]
+    autoSetupRebase = always
+
 [color]
     ui = true
 
