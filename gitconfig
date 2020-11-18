@@ -47,3 +47,6 @@
 	rebase = true
 [merge]
 	ff = false
+
+[alias]
+    empty = commit -m 'Empty commit' --allow-empty
