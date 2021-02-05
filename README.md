@@ -1,6 +1,6 @@
 # dotfiles
 
-Install my dotfiles using this curl
+Install dotfiles using this command
 
 `curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash`
 
