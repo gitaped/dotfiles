@@ -18,7 +18,6 @@ set title	               " Vim decides title of terminal
 set showmode    	       " Show current mode (insert,visual, etc)
 set laststatus=2         " Always display status line, set this back to 2 later
 set completeopt-=preview " Don't show preview window
-set term=screen-256color " Use 256 colours
 set ttyfast              " Fast terminal connection
 set lazyredraw           " Screen will not redraw immediately
 set colorcolumn=80       " Bar at 80 character mark
