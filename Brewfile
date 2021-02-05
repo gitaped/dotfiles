@@ -12,5 +12,6 @@ brew "htop"
 brew "screenfetch"
 brew "watch"
 brew "tflint"
+brew "nvim"
 
 cask "iterm2"
