@@ -6,11 +6,6 @@ DOTFILES=~/dotfiles
 WOTFILES=~/wotfiles
 echo "Installing $DOTFILES and $WOTFILES (if applicable)"
 
-# TODO: prompt for installing packages
-# pip install -r $DOTFILES/requirements.txt
-# curl https://sh.rustup.rs -sSf | bash -s -- -y
-# cat $DOTFILES/cargo.list | xargs cargo install
-
 if [ ! -d $DOTFILES ]; then
     echo "Cloning dotfiles repo"
     git clone git@github.com:apeduru/dotfiles.git $DOTFILES
