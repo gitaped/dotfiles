@@ -13,5 +13,6 @@ brew "screenfetch"
 brew "watch"
 brew "tflint"
 brew "nvim"
+brew "fd"
 
 cask "iterm2"
