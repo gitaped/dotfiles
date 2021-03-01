@@ -88,12 +88,3 @@ function unset
   set --erase $argv
 end
 
-function journal
-    set --local dt (date +"%Y-%m-%d")
-    set --local path $HOME/journal/(date +"%Y")/(date +"%m")
-    set --local entry $path/(date +"%d").md
-    mkdir -p $path
-    touch -c $entry
-    test -s $entry || echo "# $dt" >> $entry
-    vim $entry
-end
