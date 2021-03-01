@@ -3,13 +3,13 @@
 [includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig-personal
 
-[includeIf "gitdir:~/github/"]
+[includeIf "gitdir:~/src/"]
+  path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/src/github.com"]
   path = ~/.gitconfig-personal
 
 [includeIf "gitdir:~/wotfiles/"]
-  path = ~/.gitconfig-work
-
-[includeIf "gitdir:~/src/"]
   path = ~/.gitconfig-work
 
 [includeIf "gitdir:~/go/"]
