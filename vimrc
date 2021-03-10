@@ -172,7 +172,6 @@ nmap yH y^
 "Delete to end of line
 nmap dL d$
 "Delete to start of line
-"nnoremap dH d^<Bar>x
 nmap dH d^
 
 "Switching between buffers
