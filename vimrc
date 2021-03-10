@@ -159,6 +159,11 @@ nnoremap L $
 nmap <leader>o o<Esc>
 nmap <leader>O O<Esc>
 
+"Select to end of line
+nmap vL v$
+"Select to start of line
+nmap vH v^
+
 "Yank to end of line
 nmap yL y$
 "Yank to start of line
