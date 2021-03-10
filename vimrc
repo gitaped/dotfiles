@@ -144,11 +144,6 @@ nnoremap <F1> <nop>
 map <F2> :StripWhitespace<CR>
 map <F3> :buffers<CR>:buffer<Space>
 
-"General search
-map <C-f> :Ack!<space>
-"Search word under cursor
-map <C-d> :Ack! <C-r><C-w>
-
 "Use semicolon in normal mode without shifting
 nnoremap ; :
 
@@ -263,17 +258,7 @@ Plug 'ntpeters/vim-better-whitespace', {'on': 'StripWhitespace' }
 "Autocompletion for quotes, parens, brackets
 Plug 'jiangmiao/auto-pairs'
 
-"Ack wrapper
-Plug 'mileszs/ack.vim'
-
 call plug#end()
-
-"----
-"Ack|
-"----
-let g:ackhighlight = 1
-let g:ack_autoclose = 1
-let g:ackprg = 'rg --vimgrep --no-heading'
 
 "----------
 "GitGutter|
