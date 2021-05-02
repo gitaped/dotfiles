@@ -25,10 +25,16 @@
     pager = delta
 
 [delta]
-    features = line-numbers
+    features = line-numbers decorations
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
     navigate = true
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
 
 [interactive]
     diffFilter = delta --color-only
