@@ -21,6 +21,18 @@
 [branch]
     autoSetupRebase = always
 
+[core]
+    pager = delta
+
+[delta]
+    features = line-numbers
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    navigate = true
+
+[interactive]
+    diffFilter = delta --color-only
+
 [color]
     ui = true
 

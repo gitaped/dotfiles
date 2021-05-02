@@ -14,5 +14,6 @@ brew "watch"
 brew "tflint"
 brew "nvim"
 brew "fd"
+brew "git-delta"
 
 cask "iterm2"
