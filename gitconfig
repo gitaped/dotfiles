@@ -6,7 +6,7 @@
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig-work
 
-[includeIf "gitdir:~/src/github.com"]
+[includeIf "gitdir:~/github"]
   path = ~/.gitconfig-personal
 
 [includeIf "gitdir:~/wotfiles/"]
