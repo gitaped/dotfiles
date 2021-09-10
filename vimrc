@@ -36,6 +36,9 @@ set autoindent                 " Copy indent from current line when starting new
 set nowrap                     " Do not wrap long lines
 set backspace=indent,eol,start " Allow backspace key
 
+autocmd filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd filetype markdown setlocal spell textwidth=0
+
 "Formatting
 set formatoptions-=t "Prevent autowrapping
 set formatoptions+=c "Format Comments
