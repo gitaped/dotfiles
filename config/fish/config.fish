@@ -61,7 +61,7 @@ function gst
 end
 
 function gnb -d "Quickly create a new git branch tracking master"
-    git checkout --track -b "ap/$argv[1]" origin/master
+    git checkout --track -b "ap/$argv[1]/$argv[2]" origin/master
 end
 
 function gap -d "List all my git branches"
