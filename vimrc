@@ -123,7 +123,7 @@ set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
 set statusline+=%{&fileformat}]              " file format
 set statusline+=%=                           " right align
-set statusline+=%-4.(%l,%c%V%)\ %<%P         " offset
+set statusline+=%-4.(%l,%c%V%)\ %<%P         " offset: line number, column number, virtual column number, percentage thru file
 
 "File
 set modeline
