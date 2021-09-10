@@ -8,7 +8,6 @@ set nocompatible    "no Vi compatibility mode
 
 "Line
 set number               " Show line numbers
-set relativenumber       " Show number of lines above and below
 set ruler	               " Show current row and line
 set nostartofline        " Don't always start at the start of a line
 set cursorline  	       " Highlight current line
