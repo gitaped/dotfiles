@@ -12,6 +12,9 @@
 [includeIf "gitdir:~/wotfiles/"]
   path = ~/.gitconfig-work
 
+[includeIf "gitdir:~/go/src/github.com/apeduru"]
+  path = ~/.gitconfig-personal
+
 [includeIf "gitdir:~/go/"]
   path = ~/.gitconfig-work
 
