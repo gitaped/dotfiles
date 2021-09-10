@@ -104,7 +104,7 @@ set scrolloff=20     " Minimum number of lines to keep above and below cursor
 set sidescrolloff=10 " Minimum number of columns to keep to left and right of cursor"
 
 "Spelling
-set spelllang=en_gb   " Use Commonwealth dictionary
+set spelllang=en_us   " Use American English
 set nospell           " Turn off spell checking
 
 "Message
