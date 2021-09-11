@@ -74,3 +74,4 @@
 
 [alias]
     empty = commit -m 'Empty commit' --allow-empty
+    uncommit = reset --soft HEAD~1
