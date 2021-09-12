@@ -3,8 +3,8 @@ function __kube_status
     set -g lblue (set_color 00AAFF)
     set -g grey (set_color 878787)
 
-    set -g __on $grey"on "
-    set -g __in $grey" in "
+    set -g __on $grey" on "
+    set -g __in $grey"in "
 
     set -g __kube_config "$HOME/.kube/config"
 
@@ -22,5 +22,5 @@ function __kube_status
         [ -z $__namespace ]; and set -g __namespace $lblue'default'
     end
 
-    echo -n -s $__on $__context $__in $__namespace
+    echo -n -s $__in $__namespace $__on $__context 
 end
