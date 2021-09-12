@@ -10,11 +10,15 @@ Install dotfiles using this curl
 
 `make up`
 
-Symlink all the dotfiles
+Run pre-up hooks, symlink dotfiles, and run post-up hooks
+
+`make sym`
+
+Symlink dotfiles only
 
 `make down`
 
-Unsymlink all the dotfiles
+Run pre-down hooks, unsymlink dotfiles, and run post-down hooks
 
 `make ls`
 
