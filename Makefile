@@ -10,6 +10,14 @@ else
 	rcup -d ~/dotfiles -d ~/wotfiles -t linux -v
 endif
 
+.PHONY: sym
+sym:
+ifeq ($(shell uname),Darwin)
+	rcup -K -d ~/dotfiles -d ~/wotfiles -v
+else
+	rcup -K -d ~/dotfiles -d ~/wotfiles -t linux -v
+endif
+
 .PHONY: down
 down:
 	rcdn -d ~/dotfiles -d ~/wotfiles -v
