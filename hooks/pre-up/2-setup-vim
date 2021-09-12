@@ -11,7 +11,7 @@ fi
 
 if [ ! -e $DOTFILES/vim/colors/badwolf.vim ]; then
     echo "Downloading badwolf vim colorscheme"
-    curl --silent -fLo $DOTFILES/vim/colors/badwolf.vim --create-dirs https://bitbucket.org/sjl/badwolf/raw/tip/colors/badwolf.vim
+    curl --silent -fLo $DOTFILES/vim/colors/badwolf.vim --create-dirs https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 fi
 
 exit 0
