@@ -24,7 +24,6 @@ function journal
     switch "$argv"
         case ""
         # today
-            touch -c $entry
             test -e $entry || echo "# $dt" >> $entry
             $EDITOR $entry
         case y
