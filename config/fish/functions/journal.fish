@@ -37,9 +37,11 @@ function journal
                 test ! -e $page && continue || cat $page && echo
             end | less
         case commit
-            git -C $JOURNAL_PATH add -A
-            git -C $JOURNAL_PATH commit -m $dt
-            git -C $JOURNAL_PATH push origin HEAD
+            if ! git -C $JOURNAL_PATH diff --quiet
+                git -C $JOURNAL_PATH add -A
+                git -C $JOURNAL_PATH commit -m $dt
+                git -C $JOURNAL_PATH push origin HEAD
+            end
         case \*
             echo "usage: journal [y w s m q commit]"
             return 1
