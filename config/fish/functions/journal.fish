@@ -41,6 +41,9 @@ function journal
                 git -C $JOURNAL_PATH add -A
                 git -C $JOURNAL_PATH commit -m $dt
                 git -C $JOURNAL_PATH push origin HEAD
+            else
+                echo "no entries to commit"
+                return 1
             end
         case \*
             echo "usage: journal [y w s m q commit]"
