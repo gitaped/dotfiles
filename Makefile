@@ -1,24 +1,27 @@
+DOTFILES=$(HOME)/dotfiles
+WOTFILES=$(HOME)/wotfiles
+
 .PHONY: ls
 ls:
-	lsrc -d ~/dotfiles -d ~/wotfiles
+	lsrc -d $(DOTFILES) -d $(WOTFILES)
 
 .PHONY: up
 up:
 ifeq ($(shell uname),Darwin)
-	rcup -d ~/dotfiles -d ~/wotfiles -v
+	rcup -d $(DOTFILES) -d $(WOTFILES) -v
 else
-	rcup -d ~/dotfiles -d ~/wotfiles -t linux -v
+	rcup -d $(DOTFILES) -d $(WOTFILES) -t linux -v
 endif
 
 .PHONY: sym
 sym:
 ifeq ($(shell uname),Darwin)
-	rcup -K -d ~/dotfiles -d ~/wotfiles -v
+	rcup -K -d $(DOTFILES) -d $(WOTFILES) -v
 else
-	rcup -K -d ~/dotfiles -d ~/wotfiles -t linux -v
+	rcup -K -d $(DOTFILES) -d $(WOTFILES) -t linux -v
 endif
 
 .PHONY: down
 down:
-	rcdn -d ~/dotfiles -d ~/wotfiles -v
+	rcdn -d $(DOTFILES) -d $(WOTFILES) -v
 
