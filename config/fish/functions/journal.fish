@@ -37,7 +37,7 @@ function journal
                 test ! -e $page && continue || cat $page && echo
             end | less
         case commit
-            if ! test -z (git -C $JOURNAL_PATH status --porcelain)
+            if test (git -C $JOURNAL_PATH status --porcelain | wc -l) -gt 0
                 git -C $JOURNAL_PATH add -A
                 git -C $JOURNAL_PATH commit -m $dt
                 git -C $JOURNAL_PATH push origin HEAD
