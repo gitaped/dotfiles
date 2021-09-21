@@ -5,11 +5,6 @@ set -x -U WOTFILES ~/wotfiles
 
 set -x -U GPG_TTY (tty)
 
-function select -d "Read the elements of an array (1-indexed)"
-    read --local --array --null arr
-    echo $arr[$argv]
-end
-
 # shortcuts for colors
 set -g cyan (set_color cyan)
 set -g red (set_color red)
@@ -22,25 +17,6 @@ set -g lblue (set_color 00AAFF)
 
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
-end
-
-function fish_greeting
-end
-
-function ll
-    ls -lh $argv
-end
-
-function l
-    ls -G $argv
-end
-
-function gdf
-    git diff $argv
-end
-
-function gst
-    git status
 end
 
 function ...
