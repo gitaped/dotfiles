@@ -247,7 +247,7 @@ Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'towolf/vim-helm', {'for': 'helm'}
 
 "Asynchronous Lint Engine
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 "Commenting
 Plug 'tpope/vim-commentary'
