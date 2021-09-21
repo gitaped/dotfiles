@@ -2,5 +2,5 @@ DOTFILES_DIRS="~/dotfiles ~/wotfiles"
 
 SYMLINK_DIRS="vim"
 
-EXCLUDES="Makefile Brewfile Brewfile.lock.json README.md iterm bash packages install vim/plugged gpg"
+EXCLUDES="Makefile Brewfile Brewfile.lock.json README.md iterm packages install vim/plugged gpg"
 
