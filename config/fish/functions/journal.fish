@@ -24,6 +24,7 @@ function journal
     switch "$argv"
         case ""
         # today
+            mkdir -p (dirname $entry)
             test -e $entry || echo "# $dt" >> $entry
             $EDITOR $entry
         case y
