@@ -1,8 +1,0 @@
-autopep8
-pep8 
-jedi 
-flake8
-virtualenv 
-virtualenvwrapper 
-ipython
-gsutil
