@@ -8,18 +8,19 @@ Install dotfiles using this curl
 
 ## Usage
 
-`make up`
-
 Run pre-up hooks, symlink dotfiles, and run post-up hooks
 
-`make sym`
+`make up`
 
 Symlink dotfiles only
 
-`make down`
+`make sym`
 
 Run pre-down hooks, unsymlink dotfiles, and run post-down hooks
 
-`make ls`
+`make down`
 
 List all the symlinks
+
+`make ls`
+
