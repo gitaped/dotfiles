@@ -9,6 +9,7 @@ function journal
     set --local JOURNAL_HELP "usage:
     journal 
     journal [y w s m q]
+    journal search PATTERN
     journal commit
     journal help
     "
@@ -49,12 +50,13 @@ function journal
                     echo "no entries to commit"
                     return 1
                 end
+            case search
+                rg $argv[2] $JOURNAL_PATH
             case \* or help
                 echo $JOURNAL_HELP
                 return 1
         end
     end
-
 
     return 0
 end
