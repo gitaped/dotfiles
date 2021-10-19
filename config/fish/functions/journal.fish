@@ -11,6 +11,13 @@ function journal
         return 1
     end
 
+    set --local JOURNAL_HELP "usage:
+    journal 
+    journal [y w s m q]
+    journal commit
+    journal help
+    "
+
     # Hashmap implementation (not yet avaiable in fish)
     # Mapping ranges to time in days
     set --local range_w 7
@@ -46,8 +53,8 @@ function journal
                 echo "no entries to commit"
                 return 1
             end
-        case \*
-            echo "usage: journal [y w s m q commit]"
+        case \* or help
+            echo $JOURNAL_HELP
             return 1
     end
 
