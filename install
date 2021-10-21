@@ -15,7 +15,7 @@ else
 fi
 
 cd $DOTFILES
-if [ "$(uname)" == "Darwin"  ]; then
+if [ "$(uname -s)" == "Darwin"  ]; then
   if  [ ! -e $(which brew) ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
