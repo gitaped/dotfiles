@@ -1,3 +1,5 @@
+# vim: set ft=ruby:
+
 tap "thoughtbot/formulae"
 brew "rcm"
 
