@@ -6,6 +6,6 @@ function fish_prompt
     end
 
     echo -s $_workspace (__kube_status)
-    echo -s $cyan(prompt_pwd) $normal(__fish_git_prompt)
-    echo -e $normal'$ '
+    echo -s (set_color cyan)(prompt_pwd) (set_color normal)(__fish_git_prompt)
+    echo -e (set_color normal)'$ '
 end
