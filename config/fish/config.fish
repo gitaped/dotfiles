@@ -14,8 +14,6 @@ set -x -U GPG_TTY (tty)
 # grey 878787
 # lblue 00AAFF
 
-set -g fish_prompt_pwd_dir_length 999
-
 set -g __fish_git_prompt_showdirtystate 1
 set -g __fish_git_prompt_showcolorhints 1
 set -g __fish_git_prompt_color_branch FFA500 # orange
