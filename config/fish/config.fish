@@ -3,6 +3,8 @@ set -U EDITOR vim
 set -x -U DOTFILES ~/dotfiles
 set -x -U WOTFILES ~/wotfiles
 
+set -x -U JOURNAL_PATH $HOME/journal
+
 set -x -U GPG_TTY (tty)
 
 # shortcuts for colors

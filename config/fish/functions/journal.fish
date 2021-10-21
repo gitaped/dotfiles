@@ -1,5 +1,3 @@
-set -x -U JOURNAL_PATH $HOME/journal
-
 function journal
     if ! test -d $JOURNAL_PATH;
         echo "JOURNAL_PATH does not exist"
