@@ -7,7 +7,7 @@
 "---------
 
 "Vim
-set nocompatible "no Vi compatibility mode
+set nocompatible         " no Vi compatibility mode (not neccessary for nvim)
 
 "Line
 set number               " Show line numbers
