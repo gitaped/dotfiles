@@ -15,5 +15,6 @@ brew "tflint"
 brew "nvim"
 brew "fd"
 brew "git-delta"
+brew "autojump"
 
 cask "iterm2"
