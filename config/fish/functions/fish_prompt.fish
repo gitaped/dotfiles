@@ -4,9 +4,6 @@ function fish_prompt
         set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
     end
 
-    # set path
-    set -l cwd $cyan(prompt_pwd)
-
     set _this_machine (uname -s)
     if test "$_this_machine" = "Darwin"
         set -g _workspace (set_color normal)"macbook "
@@ -15,6 +12,6 @@ function fish_prompt
     end
 
     echo -s $_workspace (__kube_status)
-    echo -s $cwd $orange(__fish_git_prompt)
+    echo -s $cyan(prompt_pwd) $normal(__fish_git_prompt)
     echo -e $normal'$ '
 end
