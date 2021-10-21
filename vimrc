@@ -146,6 +146,9 @@ nnoremap <F1> <nop>
 map <F2> :StripWhitespace<CR>
 map <F3> :buffers<CR>:buffer<Space>
 
+"Redo for same key opposite of undo
+nnoremap U <c-r>
+
 "Use semicolon in normal mode without shifting
 nnoremap ; :
 
