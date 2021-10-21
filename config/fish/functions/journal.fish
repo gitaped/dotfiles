@@ -14,6 +14,7 @@ function journal
 
     # Hashmap implementation (not yet avaiable in fish)
     # Mapping ranges to time in days
+    # Source: https://mvolkmann.github.io/fish-article/#Hashmaps
     set --local range_w 7
     set --local range_s 14
     set --local range_m 31
