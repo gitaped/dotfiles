@@ -17,6 +17,8 @@ set -g normal (set_color normal)
 set -g grey (set_color 878787)
 set -g lblue (set_color 00AAFF)
 
+set fish_prompt_pwd_dir_length 999
+
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
 end
