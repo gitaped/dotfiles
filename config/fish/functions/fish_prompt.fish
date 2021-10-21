@@ -1,6 +1,5 @@
 function fish_prompt
-    set _this_machine (uname -s)
-    if test "$_this_machine" = "Darwin"
+    if test (uname -s) = "Darwin"
         set -g _workspace (set_color normal)"macbook "
     else
         set -g _workspace (set_color normal)"desktop "
