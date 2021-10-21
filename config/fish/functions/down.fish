@@ -1,4 +1,4 @@
 function down
-    clear; cd ~/Downloads; ls
+    clear; cd ~/Downloads
 end
 

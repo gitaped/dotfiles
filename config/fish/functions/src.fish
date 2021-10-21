@@ -1,4 +1,4 @@
 function src
-    clear; cd ~/src; ls
+    clear; cd ~/src
 end
 

@@ -1,4 +1,4 @@
 function dot
-    clear; cd $DOTFILES; ls
+    clear; cd $DOTFILES
 end
 
