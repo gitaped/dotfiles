@@ -19,6 +19,11 @@ set -g lblue (set_color 00AAFF)
 
 set fish_prompt_pwd_dir_length 999
 
+set -g __fish_git_prompt_showdirtystate 1
+set -g __fish_git_prompt_showcolorhints 1
+set -g __fish_git_prompt_color_branch FFA500 # orange
+set -g __fish_git_prompt_char_dirtystate "✗"
+
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
 end
