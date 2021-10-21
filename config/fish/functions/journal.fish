@@ -4,6 +4,11 @@ function journal
         return 1
     end
 
+    if ! git -C $JOURNAL_PATH rev-parse 2>/dev/null
+        echo "$JOURNAL_PATH is not a git repo"
+        return 1
+    end
+
     set --local JOURNAL_HELP "usage:
     journal 
     journal [y w s m q]
