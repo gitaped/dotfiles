@@ -1,20 +1,23 @@
 "---------------
 "Ansley's vimrc|
 "---------------
-set nocompatible    "no Vi compatibility mode
+
 "---------
 "Settings|
 "---------
 
+"Vim
+set nocompatible "no Vi compatibility mode
+
 "Line
 set number               " Show line numbers
-set ruler	               " Show current row and line
+set ruler                " Show current row and line
 set nostartofline        " Don't always start at the start of a line
-set cursorline  	       " Highlight current line
+set cursorline           " Highlight current line
 
 "UI
-set title	               " Vim decides title of terminal
-set showmode    	       " Show current mode (insert,visual, etc)
+set title                " Vim decides title of terminal
+set showmode             " Show current mode (insert,visual, etc)
 set laststatus=2         " Always display status line, set this back to 2 later
 set completeopt-=preview " Don't show preview window
 set ttyfast              " Fast terminal connection
@@ -45,9 +48,9 @@ set formatoptions+=c "Format Comments
 set formatoptions+=r "Continue comments by default
 
 "Text
-set textwidth=80	        "Wrap lines at column 80
-set showmatch             " Highlight matching paren
-set matchtime=1           " 0.1 seconds to show matching paren
+set textwidth=80     " Wrap lines at column 80
+set showmatch        " Highlight matching paren
+set matchtime=1      " 0.1 seconds to show matching paren
 
 " Allows vim to interact with system clipboard
 if system('uname -s') == "Darwin\n"
@@ -82,37 +85,37 @@ set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 
 "Searching
-set incsearch       "search as characters are entered
-set hlsearch        "search for all matches
-set ignorecase      "ignore case when searching
-set smartcase       "for unexpected results
+set incsearch        " search as characters are entered
+set hlsearch         " search for all matches
+set ignorecase       " ignore case when searching
+set smartcase        " for unexpected results
 
 "Backup
-set nobackup        " Don't make a backup before overwriting file
-set noswapfile      " No swap files
+set nobackup         " Don't make a backup before overwriting file
+set noswapfile       " No swap files
 
 "Timing
-set timeoutlen=500	" Delay between commands/mappings in milliseconds
-set ttimeoutlen=0   " Delay after key codes in milliseconds
+set timeoutlen=500   " Delay between commands/mappings in milliseconds
+set ttimeoutlen=0    " Delay after key codes in milliseconds
 
 "Splitting
-set splitbelow      "Split new horizontal window below current one
-set splitright      "Split new vertical window to the right of curretnt one
+set splitbelow       " Split new horizontal window below current one
+set splitright       " Split new vertical window to the right of curretnt one
 
 "Scrolling
 set scrolloff=20     " Minimum number of lines to keep above and below cursor
-set sidescrolloff=10 " Minimum number of columns to keep to left and right of cursor"
+set sidescrolloff=10 " Minimum number of columns to keep to left and right of cursor
 
 "Spelling
-set spelllang=en_us   " Use American English
-set nospell           " Turn off spell checking
+set spelllang=en_us  " Use American English
+set nospell          " Turn off spell checking
 
 "Message
-set shortmess=   " Statusline messages
-set shortmess+=s " Don't give search hit BOTTOM, continuing at TOP or search hit TOP, continuing at BOTTOM messages
-set shortmess+=l " Use 999L, 888C instead of 999 lines, 888 characters
-set shortmess+=f " Use (3 of 5) instead of (file 3 of 5)
-set shortmess+=c " Don't give ins-completion-menu messages
+set shortmess=       " Statusline messages
+set shortmess+=s     " Don't give search hit BOTTOM, continuing at TOP or search hit TOP, continuing at BOTTOM messages
+set shortmess+=l     " Use 999L, 888C instead of 999 lines, 888 characters
+set shortmess+=f     " Use (3 of 5) instead of (file 3 of 5)
+set shortmess+=c     " Don't give ins-completion-menu messages
 
 "Statusline
 set statusline=                              " clear the statusline
@@ -289,9 +292,9 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 "---------------
 let g:indexed_search_dont_move = 1
 
-""----
-""Ale|
-""----
+"----
+"Ale|
+"----
 let g:ale_sign_column_always = 1
 let g:ale_sign_error="✖"
 let g:ale_sign_warning="!"
