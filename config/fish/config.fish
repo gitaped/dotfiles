@@ -7,15 +7,12 @@ set -x -U JOURNAL_PATH $HOME/journal
 
 set -x -U GPG_TTY (tty)
 
-# shortcuts for colors
-set -g cyan (set_color cyan)
-set -g red (set_color red)
-set -g kubeblue (set_color 326CE5)
-set -g orange (set_color FFA500)
-set -g green (set_color 008000)
-set -g normal (set_color normal)
-set -g grey (set_color 878787)
-set -g lblue (set_color 00AAFF)
+# shortcuts for custom colors
+# kubeblue 326CE5
+# orange FFA500
+# green 008000
+# grey 878787
+# lblue 00AAFF
 
 set fish_prompt_pwd_dir_length 999
 
