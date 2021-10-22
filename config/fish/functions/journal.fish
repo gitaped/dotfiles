@@ -55,7 +55,7 @@ function journal
                     return 1
                 end
             case search
-                rg $argv[2] $JOURNAL_PATH
+                rg --sortr path $argv[2] $JOURNAL_PATH
             case \* or help
                 echo $JOURNAL_HELP
                 return 1
