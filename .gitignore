@@ -6,6 +6,4 @@ vim/autoload/plug.vim
 vim/colors/badwolf.vim
 vim/plugged
 vim/spell
-config/fish/work.fish
 Brewfile.lock.json
-gitconfig-work
