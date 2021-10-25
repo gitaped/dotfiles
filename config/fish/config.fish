@@ -25,6 +25,10 @@ if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
 end
 
+if test -e /usr/local/share/autojump/autojump.fish 
+    source /usr/local/share/autojump/autojump.fish
+end
+
 function ...
     cd ../../
 end
@@ -41,4 +45,3 @@ function unset
   set --erase $argv
 end
 
-[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
