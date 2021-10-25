@@ -7,6 +7,8 @@ set -x -U JOURNAL_PATH $HOME/journal
 
 set -x -U GPG_TTY (tty)
 
+set -x -U RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/ripgreprc
+
 # shortcuts for custom colors
 # kubeblue 326CE5
 # orange FFA500
