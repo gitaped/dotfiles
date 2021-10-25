@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[2]: Installing vim plugins"
+echo "[3]: Installing vim plugins"
 vim +PlugInstall +qall
 
 exit 0 
