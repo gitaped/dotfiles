@@ -7,3 +7,8 @@
 # Searches case insensitively.
 --smart-case
 
+# Ignore vendor dir for go projects
+--glob=!vendor/*
+
+# Ignore git dir
+--glob=!.git/*
