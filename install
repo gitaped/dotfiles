@@ -3,8 +3,7 @@
 set -e
 
 DOTFILES=~/dotfiles
-WOTFILES=~/wotfiles
-echo "Installing $DOTFILES and $WOTFILES (if applicable)"
+echo "Installing $DOTFILES"
 
 if [ ! -d $DOTFILES ]; then
   echo "Cloning dotfiles repo"
