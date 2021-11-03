@@ -7,3 +7,4 @@ vim/colors/badwolf.vim
 vim/plugged
 vim/spell
 Brewfile.lock.json
+.DS_Store
