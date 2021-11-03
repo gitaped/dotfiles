@@ -1,0 +1,10 @@
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
+window:
+  decorations: buttonless
+  startup_mode: Fullscreen
