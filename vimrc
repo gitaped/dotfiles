@@ -1,10 +1,10 @@
-"---------------
-"Ansley's vimrc|
-"---------------
+"------------------
+"| Ansley's vimrc |
+"------------------
 
-"---------
-"Settings|
-"---------
+"------------
+"| Settings |
+"------------
 
 "Vim
 set nocompatible         " no Vi compatibility mode (not neccessary for nvim)
@@ -131,9 +131,9 @@ set statusline+=%-4.(%l,%c%V%)\ %<%P         " offset: line number, column numbe
 "File
 set modeline
 
-"---------
-"Mappings|
-"---------
+"------------
+"| Mappings |
+"------------
 
 let mapleader = ","
 
@@ -223,9 +223,9 @@ nmap yY :%y<c-r>=v:register<cr><cr>
 "Delete entire buffer
 nmap dD :%d<c-r>=v:register<cr><cr>
 
-"---------------
-"Plugin Manager|
-"---------------
+"------------------
+"| Plugin Manager |
+"------------------
 
 " :PlugStatus		lists configured plugins
 " :PlugUpgrade	upgrade Vim-plug itself
@@ -272,9 +272,9 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-"----------
-"GitGutter|
-"----------
+"-------------
+"| GitGutter |
+"-------------
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 let g:gitgutter_map_keys = 1
@@ -287,41 +287,41 @@ highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
-"---------------
-"Indexed Search|
-"---------------
+"------------------
+"| Indexed Search |
+"------------------
 let g:indexed_search_dont_move = 1
 
-"----
-"Ale|
-"----
+"-------
+"| Ale |
+"-------
 let g:ale_sign_column_always = 1
 let g:ale_sign_error="✖"
 let g:ale_sign_warning="!"
 
-"-----------
-"Whitespace|
-"-----------
+"--------------
+"| Whitespace |
+"--------------
 highlight ExtraWhitespace ctermbg=blue
 
-"-----
-"Rust|
-"-----
+"--------
+"| Rust |
+"--------
 let g:rust_recommended_style = 1
 let g:rust_fold=1
 
-"-----------
-" Completor|
-"-----------
+"-------------
+"| Completor |
+"-------------
 let g:completor_racer_binary = '~/.cargo/bin/racer'
 let g:completor_python_binary = '/usr/bin/python3'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
 
-"----------
-"Terraform|
-"----------
+"-------------
+"| Terraform |
+"-------------
 let g:terraform_fmt_on_save=1"
 
 au BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
