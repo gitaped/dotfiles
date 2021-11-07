@@ -36,7 +36,8 @@
 
 [delta]
     features = line-numbers decorations
-    plus-style = syntax bold 22
+    plus-style = syntax 22
+    plus-emph-style = syntax bold 28
     navigate = true
 
 [delta "decorations"]
