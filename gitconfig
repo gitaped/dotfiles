@@ -29,6 +29,10 @@
 
 [core]
     pager = delta
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 
 [delta]
     features = line-numbers decorations
