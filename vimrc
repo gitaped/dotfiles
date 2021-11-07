@@ -35,9 +35,6 @@ set autoindent                 " Copy indent from current line when starting new
 set nowrap                     " Do not wrap long lines
 set backspace=indent,eol,start " Allow backspace key
 
-autocmd filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd filetype markdown setlocal spell textwidth=0
-
 "Formatting
 set formatoptions-=t "Prevent autowrapping
 set formatoptions+=c "Format Comments
@@ -126,6 +123,11 @@ set statusline+=%-4.(%l,%c%V%)\ %<%P         " offset: line number, column numbe
 
 "File
 set modeline
+
+"Filetype options
+autocmd filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd filetype markdown setlocal spell textwidth=0
+au BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
 
 "------------
 "| Mappings |
@@ -320,4 +322,3 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
 "-------------
 let g:terraform_fmt_on_save=1"
 
-au BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
