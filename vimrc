@@ -61,9 +61,12 @@ set noerrorbells visualbell t_vb=        " This setting turns off sounds...
 autocmd GUIEnter * set visualbell t_vb=  " ...I think.
 
 "Colours & Fonts
-syntax enable       " Turn on syntax highlighting
-set t_Co=256        " Number of colours
-set background=dark	" For the longevity of my eyes
+syntax enable           " Turn on syntax highlighting
+if has('termguicolors')
+  set termguicolors     " Enable true colors (24-bit colors)
+endif
+set t_Co=256            " Number of colours
+set background=dark	    " For the longevity of my eyes
 colorscheme badwolf
 
 "Command Line
