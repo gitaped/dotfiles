@@ -19,5 +19,5 @@ brew "fd"
 brew "git-delta"
 brew "autojump"
 
-cask"alacritty"
+cask "alacritty"
 
