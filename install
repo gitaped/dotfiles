@@ -14,17 +14,18 @@ else
 fi
 
 cd $DOTFILES
+
 if [ "$(uname -s)" == "Darwin"  ]; then
   if  [ ! -e $(which brew) ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   brew update
   brew bundle
+
+  make up
 else
   sudo apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 fi
-
-make up
 
 exit 0
