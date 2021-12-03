@@ -7,7 +7,7 @@ if ! grep -Fxq "$(which fish)" /etc/shells; then
 fi
 
 if [ "$SHELL" != "$(which fish)" ]; then
-  chsh -s $(which fish)
+  sudo chsh -s $(which fish) $(whoami)
 fi
 
 exit 0
