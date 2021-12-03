@@ -24,4 +24,3 @@ jobs:
 
       - name: Install dotfiles
         run: curl -fsSL https://github.com/apeduru/dotfiles/blob/703278fa13b4a5ad43e9a4b8e30ea8776f26fa3e/install | bash
-
