@@ -13,5 +13,5 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Hello World
-        run: echo "Hello World"
+      - name: Install dotfiles
+        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
