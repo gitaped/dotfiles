@@ -13,10 +13,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_RSA_PRIVATE_KEY }}
+          known_hosts: "placeholder"
 
       - name: Install dotfiles
         run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
