@@ -18,5 +18,6 @@ brew "nvim"
 brew "fd"
 brew "git-delta"
 brew "autojump"
-brew "alacritty"
+
+cask"alacritty"
 
