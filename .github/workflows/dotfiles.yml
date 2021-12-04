@@ -33,7 +33,9 @@ jobs:
 
     steps:
       - name: Adding Known Hosts
-        run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
