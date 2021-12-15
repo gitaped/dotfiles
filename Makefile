@@ -6,17 +6,17 @@ endif
 
 .PHONY: ls
 ls:
-	lsrc $(OPTS)
+	@lsrc $(OPTS)
 
 .PHONY: up
 up:
-	rcup $(OPTS)
+	@rcup $(OPTS)
 
 .PHONY: sym
 sym:
-	rcup -K $(OPTS)
+	@rcup -K $(OPTS)
 
 .PHONY: down
 down:
-	rcdn $(OPTS)
+	@rcdn $(OPTS)
 
