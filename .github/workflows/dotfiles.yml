@@ -16,11 +16,14 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
+      # SSH_RSA_PRIVATE_KEY is located in the dotfiles repository settings under Repository secrets
+      # The public key is located in the global settings under SSH Keys
+      # This is used to enable cloning the repository in the curl below
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_RSA_PRIVATE_KEY }}
-          known_hosts: "placeholder"
+          known_hosts: "placeholder" # the known_hosts is populated above, this is just to fulfill reqs
 
       - name: Install dotfiles
         run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
