@@ -41,3 +41,5 @@ end
 function .....
     cd ../../../../
 end
+
+alias k="kubectl"
