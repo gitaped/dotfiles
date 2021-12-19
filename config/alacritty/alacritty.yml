@@ -41,3 +41,13 @@ colors:
     cyan:    '0x8abeb7'
     white:   '0xffffff'
 
+# Use `xxd -psd` to get hex dump of tmux commands
+key_bindings:
+    - { key: T, mods: Command, chars: "\x60\x63" }         # Command-T send chars `c in tmux (new window)
+    - { key: H, mods: Command, chars: "\x60\x68" }         # Command-H send chars `h in tmux (go to left pane)
+    - { key: J, mods: Command, chars: "\x60\x6a" }         # Command-J send chars `j in tmux (go to below pane)
+    - { key: K, mods: Command, chars: "\x60\x6b" }         # Command-K send chars `k in tmux (go to above pane)
+    - { key: L, mods: Command, chars: "\x60\x6c" }         # Command-L send chars `l in tmux (go to right pane)
+    - { key: Tab, mods: Control, chars: "\x60\x6e" }       # Control-Tab send chars `n in tmux (next window)
+    - { key: Tab, mods: Control|Shift, chars: "\x60\x70" } # Control-Shift-Tab send chars `p in tmux (previous window)
+    - { key: Comma, mods: Command, chars: "\x60\x2c" }     # Command-Comma send chars `, in tmux (rename window)
