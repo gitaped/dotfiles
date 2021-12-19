@@ -9,6 +9,10 @@ window:
   decorations: buttonless
   startup_mode: Fullscreen
 
+# default font size upon startup
+font:
+  size: 25
+
 # Base16 Tomorrow Night 256 - alacritty color config
 # Chris Kempson (http://chriskempson.com)
 colors:
