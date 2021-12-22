@@ -49,6 +49,7 @@ key_bindings:
   - { key: J, mods: Command, chars: "\x60\x6a" }         # Command-J send chars `j in tmux (go to below pane)
   - { key: K, mods: Command, chars: "\x60\x6b" }         # Command-K send chars `k in tmux (go to above pane)
   - { key: L, mods: Command, chars: "\x60\x6c" }         # Command-L send chars `l in tmux (go to right pane)
+  - { key: W, mods: Command, chars: "\x60\x78" }         # Command-W send chars `l in tmux (if only one pane delete window else delete pane)
   - { key: Tab, mods: Control, chars: "\x60\x6e" }       # Control-Tab send chars `n in tmux (next window)
   - { key: Tab, mods: Control|Shift, chars: "\x60\x70" } # Control-Shift-Tab send chars `p in tmux (previous window)
   - { key: Comma, mods: Command, chars: "\x60\x2c" }     # Command-Comma send chars `, in tmux (rename window)
