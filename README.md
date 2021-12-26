@@ -1,5 +1,9 @@
 # dotfiles
 
+![macos_workflow](https://github.com/apeduru/dotfiles/actions/workflows/dotfiles.yml/badge.svg?branch=master)
+
+## Prerequisites 
+
 ## Install
 
 Install dotfiles using this curl
