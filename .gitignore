@@ -1,10 +1,5 @@
-vim/__pycache__/
 *.swp
 *.pyc
-vim/.netrwhist
-vim/autoload/plug.vim
-vim/colors/badwolf.vim
-vim/plugged
-vim/spell
+vim/**
 Brewfile.lock.json
 .DS_Store
