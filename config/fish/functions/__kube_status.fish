@@ -6,6 +6,9 @@ function __kube_status
     set -g __on $grey" on "
     set -g __in $grey"in "
 
+    if ! test -e "$HOME/.kube/config"
+        return
+    end
     set -g __kube_config "$HOME/.kube/config"
 
     if test -z (which kubectl) 
