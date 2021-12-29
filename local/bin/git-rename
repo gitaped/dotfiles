@@ -24,9 +24,11 @@ if [ $# -lt 1 ] || \
   exit 1
 fi
 
+# Get the remote name and branch
 REMOTE_NAME=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream} | cut -d"/" -f1)
 REMOTE_BRANCH_NAME=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream} | cut -d"/" -f2-)
 
+# Get the local branch name
 OLD_BRANCH_NAME=$(git symbolic-ref -q --short HEAD)
 
 if [ "$OLD_BRANCH_NAME" = "master" ]; then
