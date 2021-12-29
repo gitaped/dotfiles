@@ -10,11 +10,11 @@ ls:
 
 .PHONY: up
 up:
-	@rcup $(OPTS)
+	@rcup -f $(OPTS)
 
 .PHONY: sym
 sym:
-	@rcup -K $(OPTS)
+	@rcup -f -K $(OPTS)
 
 .PHONY: down
 down:
