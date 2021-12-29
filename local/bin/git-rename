@@ -36,7 +36,7 @@ if [ "$OLD_BRANCH_NAME" = "master" ]; then
 fi
 
 UPDATE_REMOTE="no"
-if [ "$OLD_BRANCH_NAME" == "$REMOTE_BRANCH_NAME" ]; then
+if [ "$OLD_BRANCH_NAME" = "$REMOTE_BRANCH_NAME" ]; then
   UPDATE_REMOTE="yes"
 fi
 
