@@ -16,6 +16,12 @@ usage() {
   echo
 }
 
+err_msg() {
+  echo "$1"
+  usage
+  exit 1
+}
+
 if [ $# -lt 1 ] || \
   [ "$1" = "-h" ] || \
   [ "$1" = "--help" ]; then
@@ -29,9 +35,7 @@ REMOTE_BRANCH_NAME=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream}
 OLD_BRANCH_NAME=$(git symbolic-ref -q --short HEAD)
 
 if [ "$OLD_BRANCH_NAME" = "master" ]; then
-  echo "error: cannot rename master branch"
-  usage
-  exit 1
+  err_msg "error: cannot rename master branch"
 fi
 
 UPDATE_REMOTE="no"
@@ -48,9 +52,7 @@ while (( "$#" )); do
       shift
       ;;
     -*)
-      echo "error: unknown option '$1'"
-      usage
-      exit 1
+      err_msg "error: unknown option '$1'"
       ;;
     *)
       ARGS="$ARGS $1"
@@ -61,16 +63,12 @@ done
 
 ARGS_COUNT=$(echo "$ARGS" | wc -w)
 if [ "$ARGS_COUNT" -gt 1 ]; then
-  echo "error: more than one argument"
-  usage
-  exit 1
+  err_msg "error: more than one argument"
 fi
 NEW_BRANCH_NAME=$(echo "$ARGS" | tr -d ' ')
 
 if [ "$OLD_BRANCH_NAME" = "$NEW_BRANCH_NAME" ]; then
-  echo "error: new branch name is not unique"
-  usage
-  exit 1
+  err_msg "error: new branch name is not unique"
 fi
 
 rename_branch="git branch -m $NEW_BRANCH_NAME"
