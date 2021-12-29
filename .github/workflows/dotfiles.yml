@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  install-mac:
-    runs-on: macos-latest
+  install:
+    runs-on: [macos-latest, ubuntu-18.04]
 
     steps:
       - name: Adding Known Hosts
@@ -27,22 +27,4 @@ jobs:
 
       - name: Install dotfiles
         run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
-
-  install-linux:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Adding Known Hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_RSA_PRIVATE_KEY }}
-          known_hosts: "placeholder"
-
-      - name: Install dotfiles
-        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/7747e543ec0b53c5b63d30750f33e65d1f771eb8/install | bash
 
