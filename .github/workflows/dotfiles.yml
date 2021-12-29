@@ -32,5 +32,6 @@ jobs:
           known_hosts: "placeholder" # the known_hosts is populated above, this is just to fulfill reqs
 
       - name: Install dotfiles
-        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
+        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/526fd110410c5328543cf21ea00002a25f692a4e/install | bash
+
 
