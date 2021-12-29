@@ -3,11 +3,6 @@
 set -e
 set -o pipefail
 
-if ! git rev-parse --git-dir >/dev/null 2>&1; then
-  echo "fatal: not a git repository"
-  exit 1
-fi
-
 usage() {
   echo "usage: git rename [<options>] <name>"
   echo
