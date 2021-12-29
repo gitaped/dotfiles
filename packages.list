@@ -1,5 +1,2 @@
-vim
+neovim
 fish
-yq
-ripgrep
-shfmt
