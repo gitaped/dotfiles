@@ -46,6 +46,7 @@ colors:
 # Use `xxd -psd` to get hex dump of tmux commands
 key_bindings:
   - { key: Q, mods: Command, action: None}                     # Command-Q is a no-op to prevent accidently quitting
+  - { key: N, mods: Command, action: None }                    # Command-N is a no-op to prevent creating a new Alacritty window
   - { key: T, mods: Command, chars: "\x60\x63" }               # Command-T send chars `c in tmux (new window)
   - { key: Backslash, mods: Command, chars: "\x60\x5c" }       # Command-\ send chars `\ in tmux (create vertical pane)
   - { key: Backslash, mods: Command|Shift, chars: "\x60\x2d" } # Command-Shift-\ send chars `- in tmux (create horizontal pane)
