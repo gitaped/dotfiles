@@ -57,6 +57,7 @@ key_bindings:
   - { key: E, mods: Command, chars: "\x1bOF" }                 # Command-E send chars ESC-OF (End) to shell (end of line)
   - { key: Tab, mods: Control, chars: "\x60\x6e" }             # Control-Tab send chars `n in tmux (next window)
   - { key: Tab, mods: Control|Shift, chars: "\x60\x70" }       # Control-Shift-Tab send chars `p in tmux (previous window)
+  - { key: Back, mods: Command, chars: "\x15" }                # Command-Backspace send hex chars NAK (Backspace) to shell (delete line)
   - { key: Comma, mods: Command, chars: "\x60\x2c" }           # Command-Comma send chars `, in tmux (rename window)
   - { key: Backslash, mods: Command, chars: "\x60\x5c" }       # Command-\ send chars `\ in tmux (create vertical pane)
   - { key: Backslash, mods: Command|Shift, chars: "\x60\x2d" } # Command-Shift-\ send chars `- in tmux (create horizontal pane)
