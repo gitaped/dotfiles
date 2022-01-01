@@ -46,3 +46,4 @@ function .....
 end
 
 alias k="kubectl"
+alias srcfish="source $HOME/.config/fish/config.fish"
