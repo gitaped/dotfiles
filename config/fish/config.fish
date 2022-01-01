@@ -10,6 +10,7 @@ set -x -U GPG_TTY (tty)
 set -x -U RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/ripgreprc
 
 set -x -U XDG_CONFIG_HOME $HOME/.config
+set -x -U XDG_DATA_HOME $HOME/.local/share
 
 # shortcuts for custom colors
 # kubeblue 326CE5
