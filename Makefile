@@ -20,3 +20,7 @@ sym:
 down:
 	@rcdn $(OPTS)
 
+.PHONY: unsym
+unsym:
+	@rcdn -x rcrc -K $(OPTS)
+
