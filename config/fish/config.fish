@@ -30,6 +30,10 @@ if test -e $HOME/.cargo/bin
     fish_add_path $HOME/.cargo/bin
 end
 
+if test -e $HOME/go/bin
+    fish_add_path $HOME/go/bin
+end
+
 if test -e $HOME/.config/fish/work.fish
     source $HOME/.config/fish/work.fish
 end
