@@ -26,6 +26,10 @@ set -g __fish_git_prompt_char_dirtystate "✗"
 
 fish_add_path $HOME/.local/bin
 
+if test -e $HOME/.cargo/bin
+    fish_add_path $HOME/.cargo/bin
+end
+
 if test -e $HOME/.config/fish/work.fish
     source $HOME/.config/fish/work.fish
 end
