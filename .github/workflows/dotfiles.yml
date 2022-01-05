@@ -14,4 +14,4 @@ jobs:
 
     steps:
       - name: Install dotfiles
-        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
+        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/fbdd5ea340d1c7510aa611d4f0228dc090445ced/install | bash
