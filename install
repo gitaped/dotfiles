@@ -12,7 +12,10 @@ if [ ! -d $DOTFILES ]; then
     TOKEN="${TOKEN}"@
   fi
 
-  git clone "https://"$TOKEN"github.com/apeduru/dotfiles.git" "$DOTFILES"
+  remote="https://"$TOKEN"github.com/apeduru/dotfiles.git"
+  echo "$remote"
+
+  git clone -v "$remote" "$DOTFILES"
 else
   echo "$DOTFILES already exists"
   exit 1
