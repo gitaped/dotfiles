@@ -70,9 +70,6 @@
 [includeIf "gitdir:~/wotfiles/"]
   path = ~/.gitconfig-work
 
-[includeIf "gitdir:~/github.com/"]
-  path = ~/.gitconfig-personal
-
 [includeIf "gitdir:~/go/"]
   path = ~/.gitconfig-work
 
@@ -85,3 +82,5 @@
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig-work
 
+[includeIf "gitdir:~/src/github.com/"]
+  path = ~/.gitconfig-personal
