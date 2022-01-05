@@ -7,7 +7,7 @@ echo "Installing $DOTFILES"
 
 if [ ! -d $DOTFILES ]; then
   echo "Cloning dotfiles repo"
-  git clone https://github.com/apeduru/dotfiles.git
+  git clone https://github.com/apeduru/dotfiles.git $DOTFILES
 else
   echo "$DOTFILES already exists"
   exit 1
