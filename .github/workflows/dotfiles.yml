@@ -16,6 +16,6 @@ jobs:
       - name: Install dotfiles
         env:
             TOKEN: ${{ secrets.GA_PAT_TOKEN }}
-        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/b542c6b5c72087d9f115d79df56410055f5aeb53/install | bash
+        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/03bf279c09a4dfe55c16ea21be91ebc7416baa82/install | bash
         shell: bash
 
