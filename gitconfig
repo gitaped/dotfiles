@@ -13,6 +13,9 @@
     reflog = delta
     show = delta
 
+[commit]
+    verbose = true
+
 [delta]
     features = line-numbers decorations
     plus-style = syntax 22
