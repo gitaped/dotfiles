@@ -28,38 +28,36 @@ function journal
     set --local dt (date +"%Y/%m/%d")
     set --local entry $JOURNAL_PATH/$dt.md
 
-    if test (count $argv) -eq 0;
+    switch $argv[1]
+        case ""
         # today
-        mkdir -p (dirname $entry)
-        test -e $entry || echo "# $dt" >> $entry
-        $EDITOR $entry
-    else
-        switch $argv[1]
-            case y
-            # yesterday
-                set --local page $JOURNAL_PATH/(date -v-1d +"%Y/%m/%d").md 
-                test ! -e $page || cat $page | less
-            case w s m q
-            # last {week, sprint, month, quarter}
-                for day in (seq (eval echo '$'range_$argv) 0) # chronological order
-                    set --local page $JOURNAL_PATH/(date -v-"$day"d +"%Y/%m/%d").md 
-                    test ! -e $page && continue || cat $page && echo
-                end | less
-            case commit
-                if test (git -C $JOURNAL_PATH status --porcelain | wc -l) -gt 0
-                    git -C $JOURNAL_PATH add -A
-                    git -C $JOURNAL_PATH commit -m $dt
-                    git -C $JOURNAL_PATH push origin HEAD
-                else
-                    echo "no entries to commit"
-                    return 1
-                end
-            case search
-                rg --sortr path $argv[2] $JOURNAL_PATH
-            case \* or help
-                echo $JOURNAL_HELP
+            mkdir -p (dirname $entry)
+            test -e $entry || echo "# $dt" >> $entry
+            $EDITOR $entry
+        case y
+        # yesterday
+            set --local page $JOURNAL_PATH/(date -v-1d +"%Y/%m/%d").md 
+            test ! -e $page || cat $page | less
+        case w s m q
+        # last {week, sprint, month, quarter}
+            for day in (seq (eval echo '$'range_$argv) 0) # chronological order
+                set --local page $JOURNAL_PATH/(date -v-"$day"d +"%Y/%m/%d").md 
+                test ! -e $page && continue || cat $page && echo
+            end | less
+        case commit
+            if test (git -C $JOURNAL_PATH status --porcelain | wc -l) -gt 0
+                git -C $JOURNAL_PATH add -A
+                git -C $JOURNAL_PATH commit -m $dt
+                git -C $JOURNAL_PATH push origin HEAD
+            else
+                echo "no entries to commit"
                 return 1
-        end
+            end
+        case search
+            rg --sortr path $argv[2] $JOURNAL_PATH
+        case \* or help
+            echo $JOURNAL_HELP
+            return 1
     end
 
     return 0
