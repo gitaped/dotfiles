@@ -56,5 +56,6 @@ function .....
     cd ../../../../
 end
 
+alias l="ls"
 alias k="kubectl"
 alias srcfish="source $HOME/.config/fish/config.fish"
