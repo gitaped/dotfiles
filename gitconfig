@@ -2,7 +2,7 @@
 
 [branch]
     autoSetupRebase = always
-
+    autoSetupMerge = always # controls whether git branch and git checkout -b imply the --track option
 [core]
     pager = delta
     diff = delta
