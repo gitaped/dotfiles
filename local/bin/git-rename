@@ -45,30 +45,21 @@ if [ "$ARGS_COUNT" -ne 1 ]; then
 fi
 NEW_BRANCH_NAME=$(echo "$ARGS" | tr -d ' ')
 
-# Get the remote name and default branch
-# This assumes the current branch was already tracking <remote>/<default_branch>
-REMOTE_NAME=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream} | cut -d"/" -f1)
-DEFAULT_BRANCH=$(git rev-parse --abbrev-ref --symbolic-full-name @{upstream} | cut -d"/" -f2-)
-
-if [ "$NEW_BRANCH_NAME" = "$DEFAULT_BRANCH" ]; then
-  err_msg "branch name cannot be renamed to $DEFAULT_BRANCH"
-fi
-
 # Get the local branch name
 OLD_BRANCH_NAME=$(git symbolic-ref -q --short HEAD)
-case "$OLD_BRANCH_NAME" in
-  "$DEFAULT_BRANCH")
-    err_msg "cannot rename "$DEFAULT_BRANCH" branch"
-    ;;
-  "$NEW_BRANCH_NAME")
-    err_msg "new branch name is not unique"
-    ;;
-esac
+if [ "$OLD_BRANCH_NAME" = "$NEW_BRANCH_NAME" ]; then
+  err_msg "new branch name is not unique"
+fi
+
+if git branch -l | grep -Fq "$NEW_BRANCH_NAME"; then
+  err_msg "new branch name already exists"
+fi
 
 UPDATE_REMOTE="no"
 if git branch -r | grep -q "$OLD_BRANCH_NAME"; then
   UPDATE_REMOTE="yes"
 fi
+REMOTE_NAME=$(git remote show -n)
 
 rename_local_branch="git branch -m $NEW_BRANCH_NAME"
 push_new_remote_branch="git push --set-upstream $REMOTE_NAME $NEW_BRANCH_NAME"
