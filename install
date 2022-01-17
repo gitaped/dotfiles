@@ -8,14 +8,13 @@ echo "Installing $DOTFILES"
 if [ ! -d $DOTFILES ]; then
   echo "Cloning dotfiles repo"
 
+  remote="https://github.com/apeduru/dotfiles.git"
   if [[ -n "${TOKEN}" ]]; then
-    TOKEN="${TOKEN}"@
+    token="${TOKEN}"@
+    remote="https://"$token"github.com/apeduru/dotfiles.git"
   fi
 
-  remote="https://"$TOKEN"github.com/apeduru/dotfiles.git"
-  echo "$remote"
-
-  git clone -v --progress "$remote" "$DOTFILES"
+  git clone "$remote" "$DOTFILES"
 else
   echo "$DOTFILES already exists"
   exit 1
