@@ -3,9 +3,7 @@
 Host github.com
     HostName github.com
     User apeduru
-    IdentityFile ~/.ssh/id_ed25519_pub_github
 
 Host gitlab.com
     HostName gitlab.com
     User apeduru
-    IdentityFile ~/.ssh/id_ed25519_pub_github
