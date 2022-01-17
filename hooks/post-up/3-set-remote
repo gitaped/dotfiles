@@ -1,7 +1,0 @@
-#!/bin/bash
-
-echo "[3]: Setting remote URL"
-
-git remote set-url origin git@github.com:apeduru/dotfiles.git
-
-exit 0
