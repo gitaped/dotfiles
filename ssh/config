@@ -1,3 +1,5 @@
 # vim: set ft=sshconfig:
 
 Include ~/.ssh/config.d/*
+
+IdentityFile ~/.ssh/keys/%h

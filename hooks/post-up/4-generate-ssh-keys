@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DIR="$HOME/.ssh/keys"
+
+echo "[4]: Generating SSH keys"
+
+mkdir -p $DIR
+yes | ssh-keygen -o -a 100 -t ed25519 -f $DIR/github.com -C "ansleypeduru96@gmail.com" -N ""
+
+exit 0
