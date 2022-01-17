@@ -10,8 +10,7 @@ if [ ! -d $DOTFILES ]; then
 
   remote="https://github.com/apeduru/dotfiles.git"
   if [[ -n "${TOKEN}" ]]; then
-    token="${TOKEN}"@
-    remote="https://"$token"github.com/apeduru/dotfiles.git"
+    remote="https://"${TOKEN}"@github.com/apeduru/dotfiles.git"
   fi
 
   git clone "$remote" "$DOTFILES"
@@ -22,7 +21,7 @@ fi
 
 cd $DOTFILES
 
-if [ "$(uname -s)" == "Darwin"  ]; then
+if [ "$(uname -s)" == "Darwin" ]; then
   if  [ ! -e $(which brew) ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
