@@ -15,7 +15,9 @@ jobs:
     steps:
       - name: Install dotfiles
         env:
+            # Personal access token is generated in GitHub settings and stored
+            # as a repository secret
             TOKEN: ${{ secrets.GA_PAT_TOKEN }}
-        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/b0f19b9ab7398af1614ec51df2d0a0c81dd33544/install | bash
+        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash
         shell: bash
 
