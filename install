@@ -15,7 +15,7 @@ if [ ! -d $DOTFILES ]; then
   remote="https://"$TOKEN"github.com/apeduru/dotfiles.git"
   echo "$remote"
 
-  git clone -v "$remote" "$DOTFILES"
+  git clone -v --progress "$remote" "$DOTFILES"
 else
   echo "$DOTFILES already exists"
   exit 1
