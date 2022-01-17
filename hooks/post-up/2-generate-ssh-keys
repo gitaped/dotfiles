@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[3]: Generating SSH keys"
+echo "[2]: Generating SSH keys"
 
 DIR="$HOME/.ssh/keys"
 
