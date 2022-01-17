@@ -10,9 +10,9 @@ if [ ! -d $DOTFILES ]; then
 
   url="https://"
   if [[ -n "${TOKEN}" ]]; then
-    url="$url""${TOKEN}""@"
+    url=""$url""${TOKEN}"@"
   fi
-  repo="$url""github.com/apeduru/dotfiles.git"
+  repo=""$url"github.com/apeduru/dotfiles.git"
 
   git clone "$repo" "$DOTFILES"
 else
