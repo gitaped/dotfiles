@@ -2,9 +2,14 @@
 
 echo "[2]: Generating SSH keys"
 
-DIR="$HOME/.ssh/keys"
+KEY="$HOME/.ssh/keys/github.com"
 
-mkdir -p $DIR
-yes | ssh-keygen -o -a 100 -t ed25519 -f $DIR/github.com -C "ansleypeduru96@gmail.com" -N ""
+mkdir -p $(dirname $KEY)
+
+if [ ! -e $KEY ]; then
+  yes | ssh-keygen -o -a 100 -t ed25519 -f $KEY -C "ansleypeduru96@gmail.com" -N ""
+else
+  echo "Skipping. Already exists."
+fi
 
 exit 0

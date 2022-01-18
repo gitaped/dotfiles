@@ -1,14 +1,15 @@
 #!/bin/bash
 
+echo "[1]: Symlinking the rcm config file"
+
 DOTFILES=$(git rev-parse --show-toplevel)
 SOURCE="$DOTFILES/rcrc"
 DESTINATION="$HOME/.rcrc"
 
 if [ ! -L "$DESTINATION" ]; then
   ln -sf "$SOURCE" "$DESTINATION"
-  echo "[1]: Symlinked the rcm config file"
 else
-  echo "[1]: Already symlinked the rcm configuration file"
+  echo "Skipping. The rcm config file is already symlinked."
 fi
 
 exit 0
