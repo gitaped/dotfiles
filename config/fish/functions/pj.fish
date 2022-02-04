@@ -1,4 +1,4 @@
-function journal
+function pj -d "personal journal"
     if ! test -d $JOURNAL_PATH;
         echo "JOURNAL_PATH does not exist"
         return 1
@@ -24,6 +24,7 @@ function journal
     set --local range_s 14
     set --local range_m 31
     set --local range_q 90
+    set --local range_a 365
 
     set --local dt (date +"%Y/%m/%d")
     set --local entry $JOURNAL_PATH/$dt.md
@@ -38,7 +39,7 @@ function journal
         # yesterday
             set --local page $JOURNAL_PATH/(date -v-1d +"%Y/%m/%d").md 
             test ! -e $page || cat $page | less
-        case w s m q
+        case w s m q a
         # last {week, sprint, month, quarter}
             for day in (seq (eval echo '$'range_$argv) 0) # chronological order
                 set --local page $JOURNAL_PATH/(date -v-"$day"d +"%Y/%m/%d").md 
