@@ -4,28 +4,27 @@ ifneq ($(wildcard $(HOME)/wotfiles),)
 	OPTS+=-d $(HOME)/wotfiles
 endif
 
-# List all the symlinks
+.PHONY: help
+help: # Show this help message
+	@egrep '^(.+)\:\ #\ (.+)' ${MAKEFILE_LIST} | column -t -c 2 -s ':#'
+
 .PHONY: ls
-ls:
+ls: # List all the symlinks
 	@lsrc $(OPTS)
 
-# Run pre-up hooks, symlink dotfiles, and run post-up hooks
 .PHONY: up
-up:
+up: # Run pre-up hooks, symlink dotfiles, and run post-up hooks
 	@rcup -f $(OPTS)
 
-# Symlink dotfiles only
 .PHONY: sym
-sym:
+sym: # Symlink dotfiles only
 	@rcup -f -K $(OPTS)
 
-# Run pre-down hooks, unsymlink dotfiles, and run post-down hooks
 .PHONY: down
-down:
+down: # Run pre-down hooks, unsymlink dotfiles, and run post-down hooks
 	@rcdn $(OPTS)
 
-# Unsymlink dotfiles only
 .PHONY: unsym
-unsym:
+unsym: # Unsymlink dotfiles only
 	@rcdn -x rcrc -K $(OPTS)
 
