@@ -118,9 +118,7 @@ set statusline=                              " clear the statusline
 set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " file name
 set statusline+=%h%m%r%w                     " flags
-set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
-set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
-set statusline+=%{&fileformat}]              " file format
+set statusline+=[%{strlen(&ft)?&ft:'none'}]  " filetype
 set statusline+=%=                           " right align
 set statusline+=%-4.(%l,%c%V%)\ %<%P         " offset: line number, column number, virtual column number, percentage thru file
 
