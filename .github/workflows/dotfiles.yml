@@ -9,8 +9,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  install-mac:
-    runs-on: macos-latest
+  install:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Install dotfiles
