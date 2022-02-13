@@ -31,6 +31,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
 else
   sudo apt update
   cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+  sudo apt-get install rcm
 fi
 
 make up
