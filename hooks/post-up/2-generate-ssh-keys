@@ -6,7 +6,7 @@ KEY="$HOME/.ssh/keys/github.com"
 
 if [ ! -e $KEY ]; then
   mkdir -p $(dirname $KEY)
-  yes | ssh-keygen -a 100 -t ed25519 -f $KEY -C "ansleypeduru96@gmail.com" -N ""
+  yes 2>/dev/null | ssh-keygen -a 100 -t ed25519 -f $KEY -C "ansleypeduru96@gmail.com" -N ""
 else
   echo "Skipping. Already exists."
 fi
