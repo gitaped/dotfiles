@@ -21,6 +21,6 @@ jobs:
             # Personal access token is generated in GitHub settings and stored
             # as a repository secret
             TOKEN: ${{ secrets.GA_PAT_TOKEN }}
-        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/48cb73869e8a6ccf894defa5f9c47fd6447df7a2/install | bash
+        run: curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/02f07631f668d757d6164d5334ce1bad991f6910/install | bash
         shell: bash
 
