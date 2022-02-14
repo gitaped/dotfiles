@@ -1,4 +1,4 @@
-set -U EDITOR vim
+set -U EDITOR nvim
 
 set -x -U DOTFILES $HOME/dotfiles
 set -x -U WOTFILES $HOME/wotfiles
