@@ -3,39 +3,56 @@
 set -e
 
 DOTFILES=~/dotfiles
-echo "Installing $DOTFILES"
 
-if [ ! -d $DOTFILES ]; then
-  echo "Cloning dotfiles repo"
-
-  url="https://"
-  if [[ -n "${TOKEN}" ]]; then
-    url=""$url""${TOKEN}"@"
-  fi
-  repo=""$url"github.com/apeduru/dotfiles.git"
-
-  git clone "$repo" "$DOTFILES"
-else
-  echo "$DOTFILES already exists"
+err() {
+  echo "$1"
   exit 1
-fi
+}
 
-cd $DOTFILES
+clone_dotfiles() {
+  echo "Installing $DOTFILES"
 
-if [ "$(uname -s)" == "Darwin" ]; then
-  if  [ ! -e $(which brew) ]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [ ! -d $DOTFILES ]; then
+    echo "Cloning dotfiles repo"
+
+    url="https://"
+    if [[ -n "${TOKEN}" ]]; then
+      url=""$url""${TOKEN}"@"
+    fi
+    repo=""$url"github.com/apeduru/dotfiles.git"
+
+    git clone "$repo" "$DOTFILES"
+  else
+    err "$DOTFILES already exists"
   fi
-  brew update
-  brew bundle
 
-  make up
-else
-  sudo apt update
-  cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+  cd $DOTFILES
+}
 
-  make up
-fi
+case "$(uname -s)" in 
+  Darwin)
+    clone_dotfiles
+    if  [ ! -e $(which brew) ]; then
+      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+    brew update
+    brew bundle
 
+    make up
+    ;;
+  Linux)
+    if [ ! -e $(which apt) ]; then
+      err "Unsupported Linux"
+    fi
+    clone_dotfiles
+    sudo apt update
+    cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+
+    make up
+    ;;
+  *)
+    err "Unrecognized OS"
+    ;;
+esac
 
 exit 0
