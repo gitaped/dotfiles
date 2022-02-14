@@ -29,17 +29,19 @@ case "$(uname -s)" in
     fi
     brew update
     brew bundle
+
+    make up
     ;;
   Linux)
     sudo apt update
     cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+
+    make up
     ;;
   *)
     echo "Unrecognized OS. Exiting."
     exit 1
     ;;
 esac
-
-make up
 
 exit 0
