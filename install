@@ -3,27 +3,35 @@
 set -e
 
 DOTFILES=~/dotfiles
-echo "Installing $DOTFILES"
 
-if [ ! -d $DOTFILES ]; then
-  echo "Cloning dotfiles repo"
-
-  url="https://"
-  if [[ -n "${TOKEN}" ]]; then
-    url=""$url""${TOKEN}"@"
-  fi
-  repo=""$url"github.com/apeduru/dotfiles.git"
-
-  git clone "$repo" "$DOTFILES"
-else
-  echo "$DOTFILES already exists"
+err() {
+  echo "$1"
   exit 1
-fi
+}
 
-cd $DOTFILES
+install() {
+  echo "Installing $DOTFILES"
+
+  if [ ! -d $DOTFILES ]; then
+    echo "Cloning dotfiles repo"
+
+    url="https://"
+    if [[ -n "${TOKEN}" ]]; then
+      url=""$url""${TOKEN}"@"
+    fi
+    repo=""$url"github.com/apeduru/dotfiles.git"
+
+    git clone "$repo" "$DOTFILES"
+  else
+    err "$DOTFILES already exists"
+  fi
+
+  cd $DOTFILES
+}
 
 case "$(uname -s)" in 
   Darwin)
+    install
     if  [ ! -e $(which brew) ]; then
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
@@ -33,14 +41,17 @@ case "$(uname -s)" in
     make up
     ;;
   Linux)
+    if [ ! -e $(which apt) ]; then
+      err "Unsupported Linux"
+    fi
+    install
     sudo apt update
     cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 
     make up
     ;;
   *)
-    echo "Unrecognized OS. Exiting."
-    exit 1
+    err "Unrecognized OS"
     ;;
 esac
 
