@@ -9,7 +9,7 @@ err() {
   exit 1
 }
 
-install() {
+clone_dotfiles() {
   echo "Installing $DOTFILES"
 
   if [ ! -d $DOTFILES ]; then
@@ -31,7 +31,7 @@ install() {
 
 case "$(uname -s)" in 
   Darwin)
-    install
+    clone_dotfiles
     if  [ ! -e $(which brew) ]; then
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
@@ -44,7 +44,7 @@ case "$(uname -s)" in
     if [ ! -e $(which apt) ]; then
       err "Unsupported Linux"
     fi
-    install
+    clone_dotfiles
     sudo apt update
     cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
 
