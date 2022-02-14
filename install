@@ -29,6 +29,12 @@ get_dotfiles() {
   cd $DOTFILES
 }
 
+if [ ! -e $(which git) ]; then
+  err "required tool missing: git"
+elif [ ! -e $(which make) ]; then
+  err "required tool missing: make"
+fi
+
 case "$(uname -s)" in 
   Darwin)
     get_dotfiles
