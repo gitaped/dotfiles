@@ -2,5 +2,5 @@
 
 Install dotfiles using this curl
 
-`curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash`
+`curl --proto '=https' -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/install | bash`
 
