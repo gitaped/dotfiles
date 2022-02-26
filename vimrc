@@ -129,6 +129,7 @@ set modeline
 autocmd filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd filetype markdown setlocal spell textwidth=0
 au BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
+autocmd BufLeave * silent! wall
 
 "------------
 "| Mappings |
