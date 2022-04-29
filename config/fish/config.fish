@@ -24,6 +24,12 @@ set -g __fish_git_prompt_showcolorhints 1
 set -g __fish_git_prompt_color_branch FFA500 # orange
 set -g __fish_git_prompt_char_dirtystate "✗"
 
+if which -s brew
+    if test -d (brew --prefix)/bin
+        fish_add_path (brew --prefix)/bin
+    end
+end
+
 if test -d $HOME/.local/bin
     fish_add_path $HOME/.local/bin
 end
