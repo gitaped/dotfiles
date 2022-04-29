@@ -18,6 +18,7 @@ brew "fd"
 brew "git-delta"
 brew "autojump"
 brew "ipcalc"
+brew "tmux"
 
 cask "alacritty"
 
