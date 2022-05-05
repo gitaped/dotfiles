@@ -9,14 +9,6 @@ err() {
   exit 1
 }
 
-exists () {
-  if [ -e $(which $1) ]; then
-    return 0
-  else
-    return 1
-  fi
-}
-
 get_dotfiles() {
   echo "Installing $DOTFILES"
 
@@ -37,20 +29,20 @@ get_dotfiles() {
   cd $DOTFILES
 }
 
-exists "git" || err "required tool missing: git"
-exists "make" || err "required tool missing: make"
+which -s git || err "required tool missing: git"
+which -s make || err "required tool missing: make"
 
 case "$(uname -s)" in 
   Darwin)
     get_dotfiles
-    exists "brew" || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    which -s brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew update
     brew bundle
 
     make up
     ;;
   Linux)
-    exists "apt" || err "Unsupported Linux"
+    which -s apt || err "Unsupported Linux"
     get_dotfiles
     sudo apt update
     cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
