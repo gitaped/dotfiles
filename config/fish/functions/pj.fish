@@ -14,6 +14,7 @@ function pj -d "personal journal"
     journal [y w s m q]
     journal search PATTERN
     journal commit
+    journal log
     journal help
     "
 
@@ -56,6 +57,8 @@ function pj -d "personal journal"
             end
         case search
             rg --sort path $argv[2] $JOURNAL_PATH
+        case log
+            git -C $JOURNAL_PATH log
         case \* or help
             echo $JOURNAL_HELP
             return 1
