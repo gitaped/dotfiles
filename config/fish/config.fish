@@ -46,8 +46,10 @@ if test -e $HOME/.config/fish/work.fish
     source $HOME/.config/fish/work.fish
 end
 
-if test -e /usr/local/share/autojump/autojump.fish 
-    source /usr/local/share/autojump/autojump.fish
+if which -s brew
+    if test -e (brew --prefix)/share/autojump/autojump.fish 
+        source (brew --prefix)/share/autojump/autojump.fish
+    end
 end
 
 function ...
