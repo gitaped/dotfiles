@@ -52,6 +52,10 @@ if which -s brew
     end
 end
 
+if which -s kubectl
+    kubectl completion fish | source
+end
+
 function ...
     cd ../../
 end
