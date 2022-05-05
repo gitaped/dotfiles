@@ -85,5 +85,5 @@
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig-work
 
-[includeIf "gitdir:~/src/github.com/"]
+[includeIf "gitdir:~/src/github.com/apeduru/"]
   path = ~/.gitconfig-personal
