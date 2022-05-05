@@ -16,7 +16,7 @@ function __kube_status
     # context have changed
     if test -z $__kube_timestamp; or test (stat -f '%m' $__kube_config) -gt $__kube_timestamp
         set -g __kube_timestamp (stat -f '%m' $__kube_config)
-        set -g __context $kubeblue(kubectl config current-context 2>/dev/null | string split "_" | select 4)
+        set -g __context $kubeblue(kubectl config current-context 2>/dev/null)
         set -g __namespace $lblue(kubectl config view --minify -o "jsonpath={..namespace}" 2>/dev/null)
         [ -z $__namespace ]; and set -g __namespace $lblue'default'
     end
