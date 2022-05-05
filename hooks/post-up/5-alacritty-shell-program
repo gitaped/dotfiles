@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CONFIG=$DOTFILES/config/alacritty/alacritty.yml
+
+echo "[5]: Evaluating the startup shell program for Alacritty"
+
+# Use the $SHELL env var
+yq e '.shell.program = env(SHELL)' -i $CONFIG
+
+exit 0
