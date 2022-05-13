@@ -3,7 +3,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - "tmux attach -t default || tmux -2 new-session -n journal -s default"
 
 window:
   decorations: buttonless
