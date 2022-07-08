@@ -59,7 +59,7 @@ function pj -d "personal journal"
             rg --sort path $argv[2] $JOURNAL_PATH
         case log
             git -C $JOURNAL_PATH log
-        case \* or help
+        case \*
             echo $JOURNAL_HELP
             return 1
     end
