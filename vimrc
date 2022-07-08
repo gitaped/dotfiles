@@ -99,7 +99,7 @@ set splitbelow       " Split new horizontal window below current one
 set splitright       " Split new vertical window to the right of curretnt one
 
 "Scrolling
-set scrolloff=20     " Minimum number of lines to keep above and below cursor
+set scrolloff=999    " Cursor always stays centered
 set sidescrolloff=10 " Minimum number of columns to keep to left and right of cursor
 
 "Spelling
