@@ -3,5 +3,6 @@
 Host github-apeduru
     HostName github.com
     User apeduru
-    IdentityFile ~/.ssh/keys/github.com
+    IdentityFile ~/.ssh/keys/github-apeduru
+    IdentitiesOnly yes
 
