@@ -68,22 +68,22 @@
     co = checkout
 
 [includeIf "gitdir:~/dotfiles/"]
-  path = ~/.gitconfig-personal
+  path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/wotfiles/"]
-  path = ~/.gitconfig-work
+  path = ~/.gitconfig.work
 
 [includeIf "gitdir:~/go/"]
-  path = ~/.gitconfig-work
+  path = ~/.gitconfig.work
 
 [includeIf "gitdir:~/go/src/github.com/apeduru/"]
-  path = ~/.gitconfig-personal
+  path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/journal/"]
-  path = ~/.gitconfig-work
+  path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/src/"]
-  path = ~/.gitconfig-work
+  path = ~/.gitconfig.work
 
 [includeIf "gitdir:~/src/github.com/apeduru/"]
-  path = ~/.gitconfig-personal
+  path = ~/.gitconfig.local
