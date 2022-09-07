@@ -51,7 +51,7 @@ if [ "$OLD_BRANCH_NAME" = "$NEW_BRANCH_NAME" ]; then
   err_msg "new branch name is not unique"
 fi
 
-if git branch -l | grep -Fq "$NEW_BRANCH_NAME"; then
+if git branch -l | grep -Fxq "$NEW_BRANCH_NAME"; then
   err_msg "new branch name already exists"
 fi
 
