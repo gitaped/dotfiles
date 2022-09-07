@@ -9,6 +9,8 @@ usage() {
   echo "    -d, --dry-run       Print debugging information and show what commands will"
   echo "                        be executed, without actually taking any actions."
   echo
+  echo "    -f, --force         Rename the branch right away without confirmation."
+  echo
 }
 
 err_msg() {
@@ -23,6 +25,10 @@ while (( "$#" )); do
   case "$1" in
     -d|--dry-run)
       DRY_RUN="yes"
+      shift
+      ;;
+    -f|--force)
+      FORCE="yes"
       shift
       ;;
     -h)
@@ -82,13 +88,31 @@ if [ "$DRY_RUN" = "yes" ]; then
     echo "$msg $push_new_remote_branch"
     echo "$msg $delete_old_remote_branch"
   fi
-else
-  $rename_local_branch
 
-  if [ $UPDATE_REMOTE = "yes" ]; then
-    $push_new_remote_branch
-    $delete_old_remote_branch
-  fi
+  exit 0
+fi
+
+if [ "$FORCE" != "yes" ]; then
+  echo
+  echo "Do you wish to rename this branch?"
+  select yn in "Yes" "No"; do
+      case "$yn" in
+          Yes)
+            echo;
+            break;
+            ;;
+          No)
+            exit 0
+            ;;
+      esac
+  done
+fi
+
+$rename_local_branch
+
+if [ $UPDATE_REMOTE = "yes" ]; then
+  $push_new_remote_branch
+  $delete_old_remote_branch
 fi
 
 exit 0
