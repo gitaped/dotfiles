@@ -41,7 +41,7 @@ case "$(uname -s)" in
   Linux)
     which apt || err "Unsupported Linux"
     sudo apt update
-    cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+    curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/packages.list | xargs sudo apt-get --yes install
     get_dotfiles
 
     make up
