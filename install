@@ -29,23 +29,20 @@ get_dotfiles() {
   cd $DOTFILES
 }
 
-which -s git || err "required tool missing: git"
-which -s make || err "required tool missing: make"
-
 case "$(uname -s)" in 
   Darwin)
-    get_dotfiles
     which -s brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew update
     brew bundle
+    get_dotfiles
 
     make up
     ;;
   Linux)
     which -s apt || err "Unsupported Linux"
-    get_dotfiles
     sudo apt update
     cat $DOTFILES/packages.list | xargs sudo apt-get --yes install
+    get_dotfiles
 
     make up
     ;;
