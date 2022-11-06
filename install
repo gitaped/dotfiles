@@ -31,10 +31,10 @@ get_dotfiles() {
 
 case "$(uname -s)" in 
   Darwin)
+    get_dotfiles
     which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew update
     brew bundle
-    get_dotfiles
 
     make up
     ;;
