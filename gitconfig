@@ -16,11 +16,13 @@
     verbose = true
 
 [delta]
-    features = line-numbers decorations
+    features = unobtrusive-line-numbers decorations
     plus-style = syntax 22
     plus-emph-style = syntax bold 28
     navigate = true
-    line-numbers-plus-style = 22
+
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
     line-numbers-left-style = 39
     line-numbers-right-style = 39
 
