@@ -23,6 +23,7 @@ err_msg() {
 }
 
 DRY_RUN="no"
+FORCE="no"
 ARGS=""
 while (( "$#" )); do
   case "$1" in
@@ -59,7 +60,7 @@ fi
 NEW_BRANCH_NAME=$(echo "$ARGS" | tr -d ' ')
 
 # Get the local branch name
-OLD_BRANCH_NAME=$(git symbolic-ref -q --short HEAD)
+OLD_BRANCH_NAME=$(git branch --show-current)
 if [ "$OLD_BRANCH_NAME" = "$NEW_BRANCH_NAME" ]; then
   err_msg "new branch name is not unique"
 fi
@@ -69,7 +70,7 @@ if git branch -l | grep -Fxq "$NEW_BRANCH_NAME"; then
 fi
 
 UPDATE_REMOTE="no"
-if git branch -r | grep -q "$OLD_BRANCH_NAME"; then
+if git branch --remotes --list "$OLD_BRANCH_NAME"; then
   UPDATE_REMOTE="yes"
 fi
 REMOTE_NAME=$(git remote show -n)
@@ -99,17 +100,18 @@ if [ "$DRY_RUN" = "yes" ]; then
   exit 0
 fi
 
+PS3="Do you wish to rename this branch? "
 if [ "$FORCE" != "yes" ]; then
-  echo
-  echo "Do you wish to rename this branch?"
   select yn in "Yes" "No"; do
       case "$yn" in
           Yes)
-            echo;
-            break;
+            break
             ;;
           No)
             exit 0
+            ;;
+          *)
+            echo
             ;;
       esac
   done
