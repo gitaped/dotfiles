@@ -10,6 +10,10 @@ usage() {
   echo
   echo "    -f, --force         Rename the branch immediately without confirmation."
   echo
+  echo "    --debug             Enable debugging output."
+  echo
+  echo "    -h                  Show help message."
+  echo
 }
 
 err_msg() {
@@ -28,6 +32,10 @@ while (( "$#" )); do
       ;;
     -f|--force)
       FORCE="yes"
+      shift
+      ;;
+    --debug)
+      set -x
       shift
       ;;
     -h)
