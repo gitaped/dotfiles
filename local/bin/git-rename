@@ -6,7 +6,7 @@ set -o pipefail
 usage() {
   echo "usage: git rename [<options>] <name>"
   echo
-  echo "    -d, --dry-run       Print debugging information and display the commands that would be executed."
+  echo "    -d, --dry-run       Print out the commands that will be executed but do not execute them."
   echo
   echo "    -f, --force         Rename the branch immediately without confirmation."
   echo
