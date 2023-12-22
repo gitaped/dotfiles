@@ -128,7 +128,9 @@ set modeline
 "Filetype options
 autocmd filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd filetype markdown setlocal spell textwidth=0
-au BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
+autocmd filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd filetype helm setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
 autocmd BufLeave * silent! wall
 
 "------------
@@ -248,9 +250,9 @@ Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl']  }
 Plug 'hashivim/vim-terraform', {'for': 'terraform'}
-Plug 'google/vim-jsonnet', {'for': 'jsonnet'}
-Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'towolf/vim-helm', {'for': 'helm'}
+
+Plug 'Yggdroot/indentLine'
 
 "Asynchronous Lint Engine
 Plug 'dense-analysis/ale'
