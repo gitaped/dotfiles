@@ -12,6 +12,7 @@ function __kube_status
     set -g __on $grey" on "
     set -g __in $grey"in "
     set -g __sep $normal":"
+    set -g __kube $normal"⎈ "
 
     # Check if the timestamp has been created otherwise compare it to the
     # current config timestamp; Thus only update the prompt if the namespace or
@@ -23,5 +24,5 @@ function __kube_status
         [ -z $__namespace ]; and set -g __namespace $lblue'default'
     end
 
-    echo -n -s $__context$__sep$__namespace 
+    echo -n -s $__kube$__context$__sep$__namespace 
 end
