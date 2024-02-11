@@ -251,6 +251,7 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl']  }
 Plug 'hashivim/vim-terraform', {'for': 'terraform'}
 Plug 'towolf/vim-helm', {'for': 'helm'}
+Plug 'tsandall/vim-rego', {'for': 'rego'}
 
 Plug 'Yggdroot/indentLine'
 
