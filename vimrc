@@ -1,7 +1,3 @@
-"------------
-"| Settings |
-"------------
-
 "Vim
 set nocompatible         " no Vi compatibility mode (not neccessary for nvim)
 
@@ -130,7 +126,7 @@ autocmd filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd filetype markdown setlocal spell textwidth=0
 autocmd filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype helm setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
+"autocmd BufRead,BufNewFile *.tpl set filetype=gohtmltmpl
 autocmd BufLeave * silent! wall
 
 "------------
@@ -238,9 +234,6 @@ nmap dD :%d<c-r>=v:register<cr><cr>
 filetype indent on
 call plug#begin('~/.vim/plugged')
 
-"Autocompletion
-Plug 'maralla/completor.vim'
-
 "Language
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'alcesleo/vim-uppercase-sql', { 'for': 'sql' }
@@ -248,11 +241,10 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'chr4/nginx.vim', { 'for': 'nginx' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'fatih/vim-go', { 'for': ['go', 'gohtmltmpl']  }
 Plug 'hashivim/vim-terraform', {'for': 'terraform'}
 Plug 'towolf/vim-helm', {'for': 'helm'}
 Plug 'tsandall/vim-rego', {'for': 'rego'}
-Plug 'google/vim-jsonnet', {'for': 'jsonnet'}
+Plug 'Joorem/vim-haproxy' , {'for': 'cfg'}
 
 Plug 'Yggdroot/indentLine'
 
@@ -314,11 +306,6 @@ highlight ExtraWhitespace ctermbg=blue
 let g:rust_recommended_style = 1
 let g:rust_fold=1
 
-"-------------
-"| Completor |
-"-------------
-let g:completor_racer_binary = '~/.cargo/bin/racer'
-let g:completor_python_binary = '/usr/bin/python3'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
@@ -328,4 +315,3 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
 "-------------
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
-
