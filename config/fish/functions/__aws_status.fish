@@ -1,5 +1,4 @@
 function __aws_status
-
     if test -z $AWS_PROFILE
         return
     end
@@ -8,9 +7,8 @@ function __aws_status
     set -g orange (set_color FF9900)
     set -g normal (set_color normal)
 
-    set -g __aws $blue"aws"
-    set -g __sep $normal":"
-    set -g __profile $orange(echo $AWS_PROFILE)
+    set -g __aws $normal"⌲"
+    set -g __profile $orange$AWS_PROFILE
 
-    echo -n -s $__aws$__sep$__profile
+    echo -n -s $__aws$__space$__profile
 end

@@ -12,6 +12,7 @@ function __kube_status
     set -g __on $grey" on "
     set -g __in $grey"in "
     set -g __sep $normal":"
+    set -g __space " "
     set -g __kube $normal"⎈ "
 
     # Check if the timestamp has been created otherwise compare it to the
