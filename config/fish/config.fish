@@ -13,6 +13,9 @@ set -x -U RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/ripgreprc
 set -x -U XDG_CONFIG_HOME $HOME/.config
 set -x -U XDG_DATA_HOME $HOME/.local/share
 
+set -x -U PYENV_ROOT $HOME/.pyenv
+test -d $PYENV_ROOT/bin; and set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
 # shortcuts for custom colors
 # kubeblue 326CE5
 # orange FFA500
@@ -55,6 +58,10 @@ end
 
 if which -s kubectl
     kubectl completion fish | source
+end
+
+if which -s pyenv
+    pyenv init - fish | source
 end
 
 function ...
