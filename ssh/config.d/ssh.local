@@ -1,8 +1,9 @@
 # vim: set ft=sshconfig:
 
+# Personal account
+# Debug using ssh -T git@github-apeduru
 Host github-apeduru
     HostName github.com
     User apeduru
     IdentityFile ~/.ssh/keys/github-apeduru
     IdentitiesOnly yes
-
