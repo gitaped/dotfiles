@@ -72,7 +72,7 @@
     main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
     com = "!f(){ git checkout $(git main-branch) $@;}; f"
     fomo = !git fetch origin $(git main-branch) && git rebase origin/$(git main-branch)
-    amend = commit -a --amend --no-edit
+    amend = !git add -A && git commit --amend --no-edit
 
 [includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig.local
