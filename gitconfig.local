@@ -4,5 +4,5 @@
 	name = Ansley Peduru
 	email = ansleypeduru96@gmail.com
 
-[url "git@github-apeduru:apeduru"]
-    insteadOf = git@github.com:apeduru
+[url "git@github-gitaped:gitaped"]
+    insteadOf = git@github.com:gitaped

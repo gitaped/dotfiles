@@ -2,7 +2,7 @@
 
 echo "[3]: Setting git remote URL"
 
-git remote set-url origin git@github.com:apeduru/dotfiles.git
+git remote set-url origin git@github.com:gitaped/dotfiles.git
 git remote -v
 
 exit 0

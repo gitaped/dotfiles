@@ -2,8 +2,8 @@
 
 # Personal account
 # Debug using ssh -T git@github-apeduru
-Host github-apeduru
+Host github-gitaped
     HostName github.com
-    User apeduru
-    IdentityFile ~/.ssh/keys/github-apeduru
+    User gitaped
+    IdentityFile ~/.ssh/keys/github.com
     IdentitiesOnly yes

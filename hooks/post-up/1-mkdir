@@ -2,6 +2,6 @@
 
 echo "[1]: Creating ~/src and ~/go"
 
-mkdir -p ~/src/github.com/apeduru ~/go
+mkdir -p ~/src/github.com/gitaped ~/go
 
 exit 0

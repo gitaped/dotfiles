@@ -19,7 +19,7 @@ get_dotfiles() {
     if [[ -n "${TOKEN}" ]]; then
       url=""$url""${TOKEN}"@"
     fi
-    repo=""$url"github.com/apeduru/dotfiles.git"
+    repo=""$url"github.com/gitaped/dotfiles.git"
 
     git clone "$repo" "$DOTFILES"
   else
@@ -41,7 +41,7 @@ case "$(uname -s)" in
   Linux)
     which apt || err "Unsupported Linux"
     sudo apt update
-    curl -fsSL https://raw.githubusercontent.com/apeduru/dotfiles/master/packages.list | xargs sudo apt-get --yes install
+    curl -fsSL https://raw.githubusercontent.com/gitaped/dotfiles/master/packages.list | xargs sudo apt-get --yes install
     get_dotfiles
 
     make up

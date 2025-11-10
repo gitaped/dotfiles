@@ -83,7 +83,7 @@
 [includeIf "gitdir:~/go/"]
   path = ~/.gitconfig.work
 
-[includeIf "gitdir:~/go/src/github.com/apeduru/"]
+[includeIf "gitdir:~/go/src/github.com/gitaped/"]
   path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/journal/"]
@@ -92,5 +92,5 @@
 [includeIf "gitdir:~/src/"]
   path = ~/.gitconfig.work
 
-[includeIf "gitdir:~/src/github.com/apeduru/"]
+[includeIf "gitdir:~/src/github.com/gitaped/"]
   path = ~/.gitconfig.local
