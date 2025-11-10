@@ -18,6 +18,8 @@ set -x -U XDG_DATA_HOME $HOME/.local/share
 set -x -U PYENV_ROOT $HOME/.pyenv
 test -d $PYENV_ROOT/bin; and set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
+set -x -U SHELL /opt/homebrew/bin/fish
+
 # shortcuts for custom colors
 # kubeblue 326CE5
 # orange FFA500
