@@ -80,21 +80,22 @@ push_new_remote_branch="git push --set-upstream $REMOTE_NAME $NEW_BRANCH_NAME"
 delete_old_remote_branch="git push --delete $REMOTE_NAME $OLD_BRANCH_NAME"
 
 if [ "$DRY_RUN" = "yes" ]; then
-  msg="[INFO] dry-run:"
-  echo "$msg UPDATE_REMOTE: $UPDATE_REMOTE"
+  info_msg="[INFO] dry-run:"
+  exec_msg="[EXEC] dry-run:"
+
+  echo "$info_msg Update remote? $UPDATE_REMOTE"
   if [ "$UPDATE_REMOTE" = "yes" ]; then
-    echo "$msg REMOTE_NAME: $REMOTE_NAME"
+    echo "$info_msg Remote name: $REMOTE_NAME"
   fi
-  echo "$msg OLD_BRANCH_NAME: $OLD_BRANCH_NAME"
-  echo "$msg NEW_BRANCH_NAME: $NEW_BRANCH_NAME"
-  
-  echo
-  msg="[EXEC] dry-run:"
-  echo "$msg $rename_local_branch"
+  echo "$info_msg old branch name: $OLD_BRANCH_NAME"
+  echo "$info_msg new branch name: $NEW_BRANCH_NAME"
+
+  echo "$info_msg"
+  echo "$exec_msg $rename_local_branch"
 
   if [ "$UPDATE_REMOTE" = "yes" ]; then
-    echo "$msg $push_new_remote_branch"
-    echo "$msg $delete_old_remote_branch"
+    echo "$exec_msg $push_new_remote_branch"
+    echo "$exec_msg $delete_old_remote_branch"
   fi
 
   exit 0
