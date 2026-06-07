@@ -12,6 +12,7 @@ function fish_prompt
     if test -n "$kube_prompt" -o -n "$aws_prompt"
         echo
     end
-    echo (__workspace) (set_color cyan)(prompt_pwd) (set_color normal)(__fish_git_prompt)
-    echo -e (set_color normal)'$ '
+
+    echo (set_color cyan)(prompt_pwd --dir-length=1 --full-length-dirs=3) (set_color normal)(__fish_git_prompt)
+    echo -n (set_color normal)'$ '
 end
