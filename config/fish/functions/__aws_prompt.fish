@@ -1,4 +1,4 @@
-function __aws_status
+function __aws_prompt
     if test -z $AWS_PROFILE
         return
     end
@@ -10,5 +10,5 @@ function __aws_status
     set -g __aws $normal"⌲"
     set -g __profile $orange$AWS_PROFILE
 
-    echo -n -s $__aws$__space$__profile
+    echo -n -s $__aws" "$__profile
 end
