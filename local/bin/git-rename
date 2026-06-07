@@ -65,15 +65,15 @@ if [ "$OLD_BRANCH_NAME" = "$NEW_BRANCH_NAME" ]; then
   err_msg "new branch name is not unique"
 fi
 
-if git branch -l | grep -Fxq "$NEW_BRANCH_NAME"; then
+if git show-ref --verify --quiet "refs/heads/$NEW_BRANCH_NAME"; then
   err_msg "new branch name already exists"
 fi
 
+REMOTE_NAME=$(git remote show -n)
 UPDATE_REMOTE="no"
-if git branch --remotes --list "$OLD_BRANCH_NAME"; then
+if git show-ref --verify --quiet "refs/remotes/$REMOTE_NAME/$OLD_BRANCH_NAME"; then
   UPDATE_REMOTE="yes"
 fi
-REMOTE_NAME=$(git remote show -n)
 
 rename_local_branch="git branch -m $NEW_BRANCH_NAME"
 push_new_remote_branch="git push --set-upstream $REMOTE_NAME $NEW_BRANCH_NAME"
