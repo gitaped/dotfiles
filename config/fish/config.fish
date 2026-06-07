@@ -1,3 +1,5 @@
+set -g fish_greeting ""
+
 set -x -U EDITOR nvim
 set -x -U KUBE_EDITOR nvim
 
