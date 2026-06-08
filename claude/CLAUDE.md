@@ -1,6 +1,8 @@
 Reading
 * Reading and searching for files is acceptable without prompting.
 * If possible, use ripgrep instead of grep.
+* Git commands that do reads i.e. git diff, git show, git log are acceptable without prompting.
+* WebSearch() and Fetch() are also acceptable without prompting
 * When local sources have been exhausted, it is acceptable to fetch content from the internet without prompting.
 
 Writing
