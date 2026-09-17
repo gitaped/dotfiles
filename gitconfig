@@ -94,3 +94,6 @@
 
 [includeIf "gitdir:~/src/github.com/gitaped/"]
   path = ~/.gitconfig.local
+[user]
+	name = Ansley Peduru
+	email = ansleypeduru96@gmail.com
