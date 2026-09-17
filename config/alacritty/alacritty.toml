@@ -67,8 +67,8 @@ bindings = [
     { key="Left",      mods="Command",       chars="\x1bb"    }, # Command-Left send chars ESC-b to shell (word to the left)
     { key="Right",     mods="Command",       chars="\x1bf"    }, # Command-Right send chars ESC-f to shell (word to the right)
     { key="Comma",     mods="Command",       chars="\x02\x2c" }, # Command-Comma send chars Ctrl-b-, in tmux (rename window)
-    { key="Backslash", mods="Command",       chars="\x02\x5c" }, # Command-\ send chars Ctrl-b-\ in tmux (create vertical pane)
-    { key="Backslash", mods="Command|Shift", chars="\x02\x25" }, # Command-Shift-\ send chars Ctrl-b-- in tmux (create horizontal pane)
+    { key="D",         mods="Command",       chars="\x02\x64" }, # Command-D send chars Ctrl-b-d in tmux (create vertical pane)
+    { key="D",         mods="Command|Shift", chars="\x02\x44" }, # Command-Shift-D send chars Ctrl-b-D in tmux (create horizontal pane)
     { key="Tab",       mods="Control",       chars="\x02\x6e" }, # Control-Tab send chars Ctrl-b-n in tmux (next window)
     { key="Tab",       mods="Control|Shift", chars="\x02\x70" }, # Control-Shift-Tab send chars Ctrl-b-p in tmux (previous window)
 ]
